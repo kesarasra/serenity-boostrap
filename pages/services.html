@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serenity | Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="d-flex justify-content-between align-items-center px-3 py-2 bg-dark text-light fixed-top">
+    <button class="btn btn-outline-light">☰</button>
+    <div class="logo text-center">Serenity</div>
+    <a href="/index.html" class="btn btn-outline-light">Home</a>
+  </header>
+
+  <main class="container pt-5 mt-5">
+
+    <!-- Bento Services Grid -->
+    <section class="py-5 text-center">
+      <h1 class="mb-4">Our Services</h1>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card h-100 service-bento" onclick="document.getElementById('service1').scrollIntoView({behavior:'smooth'})">
+            <div class="card-body d-flex flex-column justify-content-center">
+              <h4>Service One</h4>
+              <p class="text-muted">Short intro text...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 service-bento" onclick="document.getElementById('service2').scrollIntoView({behavior:'smooth'})">
+            <div class="card-body d-flex flex-column justify-content-center">
+              <h4>Service Two</h4>
+              <p class="text-muted">Short intro text...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 service-bento" onclick="document.getElementById('service3').scrollIntoView({behavior:'smooth'})">
+            <div class="card-body d-flex flex-column justify-content-center">
+              <h4>Service Three</h4>
+              <p class="text-muted">Short intro text...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 service-bento" onclick="document.getElementById('service4').scrollIntoView({behavior:'smooth'})">
+            <div class="card-body d-flex flex-column justify-content-center">
+              <h4>Service Four</h4>
+              <p class="text-muted">Short intro text...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 service-bento" onclick="document.getElementById('service5').scrollIntoView({behavior:'smooth'})">
+            <div class="card-body d-flex flex-column justify-content-center">
+              <h4>Service Five</h4>
+              <p class="text-muted">Short intro text...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Individual Services Sections -->
+    <section id="service1" class="py-5">
+      <h2>Service One</h2>
+      <p>Full description of service one goes here...</p>
+    </section>
+
+    <section id="service2" class="py-5 bg-light">
+      <h2>Service Two</h2>
+      <p>Full description of service two goes here...</p>
+    </section>
+
+    <section id="service3" class="py-5">
+      <h2>Service Three</h2>
+      <p>Full description of service three goes here...</p>
+    </section>
+
+    <section id="service4" class="py-5 bg-light">
+      <h2>Service Four</h2>
+      <p>Full description of service four goes here...</p>
+    </section>
+
+    <section id="service5" class="py-5">
+      <h2>Service Five</h2>
+      <p>Full description of service five goes here...</p>
+    </section>
+
+    <!-- Contact Form (from counselors.html) -->
+    <section id="contact" class="py-5 bg-dark text-light">
+      <div class="container">
+        <h2 class="mb-4 text-center">Get in Touch</h2>
+        <form class="row g-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="col-md-6">
+            <input type="email" class="form-control" placeholder="Your Email" required>
+          </div>
+          <div class="col-12">
+            <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-light">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-secondary text-light text-center py-3">
+    <p class="mb-0">&copy; 2025 Serenity. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

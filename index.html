@@ -12,33 +12,50 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <!-- Persistent Header -->
-<header class="d-flex justify-content-between align-items-center px-3 py-2 bg-dark text-light fixed-top">
-  <button class="btn btn-outline-light" onclick="toggleMenu()">☰</button>
-  <div class="logo text-center">Serenity</div>
-  <a href="#home" class="btn btn-outline-light" onclick="loadPage('home')">Home</a>
-</header>
+  <header id="siteHeader" class="d-flex justify-content-between align-items-center px-4 py-2 fixed-top shadow-lg">
+    <!-- Hamburger -->
+    <div class="hamburger-wrapper position-relative">
+      <button id="hamburgerBtn" class="btn p-0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+          <path d="M8 6h16M6 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <div id="hamburgerMenu" class="position-absolute p-3">
+        <ul class="list-unstyled mb-0">
+            <li><a href="/index.html" class="text-light d-block py-2">Home</a></li>
+            <li><a href="/pages/about.html" class="text-light d-block py-2">About</a></li>
+            <li><a href="/pages/counselors.html" class="text-light d-block py-2">Counselors</a></li>
+            <li><a href="/pages/services.html" class="text-light d-block py-2">Services</a></li>
+            <li><a href="/pages/media.html" class="text-light d-block py-2">Media</a></li>
+            <li><a href="/pages/contact.html" class="text-light d-block py-2">Contact</a></li>
+        </ul>
+        </div>
+    </div>
 
-<!-- Slide-in Sidebar Menu (custom, not Bootstrap collapse) -->
-<div id="sidebarMenu" class="bg-dark text-light position-fixed top-0 start-0 vh-100 p-4"
-     style="width: 250px; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 1050;">
-  <h5 class="mb-4">Navigation</h5>
-  <ul class="list-unstyled">
-    <li><a href="pages/about.html" class="text-light d-block py-2" onclick="loadPage('about'); toggleMenu()">About</a></li>
-    <li><a href="/pages/counselors.html" class="text-light d-block py-2" onclick="loadPage('counselors'); toggleMenu()">Counselors</a></li>
-    <li><a href="/pages/services.html" class="text-light d-block py-2" onclick="loadPage('services'); toggleMenu()">Services</a></li>
-    <li><a href="/pages/media.html" class="text-light d-block py-2" onclick="loadPage('media'); toggleMenu()">Media</a></li>
-    <li><a href="/pages/contact.html" class="text-light d-block py-2" onclick="loadPage('contact'); toggleMenu()">Contact</a></li>
-  </ul>
-</div>
+    <!-- Logo -->
+    <div class="logo-wrapper flex-fill d-flex justify-content-center">
+    <a href="/index.html">
+        <img src="assets/icons/g630.png" alt="Serenity Logo" id="logo" class="logo-img">
+    </a>
+    </div>
+
+
+    <!-- Home Button -->
+    <a href="/index.html" id="homeBtn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="home-icon" fill="currentColor">
+        <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3z"/>
+      </svg>
+    </a>
+  </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero mt-5">
     <div class="video-background">
-      <iframe src="https://player.vimeo.com/video/123456789?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" 
+      <iframe src="https://player.vimeo.com/video/1059479707?h=c04bcdd312&autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0&controls=0" 
               frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
     <div class="overlay-text" data-aos="fade-down">
@@ -97,23 +114,20 @@
     <a href="/pages/contact.html" class="btn btn-primary">Read More</a>
   </section>
 
-  <!-- Persistent Footer -->
+  <!-- Footer -->
   <footer class="bg-dark text-light text-center py-3 mt-5">
     <p class="mb-0">© 2025 Serenity</p>
   </footer>
 
-  <script src="app.js"></script>
-  <!-- Bootstrap JS -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <!-- Rellax JS -->
   <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
-  <!-- Custom JS -->
+  <script src="app.js"></script>
   <script>
     AOS.init();
     var rellax = new Rellax('.rellax');
   </script>
-
 </body>
 </html>
+

@@ -21,28 +21,45 @@
   <!-- AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <!-- Persistent Header -->
-  <header class="d-flex justify-content-between align-items-center px-3 py-2 bg-dark text-light fixed-top">
-    <button class="btn btn-outline-light" onclick="toggleMenu()">☰</button>
-    <div class="logo text-center">Serenity</div>
-    <a href="/index.html" class="btn btn-outline-light">Home</a>
+  <header id="siteHeader" class="d-flex justify-content-between align-items-center px-4 py-2 fixed-top shadow-lg">
+    <!-- Hamburger -->
+    <div class="hamburger-wrapper position-relative">
+      <button id="hamburgerBtn" class="btn p-0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+          <path d="M8 6h16M6 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <div id="hamburgerMenu" class="position-absolute p-3">
+        <ul class="list-unstyled mb-0">
+            <li><a href="/index.html" class="text-light d-block py-2">Home</a></li>
+            <li><a href="/pages/about.html" class="text-light d-block py-2">About</a></li>
+            <li><a href="/pages/counselors.html" class="text-light d-block py-2">Counselors</a></li>
+            <li><a href="/pages/services.html" class="text-light d-block py-2">Services</a></li>
+            <li><a href="/pages/media.html" class="text-light d-block py-2">Media</a></li>
+            <li><a href="/pages/contact.html" class="text-light d-block py-2">Contact</a></li>
+        </ul>
+        </div>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo-wrapper flex-fill d-flex justify-content-center">
+    <a href="/index.html">
+        <img src="/assets/icons/g630.png" alt="Serenity Logo" id="logo" class="logo-img">
+    </a>
+    </div>
+
+    <!-- Home Button -->
+    <a href="/index.html" id="homeBtn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="home-icon" fill="currentColor">
+        <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3z"/>
+      </svg>
+    </a>
   </header>
 
-  <!-- Slide-in Sidebar Menu -->
-  <div id="sidebarMenu" class="bg-dark text-light position-fixed top-0 start-0 vh-100 p-4"
-       style="width: 250px; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 1050;">
-    <h5 class="mb-4">Navigation</h5>
-    <ul class="list-unstyled">
-      <li><a href="/pages/about.html" class="text-light d-block py-2" onclick="toggleMenu()">About</a></li>
-      <li><a href="/pages/counselors.html" class="text-light d-block py-2" onclick="toggleMenu()">Counselors</a></li>
-      <li><a href="/pages/services.html" class="text-light d-block py-2" onclick="toggleMenu()">Services</a></li>
-      <li><a href="/pages/media.html" class="text-light d-block py-2" onclick="toggleMenu()">Media</a></li>
-      <li><a href="/pages/contact.html" class="text-light d-block py-2" onclick="toggleMenu()">Contact</a></li>
-    </ul>
-  </div>
 
   <main class="container-fluid pt-5 mt-5">
     <!-- Bento UI of 8 counselors -->

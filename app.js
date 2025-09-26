@@ -11,6 +11,18 @@ function loadPage(page) {
     .catch(err => console.error("Error loading page:", err));
 }
 
+
+function toggleMenu() {
+  const menu = document.getElementById("sidebarMenu");
+  if (menu.style.transform === "translateX(0%)") {
+    menu.style.transform = "translateX(-100%)";
+  } else {
+    menu.style.transform = "translateX(0%)";
+  }
+}
+
+
+
 // Initial load (default: home)
 window.addEventListener("load", () => {
   const page = window.location.hash.substring(1) || "home";

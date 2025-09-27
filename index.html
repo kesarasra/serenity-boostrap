@@ -43,6 +43,20 @@
       </a>
     </div>
 
+    <!-- Logo preload script -->
+     <script>
+      (function() {
+        const logo = new Image();
+        logo.src = "assets/icons/g630.png";
+        logo.onload = () => {
+          const logoElement = document.getElementById("logo");
+          if (logoElement) {
+            logoElement.src = logo.src;
+          }
+        };
+      })();
+     </script>
+
     <!-- Home Button -->
     <a href="index.html" id="homeBtn">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="home-icon" fill="currentColor">

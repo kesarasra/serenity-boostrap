@@ -12,7 +12,7 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Persistent Header -->
@@ -26,26 +26,25 @@
       </button>
       <div id="hamburgerMenu" class="position-absolute p-3">
         <ul class="list-unstyled mb-0">
-            <li><a href="/index.html" class="text-light d-block py-2">Home</a></li>
-            <li><a href="/pages/about.html" class="text-light d-block py-2">About</a></li>
-            <li><a href="/pages/counselors.html" class="text-light d-block py-2">Counselors</a></li>
-            <li><a href="/pages/services.html" class="text-light d-block py-2">Services</a></li>
-            <li><a href="/pages/media.html" class="text-light d-block py-2">Media</a></li>
-            <li><a href="/pages/contact.html" class="text-light d-block py-2">Contact</a></li>
+          <li><a href="index.html" class="text-light d-block py-2">Home</a></li>
+          <li><a href="pages/about.html" class="text-light d-block py-2">About</a></li>
+          <li><a href="pages/counselors.html" class="text-light d-block py-2">Counselors</a></li>
+          <li><a href="pages/services.html" class="text-light d-block py-2">Services</a></li>
+          <li><a href="pages/media.html" class="text-light d-block py-2">Media</a></li>
+          <li><a href="pages/contact.html" class="text-light d-block py-2">Contact</a></li>
         </ul>
-        </div>
+      </div>
     </div>
 
     <!-- Logo -->
     <div class="logo-wrapper flex-fill d-flex justify-content-center">
-    <a href="/index.html">
+      <a href="index.html">
         <img src="assets/icons/g630.png" alt="Serenity Logo" id="logo" class="logo-img">
-    </a>
+      </a>
     </div>
 
-
     <!-- Home Button -->
-    <a href="/index.html" id="homeBtn">
+    <a href="index.html" id="homeBtn">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="home-icon" fill="currentColor">
         <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3z"/>
       </svg>
@@ -87,31 +86,31 @@
   <section id="about" class="preview" data-aos="fade-up">
     <h2>About Serenity</h2>
     <p>Short introduction text...</p>
-    <a href="/pages/about.html" class="btn btn-primary">Read More</a>
+    <a href="pages/about.html" class="btn btn-primary">Read More</a>
   </section>
 
   <section id="counselors" class="preview" data-aos="fade-up">
     <h2>Meet Our Counselors</h2>
     <p>Short introduction text...</p>
-    <a href="/pages/counselors.html" class="btn btn-primary">Read More</a>
+    <a href="pages/counselors.html" class="btn btn-primary">Read More</a>
   </section>
 
   <section id="services" class="preview" data-aos="fade-up">
     <h2>Our Services</h2>
     <p>Short introduction text...</p>
-    <a href="/pages/services.html" class="btn btn-primary">Read More</a>
+    <a href="pages/services.html" class="btn btn-primary">Read More</a>
   </section>
 
   <section id="media" class="preview" data-aos="fade-up">
     <h2>Media & Resources</h2>
     <p>Short introduction text...</p>
-    <a href="/pages/media.html" class="btn btn-primary">Read More</a>
+    <a href="pages/media.html" class="btn btn-primary">Read More</a>
   </section>
 
   <section id="contact" class="preview" data-aos="fade-up">
     <h2>Contact Us</h2>
     <p>Get in touch...</p>
-    <a href="/pages/contact.html" class="btn btn-primary">Read More</a>
+    <a href="pages/contact.html" class="btn btn-primary">Read More</a>
   </section>
 
   <!-- Footer -->
@@ -125,9 +124,16 @@
   <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
   <script src="app.js"></script>
   <script>
-    AOS.init();
-    var rellax = new Rellax('.rellax');
+    // Ensure scripts run after DOM loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize AOS
+      AOS.init();
+
+      // Initialize Rellax only if element exists
+      if (document.querySelector('.rellax')) {
+        var rellax = new Rellax('.rellax');
+      }
+    });
   </script>
 </body>
 </html>
-

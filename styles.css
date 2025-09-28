@@ -155,7 +155,7 @@ body, html {
   z-index: 1050;
 
   /* Glassy effect */
-  background-color: rgba(109, 79, 150, 0.7);
+  background-color: rgba(109, 79, 150, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
@@ -174,10 +174,14 @@ body, html {
 #hamburgerMenu.show {
   transform: translateY(0);
   opacity: 1;
-  pointer-events: auto; /* allow clicks when visible */
+  pointer-events: auto;
 }
 
 #hamburgerMenu a {
+  display: block;
+  padding: 0.5rem 0;
+  color: white;
+  text-decoration: none;
   transition: color 0.3s, transform 0.3s;
 }
 
@@ -185,6 +189,7 @@ body, html {
   color: #A855F7;
   transform: translateX(5px);
 }
+
 
 
 

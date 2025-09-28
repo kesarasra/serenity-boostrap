@@ -43,20 +43,6 @@
       </a>
     </div>
 
-    <!-- Logo preload script -->
-     <script>
-      (function() {
-        const logo = new Image();
-        logo.src = "assets/icons/g630.png";
-        logo.onload = () => {
-          const logoElement = document.getElementById("logo");
-          if (logoElement) {
-            logoElement.src = logo.src;
-          }
-        };
-      })();
-     </script>
-
     <!-- Home Button -->
     <a href="index.html" id="homeBtn">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="home-icon" fill="currentColor">
@@ -65,11 +51,14 @@
     </a>
   </header>
 
+
+
   <!-- Hero Section -->
   <section class="hero mt-5">
     <div class="video-background">
-      <iframe src="https://player.vimeo.com/video/1059479707?h=c04bcdd312&autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0&controls=0" 
-              frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <iframe
+        src="https://player.vimeo.com/video/1059479707?h=c04bcdd312&autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0&controls=0"
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
     <div class="overlay-text" data-aos="fade-down">
       <h1>Welcome to Serenity</h1>
@@ -137,17 +126,17 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
   <script src="app.js"></script>
-  <script>
-    // Ensure scripts run after DOM loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      // Initialize AOS
-      AOS.init();
 
-      // Initialize Rellax only if element exists
-      if (document.querySelector('.rellax')) {
-        var rellax = new Rellax('.rellax');
-      }
-    });
+  <!-- Preload Logo Script -->
+  <script>
+    (function() {
+      const logo = new Image();
+      logo.src = "assets/icons/g630.png";
+      logo.onload = () => {
+        const logoElement = document.getElementById("logo");
+        if (logoElement) logoElement.src = logo.src;
+      };
+    })();
   </script>
 </body>
 </html>

@@ -1,16 +1,18 @@
-// === Hamburger toggle ===
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburgerBtn = document.getElementById("hamburgerBtn");
-  const hamburgerMenu = document.getElementById("hamburgerMenu");
+// === App.js - Fully Fixed Version ===
+window.addEventListener("load", () => {
+  const header = document.getElementById("siteHeader");
+  const contentContainer = document.getElementById("content");
 
-  if (hamburgerBtn && hamburgerMenu) {
-    // Function to open/close menu
+  // --- Hamburger Menu Init ---
+  function initHamburgerMenu() {
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const hamburgerMenu = document.getElementById("hamburgerMenu");
+    if (!hamburgerBtn || !hamburgerMenu) return;
+
     const openMenu = () => hamburgerMenu.classList.add("show");
     const closeMenu = () => hamburgerMenu.classList.remove("show");
 
-    // Detect if device supports hover
     const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-
     if (canHover) {
       hamburgerBtn.addEventListener("mouseenter", openMenu);
       hamburgerBtn.addEventListener("mouseleave", closeMenu);
@@ -18,25 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburgerMenu.addEventListener("mouseleave", closeMenu);
     }
 
-    // Touch/click toggle
     hamburgerBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       hamburgerMenu.classList.toggle("show");
     });
 
-    // Close menu when clicking outside
     document.addEventListener("click", (e) => {
       if (!hamburgerBtn.contains(e.target) && !hamburgerMenu.contains(e.target)) {
-        hamburgerMenu.classList.remove("show");
+        closeMenu();
       }
     });
   }
 
-  // === Header scroll animation ===
-  const header = document.getElementById("siteHeader");
+  // --- Header Scroll Animation ---
   if (header) {
     let lastScrollY = window.scrollY;
-
     window.addEventListener("scroll", () => {
       if (window.scrollY > lastScrollY && window.scrollY > 50) {
         header.classList.add("hide-header");
@@ -49,8 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // === Page load via #hash ===
-  const contentContainer = document.getElementById("content");
+  // --- Page Load via Hash ---
   function loadPage(page) {
     if (!contentContainer) return;
 
@@ -59,17 +56,31 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(data => {
         contentContainer.innerHTML = data;
         window.location.hash = page;
+
+        // Re-initialize hamburger menu after page content changes
+        initHamburgerMenu();
       })
       .catch(err => console.error("Error loading page:", err));
   }
 
-  // Initial load
+  // --- Initial Load ---
   const initialPage = window.location.hash.substring(1) || "home";
   loadPage(initialPage);
 
-  // Handle back/forward buttons
+  // --- Hash Change Handling ---
   window.addEventListener("hashchange", () => {
     const page = window.location.hash.substring(1) || "home";
     loadPage(page);
   });
+
+  // --- Init Hamburger Menu on first load ---
+  initHamburgerMenu();
+
+  // --- Optional: Init Rellax + AOS ---
+  if (window.Rellax) {
+    new Rellax(".rellax");
+  }
+  if (window.AOS) {
+    AOS.init();
+  }
 });

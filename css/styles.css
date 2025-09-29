@@ -1,3 +1,7 @@
+body {
+  background-color: #90ee90;
+}
+
 /* --------------------------
    HEADER (frosted glass)
 --------------------------- */
@@ -326,4 +330,3 @@
 [data-parallax] {
     transition: transform 0.1s ease-out;
 }
-

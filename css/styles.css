@@ -159,12 +159,14 @@ body {
     /* Scroll indicator */
     #scroll-indicator {
       position: absolute;
-      bottom: 1rem;
+      bottom: 5rem;
       left: 50%;
       transform: translateX(-50%);
       font-size: 2rem;
       opacity: 0.75;
-      color: white;
+      color: rgb(134, 44, 44);
+      z-index: 20;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7); 
       animation: bounceY 1.5s infinite;
       pointer-events: none;
     }
@@ -175,14 +177,14 @@ body {
 
   /* Bento Section */
 #bento {
-  background-color: #f8f9fa;
+  background-color: #44719e;
 }
 
 .bento-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.1rem;
 }
 
 .bento-section {
@@ -197,7 +199,7 @@ body {
   font-size: 1.25rem;
   border-radius: 0.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: white;
+  color: rgb(138, 40, 40);
   cursor: pointer;
 }
 
@@ -208,7 +210,7 @@ body {
 }
 
 /* Colors */
-#bento-about { background-color: #f0e68c; color: #333; }
+#bento-about { background-color: #f0e68c; }
 #bento-counselors { background-color: #90ee90; }
 #bento-services { background-color: #ffb6c1; }
 #bento-media { background-color: #90ee90; }

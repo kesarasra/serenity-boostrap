@@ -18,9 +18,11 @@ function updateBentoScale() {
     const distance = Math.abs(windowCenter - sectionCenter);
 
     // scale from 1 to 1.2 depending on distance to center
-    let scale = 1.2 - (distance / windowCenter) * 0.2;
-    scale = Math.max(scale, 1);
+    let scale = 1.4 - (distance / windowCenter) * 0.5;
+    scale = Math.min(Math.max(scale, 0.9), 1.4); // clamp between 0.9 and 1.4
+
     section.style.transform = `scale(${scale})`;
+    section.style.transition = 'transform 0.2s ease-out'; // smooth transition
   });
 }
 

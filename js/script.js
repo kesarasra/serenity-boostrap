@@ -1,3 +1,11 @@
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const homeText = document.getElementById('home-text');
+    homeText.classList.add('show'); // fade/slide in
+  }, 3000);
+});
+
 // Header hide/show on scroll
 let lastScroll = 0;
 const header = document.getElementById('site-header');
@@ -12,13 +20,6 @@ window.addEventListener('scroll', () => {
         header.style.transform = 'translateY(0)';
     }
     lastScroll = currentScroll;
-});
-
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    const homeText = document.getElementById('home-text');
-    homeText.classList.add('show'); // fade/slide in
-  }, 3000);
 });
 
 

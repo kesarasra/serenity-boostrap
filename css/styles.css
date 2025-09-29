@@ -69,12 +69,12 @@ section {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
+}
 
-    body {
-      scroll-snap-type: y mandatory;
-      overflow-y: scroll;
-    }
+body {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
 
     /* Video background */
     #home video, #home iframe {

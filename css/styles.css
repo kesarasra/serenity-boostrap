@@ -298,3 +298,32 @@
 #blogs    { background-color: #f0e68c; }
 #media    { background-color: #90ee90; }
 #contact  { background-color: #ffb6c1; }
+
+/* Frosted Fuchsia Card */
+.frosted-card {
+    background-color: rgba(255, 0, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    color: white;
+}
+
+/* Responsive Image */
+#activities img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #mottos .col-md-4 {
+        margin-bottom: 1rem;
+    }
+}
+
+[data-parallax] {
+    transition: transform 0.1s ease-out;
+}
+

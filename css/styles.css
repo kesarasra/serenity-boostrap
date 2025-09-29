@@ -173,6 +173,48 @@ body {
       50% { transform: translateX(-50%) translateY(10px); }
     }
 
+  /* Bento Section */
+#bento {
+  background-color: #f8f9fa;
+}
+
+.bento-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bento-section {
+  flex: 1 1 calc(20% - 0.8rem);
+  min-width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  cursor: pointer;
+}
+
+/* Scroll-responsive scaling */
+.bento-section.active {
+  transform: scale(1.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Colors */
+#bento-about { background-color: #f0e68c; color: #333; }
+#bento-counselors { background-color: #90ee90; }
+#bento-services { background-color: #ffb6c1; }
+#bento-media { background-color: #90ee90; }
+#bento-contact { background-color: #ffb6c1; }
+
+
     /* Section colors (replicate React version) */
     #about { background-color: #f0e68c; }       /* turmeric-like */
     #team { background-color: #90ee90; }        /* green */

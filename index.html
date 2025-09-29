@@ -11,9 +11,21 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
 
+  <!-- In <head> -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.css" rel="stylesheet">
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="img/serenity-favicon.svg">
 </head>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
 <body>
 
   <!-- Header (hamburger + logo + home) -->
@@ -44,7 +56,6 @@
         src="https://player.vimeo.com/video/1059479707?h=c04bcdd312&autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0&controls=0"
         frameborder="0"
         allow="autoplay; fullscreen"
-        allowfullscreen
         class="w-auto h-auto min-vh-100 min-vw-100 position-absolute top-50 start-50 translate-middle"
         style="transform: scale(2.9);"
       ></iframe>
@@ -60,6 +71,21 @@
 
     <div id="scroll-indicator">↓ More</div>
   </section>
+
+  <!-- Section: Bento Menu -->
+  <section id="bento" class="position-relative py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Explore Our Site</h2>
+      <div class="bento-box">
+        <a href="about.html" class="bento-section" id="bento-about">About</a>
+        <a href="counselors.html" class="bento-section" id="bento-counselors">Counselors</a>
+        <a href="services.html" class="bento-section" id="bento-services">Services</a>
+        <a href="media.html" class="bento-section" id="bento-media">Media</a>
+        <a href="contact.html" class="bento-section" id="bento-contact">Contact</a>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Section 2: About -->
   <section id="about">
@@ -123,17 +149,7 @@
   <script src="js/script.js"></script>
 
   <script>
-    // Hamburger toggle
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const menuDropdown = document.getElementById('menuDropdown');
-    hamburgerBtn.addEventListener('click', () => {
-      menuDropdown.classList.toggle('show');
-    });
-    document.body.addEventListener('click', function(e) {
-      if (!e.target.closest('.dropdown')) {
-        menuDropdown.classList.remove('show');
-      }
-    });
+    
 
   </script>
 

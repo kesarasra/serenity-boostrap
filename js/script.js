@@ -6,6 +6,29 @@ window.addEventListener('load', () => {
   }, 3000);
 });
 
+// Bento scroll-responsive scaling
+const bentoSections = document.querySelectorAll('.bento-section');
+
+function updateBentoScale() {
+  const windowCenter = window.innerHeight / 2;
+
+  bentoSections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const sectionCenter = rect.top + rect.height / 2;
+    const distance = Math.abs(windowCenter - sectionCenter);
+
+    // scale from 1 to 1.2 depending on distance to center
+    let scale = 1.2 - (distance / windowCenter) * 0.2;
+    scale = Math.max(scale, 1);
+    section.style.transform = `scale(${scale})`;
+  });
+}
+
+window.addEventListener('scroll', updateBentoScale);
+window.addEventListener('resize', updateBentoScale);
+updateBentoScale(); // initial call
+
+
 // Header hide/show on scroll
 let lastScroll = 0;
 const header = document.getElementById('site-header');

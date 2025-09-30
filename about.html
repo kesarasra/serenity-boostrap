@@ -44,18 +44,10 @@
     </header>
 
 <!-- Section 1: Motto Cards -->
-  <section id="mottos" class="py-5 mt-5">
+  <section id="mottos" class="py-5 mt-5" style="position: relative; z-index: 5;">
     <div class="container">
       <div class="row g-8">
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="100" data-parallax="0.4">
-          <div class="frosted-card text-center p-4">
-            <h4>Our Vision</h4>
-            <p>To become a trusted and preferred place of choice where those who need mental health,
-                trauma victims, and their families can rely on receiving high-quality psychological
-                well-being services in Myanmar.</p>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200" data-parallax="0.6">
           <div class="frosted-card text-center p-4">
             <h4>Our Values</h4>
             <ul>
@@ -67,7 +59,16 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300" data-parallax="0.8">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200" data-parallax="0.6">
+          <div class="frosted-card text-center p-4">
+            <h4>Our Vision</h4>
+            <p>To become a trusted and preferred place of choice where those who need mental health,
+                trauma victims, and their families can rely on receiving high-quality psychological
+                well-being services in Myanmar.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 d-flex align-items-center" data-aos="fade-up" data-aos-delay="300" data-parallax="0.8">
           <div class="frosted-card text-center p-4">
             <h4>Our Mission</h4>
             <ul>
@@ -82,27 +83,35 @@
   </section>
 
   <!-- Section 2: Activities / Vision -->
-    <section id="activities" class="py-5" style="background-color:#90ee90; padding-bottom: 400px;">
-    <div class="container">
-        <div class="row align-items-center g-4">
-        <!-- Image -->
-        <div class="col-md-12 text-center col">
-            <img src="img/SerenityGroup.jpg" alt="Activities" class="img-fluid rounded shadow" style="max-width: 120%; height: auto;">
+    <section id="activities" style="background-color:#90ee90; position: relative; padding-bottom: 600px;">
+        <!-- Full-width Image in Background -->
+        <div class="text-center position-relative" style="z-index: 0;">
+            <img src="img/SerenityGroup.jpg" 
+                alt="Activities" 
+                class="img-fluid shadow" 
+                style="width: 100vw; height: auto; border-radius: 0; position: relative; z-index: 0;">
         </div>
 
         <!-- Text Card -->
-        <div class="col-md-12 d-flex align-items-top" style="padding-bottom: 400px;" data-aos="fade-down" data-aos-delay="200" data-parallax="0.9">
-            <div class="frosted-card p-4">
-            <h3>Our Vision</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
-                Curabitur ut eros non enim pretium tristique.
-            </p>
+        <div class="col-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="300" data-parallax="0.3">
+            <div class="frosted-card p-4 shadow-lg" 
+                style="position: relative; top: -150px; z-index: 2; padding-bottom: 0px; max-width: 600px;">
+            <h3>We Offer</h3>
+            <ul>
+                <li>Individual Counseling</li>
+                <li>Couple Counseling</li>
+                <li>Group Counseling</li>
+                <li>Employee Well-being Program</li>
+                <li>Mental Health Support</li>
+                <li>Mental Health & Psychosocial Support</li>
+                <li>Free Community Outreach Activities</li>
+            </ul>
             </div>
         </div>
         </div>
     </div>
     </section>
+
 
 
   <!-- Bootstrap JS -->
@@ -128,7 +137,7 @@
     const items = nodes.map(el => {
         return {
         el,                                       // the container (e.g. col-md-4)
-        target: el.querySelector('.frosted-card') || el, // apply transform to .frosted-card if it exists
+        target: el.querySelector('.frosted-card, img') || el, // apply transform to .frosted-card if it exists
         speed: Math.max(0, parseFloat(el.getAttribute('data-parallax')) || 0.2),
         initialTop: 0
         };
@@ -157,7 +166,7 @@
         if (translate < -maxTranslate) translate = -maxTranslate;
 
         // apply to the chosen target element
-        item.target.style.transform = `translateY(${translate}px)`;
+        item.target.style.transform = `translateY(${translate}px) scale(1.1)`;
         // keep smooth transitions handled by CSS
         });
     }

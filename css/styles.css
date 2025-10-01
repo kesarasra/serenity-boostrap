@@ -1,5 +1,5 @@
 body {
-  background-color: #90ee90;
+  background-color: #eaf5ea;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@ main, section {
 --------------------------- */
 #site-header {
   height: 100px;
-  background-color: rgba(255, 0, 255, 0.3); /* fuchsia with transparency */
+  background-color: #ff00ff4d; /* fuchsia with transparency */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); /* Safari support */
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -317,7 +317,7 @@ main, section {
     -webkit-backdrop-filter: blur(10px);
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    color: white;
+    color: #4b262b;
     transition: transform 0.18s linear; /* slight smoothing; adjust timing if desired */
     will-change: transform;
 }

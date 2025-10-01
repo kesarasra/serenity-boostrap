@@ -332,3 +332,36 @@ body {
 [data-parallax] {
     transition: transform 0.1s ease-out;
 }
+
+/* --- Title spacing to clear fixed header --- */
+
+/* If you already set #site-header height elsewhere, this keeps things consistent.
+   Adjust the numbers if your header height differs. */
+:root {
+  --site-header-height: 100px;       /* desktop header height (matches your #site-header) */
+  --site-header-height-mobile: 60px; /* header height for small screens (matches your media query) */
+}
+
+/* #site-header { height: var(--site-header-height); } */
+/* @media (max-width: 768px) { #site-header { height: var(--site-header-height-mobile); } } */
+
+.page-title-wrapper {
+  padding-top: calc(var(--site-header-height) + 1.25rem); /* header height + small gap */
+  padding-bottom: 0.75rem;
+  position: relative;
+  z-index: 10; /* sits above background but below fixed header (header has greater z-index) */
+}
+
+/* Mobile: reduce the top padding so the title hugs the header on small screens */
+@media (max-width: 768px) {
+  .page-title-wrapper {
+    padding-top: calc(var(--site-header-height-mobile) + 0.4rem);
+  }
+}
+
+/* Optional: make the HR small & left-aligned on narrow screens */
+@media (max-width: 576px) {
+  .page-title-wrapper hr.w-25 {
+    width: 40% !important;
+  }
+}

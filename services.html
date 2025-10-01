@@ -43,23 +43,41 @@
     }
 
     .bento-card {
-        position: relative; /* allow absolute positioning inside */
+        position: relative;
         border-radius: 14px;
         overflow: hidden;
         box-shadow: 0 8px 20px rgba(10,10,10,0.08);
         transition: transform .28s ease, box-shadow .28s ease;
         }
 
-    .bento-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 14px 30px rgba(10,10,10,0.12);
-    }
+        .bento-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 14px 30px rgba(10,10,10,0.12);
+        }
 
-    .bento-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
+        .bento-card img {
+        width: 100%;
+        height: 260px; /* make a square-like card */
+        object-fit: cover;
+        display: block;
+        }
+
+        /* overlay text frosted card */
+        .bento-card .frosted-card {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40%; /* covers bottom 40% */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 16px;
+        box-sizing: border-box;
+        backdrop-filter: blur(10px);
+        background: rgba(196, 119, 226, 0.55); /* frosted look */
+        color: #130606;
+        transition: transform 0.4s ease, opacity 0.4s ease;
     }
 
     .bento-card .card-body {
@@ -121,49 +139,49 @@
 
     <div class="bento-grid">
       <!-- 6 cards -->
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="80" data-parallax="0.18">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/services/IndividualCounseling.jpg" alt="Counseling">
-        <div class="card-body frosted-card">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50"  data-parallax="0.9">
           <h5>Counseling</h5>
           <p>Individual and group counseling sessions tailored to your needs.</p>
         </div>
       </article>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100" data-parallax="0.22">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100" >
         <img src="img/services/GroupCounseling.jpg" alt="Psychotherapy">
-        <div class="card-body frosted-card">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
           <h5>Psychotherapy</h5>
           <p>Evidence-based psychotherapy approaches for healing and growth.</p>
         </div>
       </article>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="120" data-parallax="0.26">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/services/service3.jpg" alt="EMDR">
-        <div class="card-body">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
           <h5>EMDR Therapy</h5>
           <p>Specialised trauma-focused therapy with trained clinicians.</p>
         </div>
       </article>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="140" data-parallax="0.30">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/services/service4.jpg" alt="Mindfulness">
-        <div class="card-body">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
           <h5>Mindfulness</h5>
           <p>Practical mindfulness training to reduce stress and sharpen attention.</p>
         </div>
       </article>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="160" data-parallax="0.34">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/services/service5.jpg" alt="Workplace Counseling">
-        <div class="card-body">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
           <h5>Workplace Support</h5>
           <p>Employee wellbeing and workplace counseling services for organisations.</p>
         </div>
       </article>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="180" data-parallax="0.38">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/services/service6.jpg" alt="Adolescent Care">
-        <div class="card-body">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
           <h5>Adolescent Care</h5>
           <p>Dedicated support programs for young people and families.</p>
         </div>
@@ -177,41 +195,41 @@
 
     <div class="bento-grid">
       <!-- 5 cards -->
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="80" data-parallax="0.18">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/training/train1.jpg" alt="Basic counseling">
-        <div class="card-body">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
           <h5>Basic Counseling Skills</h5>
           <p>Practical skills for listening, responding and supporting others.</p>
         </div>
       </article>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100" data-parallax="0.22">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/training/train2.jpg" alt="Trauma">
-        <div class="card-body">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
           <h5>Trauma-Informed Care</h5>
           <p>Practical training for supporting trauma survivors safely.</p>
         </div>
       </article>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="120" data-parallax="0.26">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/training/train3.jpg" alt="Mindfulness Workshop">
-        <div class="card-body">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
           <h5>Mindfulness Workshops</h5>
           <p>Hands-on workshops to integrate mindful practice into life and work.</p>
         </div>
       </article>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="140" data-parallax="0.30">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/training/train4.jpg" alt="PFA">
-        <div class="card-body">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
           <h5>Psychological First Aid</h5>
           <p>Immediate support techniques for people in crisis or distress.</p>
         </div>
       </article>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="160" data-parallax="0.34">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/training/train5.jpg" alt="Leadership">
-        <div class="card-body">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
           <h5>Leadership & Empathy</h5>
           <p>Develop leadership skills grounded in empathy and ethical practice.</p>
         </div>
@@ -225,25 +243,25 @@
 
     <div class="bento-grid">
       <!-- 3 cards -->
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="80" data-parallax="0.18">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/activities/act1.jpg" alt="Retreats">
-        <div class="card-body">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
           <h5>Retreats</h5>
           <p>Immersive retreats focused on rest, reflection and recovery.</p>
         </div>
       </article>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100" data-parallax="0.22">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/activities/act2.jpg" alt="Community">
-        <div class="card-body">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
           <h5>Community Events</h5>
           <p>Group activities that nurture connection and collective wellbeing.</p>
         </div>
       </article>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="120" data-parallax="0.26">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/activities/act3.jpg" alt="Workshops">
-        <div class="card-body">
+        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
           <h5>Workshops</h5>
           <p>Practical interactive workshops for skills-building and growth.</p>
         </div>

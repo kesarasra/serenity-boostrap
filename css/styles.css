@@ -1,5 +1,12 @@
 body {
   background-color: #90ee90;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main, section {
+    flex-shrink: 0; /* prevents sections from adding extra space */
 }
 
 /* --------------------------
@@ -365,3 +372,14 @@ body {
     width: 40% !important;
   }
 }
+
+.text-blocks [data-parallax] {
+  transform: translateY(0);
+  transition: transform 0.2s ease-out;
+}
+
+[data-parallax] {
+  will-change: transform;
+}
+
+

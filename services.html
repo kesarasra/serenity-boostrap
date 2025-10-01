@@ -1,228 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Serenity</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services - Serenity</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
+  <!-- Your main CSS (keeps site-wide styles consistent) -->
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- In <head> -->
+  <!-- AOS CSS (same beta version used elsewhere) -->
   <link href="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.css" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="img/serenity-favicon.svg">
-</head>
 
-<script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
-  <!-- Custom CSS -->
   <style>
+    /* --- layout & bento styles --- */
     body {
       background: #f9f9f9;
-      color: #333;
+      color: #222;
       overflow-x: hidden;
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-      margin-top: 80px;
+    /* ensure header space */
+    .page-title-wrapper { padding-top: 120px; padding-bottom: 8px; }
+
+    h1.section-main {
+      margin-bottom: 6px;
       font-weight: 700;
     }
+    p.lead-sub { margin-bottom: 28px; color: #5b6b5b; }
 
+    /* Bento grid */
     .bento-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      align-items: start;
     }
 
     .bento-card {
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        position: relative; /* allow absolute positioning inside */
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(10,10,10,0.08);
+        transition: transform .28s ease, box-shadow .28s ease;
+        }
 
     .bento-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+      box-shadow: 0 14px 30px rgba(10,10,10,0.12);
     }
 
     .bento-card img {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
+      display: block;
     }
 
     .bento-card .card-body {
-      padding: 20px;
+      padding: 14px 16px;
+    }
+
+    /* Tighter section spacing */
+    section { padding: 56px 0; }
+    section:first-of-type { padding-top: 120px; }
+
+    /* Section title styling */
+    .section-title { font-size: 1.4rem; margin-bottom: 18px; font-weight: 700; text-align: left; }
+
+    /* small helpers */
+    .centered { text-align: center; }
+    @media (max-width: 767px) {
+      .bento-card img { height: 160px; }
+      .page-title-wrapper { padding-top: 100px; }
     }
   </style>
 </head>
 <body>
-    <!-- Header (hamburger + logo + home) -->
-  <header id="site-header" class="position-fixed w-100 top-0 d-flex justify-content-between align-items-center px-4 py-3">
+
+  <!-- Header (same header you use across the site) -->
+  <header id="site-header" class="position-fixed w-100 top-0 d-flex justify-content-between align-items-center px-4 py-3"
+          style="z-index:1000;">
     <div class="dropdown">
-        <button class="btn btn-outline-light" id="hamburgerBtn">&#9776;</button>
-        <ul class="dropdown-menu" id="menuDropdown">
+      <button class="btn btn-outline-light" id="hamburgerBtn">&#9776;</button>
+      <ul class="dropdown-menu" id="menuDropdown">
         <li><a class="dropdown-item" href="about.html">About</a></li>
         <li><a class="dropdown-item" href="counselors.html">Counselors</a></li>
         <li><a class="dropdown-item" href="services.html">Services</a></li>
         <li><a class="dropdown-item" href="#blogs">Blogs</a></li>
         <li><a class="dropdown-item" href="#media">Media</a></li>
         <li><a class="dropdown-item" href="#contact">Contact</a></li>
-        </ul>
+      </ul>
     </div>
 
     <a href="index.html">
-        <img src="img/g630.png" alt="Serenity Logo" class="logo-img">
+      <img src="img/g630.png" alt="Serenity Logo" class="logo-img" style="height:36px;">
     </a>
 
     <a href="index.html" class="fs-4 text-light">🏠</a>
-    </header>
+  </header>
 
-  <!-- Top Section -->
-  <section class="container py-5">
-    <h1 class="section-title" data-aos="fade-up" data-parallax="0.2">Our Services</h1>
-    <p class="text-center mb-5" data-aos="fade-up" data-parallax="0.3">Explore our range of professional services, training opportunities, and activities designed to promote growth and well-being.</p>
-  </section>
+  <!-- Page title -->
+  <div class="container page-title-wrapper" data-aos="fade-left" data-aos-delay="120" data-parallax="0.25">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="section-main">Our Services</h1>
+        <p class="lead lead-sub">Explore our professional services, training opportunities, and community activities — designed to support wellbeing at every stage.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Category 1: Services -->
-  <section class="container py-5">
-    <h2 class="section-title" data-aos="fade-up">Services</h2>
+  <section class="container" aria-labelledby="services-title">
+    <h2 id="services-title" class="section-title" data-aos="fade-up" data-aos-delay="60">Services</h2>
+
     <div class="bento-grid">
-      <!-- Service Cards (6 total) -->
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.2">
-        <img src="img/services/service1.jpg" alt="Service 1">
-        <div class="card-body">
+      <!-- 6 cards -->
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="80" data-parallax="0.18">
+        <img src="img/services/IndividualCounseling.jpg" alt="Counseling">
+        <div class="card-body frosted-card">
           <h5>Counseling</h5>
           <p>Individual and group counseling sessions tailored to your needs.</p>
         </div>
-      </div>
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.3">
-        <img src="img/services/service2.jpg" alt="Service 2">
-        <div class="card-body">
+      </article>
+
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100" data-parallax="0.22">
+        <img src="img/services/GroupCounseling.jpg" alt="Psychotherapy">
+        <div class="card-body frosted-card">
           <h5>Psychotherapy</h5>
           <p>Evidence-based psychotherapy approaches for healing and growth.</p>
         </div>
-      </div>
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.4">
-        <img src="img/services/service3.jpg" alt="Service 3">
+      </article>
+
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="120" data-parallax="0.26">
+        <img src="img/services/service3.jpg" alt="EMDR">
         <div class="card-body">
           <h5>EMDR Therapy</h5>
-          <p>Specialized trauma-focused therapy sessions with trained experts.</p>
+          <p>Specialised trauma-focused therapy with trained clinicians.</p>
         </div>
-      </div>
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.5">
-        <img src="img/services/service4.jpg" alt="Service 4">
+      </article>
+
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="140" data-parallax="0.30">
+        <img src="img/services/service4.jpg" alt="Mindfulness">
         <div class="card-body">
-          <h5>Mindfulness Training</h5>
-          <p>Learn mindfulness techniques to reduce stress and improve focus.</p>
+          <h5>Mindfulness</h5>
+          <p>Practical mindfulness training to reduce stress and sharpen attention.</p>
         </div>
-      </div>
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.6">
-        <img src="img/services/service5.jpg" alt="Service 5">
+      </article>
+
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="160" data-parallax="0.34">
+        <img src="img/services/service5.jpg" alt="Workplace Counseling">
         <div class="card-body">
-          <h5>Workplace Counseling</h5>
-          <p>Support for professionals to manage stress and workplace challenges.</p>
+          <h5>Workplace Support</h5>
+          <p>Employee wellbeing and workplace counseling services for organisations.</p>
         </div>
-      </div>
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.7">
-        <img src="img/services/service6.jpg" alt="Service 6">
+      </article>
+
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="180" data-parallax="0.38">
+        <img src="img/services/service6.jpg" alt="Adolescent Care">
         <div class="card-body">
           <h5>Adolescent Care</h5>
-          <p>Specialized counseling for teenagers navigating life challenges.</p>
+          <p>Dedicated support programs for young people and families.</p>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
   <!-- Category 2: Training -->
-  <section class="container py-5">
-    <h2 class="section-title" data-aos="fade-up">Training</h2>
+  <section class="container" aria-labelledby="training-title">
+    <h2 id="training-title" class="section-title" data-aos="fade-up" data-aos-delay="60">Training</h2>
+
     <div class="bento-grid">
-      <!-- Training Cards (5 total) -->
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.2">
-        <img src="img/training/train1.jpg" alt="Training 1">
+      <!-- 5 cards -->
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="80" data-parallax="0.18">
+        <img src="img/training/train1.jpg" alt="Basic counseling">
         <div class="card-body">
           <h5>Basic Counseling Skills</h5>
-          <p>Develop fundamental counseling skills for personal or professional use.</p>
+          <p>Practical skills for listening, responding and supporting others.</p>
         </div>
-      </div>
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.3">
-        <img src="img/training/train2.jpg" alt="Training 2">
+      </article>
+
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100" data-parallax="0.22">
+        <img src="img/training/train2.jpg" alt="Trauma">
         <div class="card-body">
           <h5>Trauma-Informed Care</h5>
-          <p>Training for caregivers and professionals to support trauma survivors.</p>
+          <p>Practical training for supporting trauma survivors safely.</p>
         </div>
-      </div>
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.4">
-        <img src="img/training/train3.jpg" alt="Training 3">
+      </article>
+
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="120" data-parallax="0.26">
+        <img src="img/training/train3.jpg" alt="Mindfulness Workshop">
         <div class="card-body">
           <h5>Mindfulness Workshops</h5>
-          <p>Hands-on workshops to integrate mindfulness into everyday life.</p>
+          <p>Hands-on workshops to integrate mindful practice into life and work.</p>
         </div>
-      </div>
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.5">
-        <img src="img/training/train4.jpg" alt="Training 4">
+      </article>
+
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="140" data-parallax="0.30">
+        <img src="img/training/train4.jpg" alt="PFA">
         <div class="card-body">
           <h5>Psychological First Aid</h5>
-          <p>Learn how to provide initial support in mental health emergencies.</p>
+          <p>Immediate support techniques for people in crisis or distress.</p>
         </div>
-      </div>
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.6">
-        <img src="img/training/train5.jpg" alt="Training 5">
+      </article>
+
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="160" data-parallax="0.34">
+        <img src="img/training/train5.jpg" alt="Leadership">
         <div class="card-body">
           <h5>Leadership & Empathy</h5>
-          <p>Develop leadership skills rooted in empathy and understanding.</p>
+          <p>Develop leadership skills grounded in empathy and ethical practice.</p>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
   <!-- Category 3: Activities -->
-  <section class="container py-5">
-    <h2 class="section-title" data-aos="fade-up">Activities</h2>
+  <section class="container" aria-labelledby="activities-title">
+    <h2 id="activities-title" class="section-title" data-aos="fade-up" data-aos-delay="60">Activities</h2>
+
     <div class="bento-grid">
-      <!-- Activities Cards (3 total) -->
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.2">
-        <img src="img/activities/act1.jpg" alt="Activity 1">
+      <!-- 3 cards -->
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="80" data-parallax="0.18">
+        <img src="img/activities/act1.jpg" alt="Retreats">
         <div class="card-body">
           <h5>Retreats</h5>
-          <p>Join wellness retreats focused on personal growth and relaxation.</p>
+          <p>Immersive retreats focused on rest, reflection and recovery.</p>
         </div>
-      </div>
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.3">
-        <img src="img/activities/act2.jpg" alt="Activity 2">
+      </article>
+
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100" data-parallax="0.22">
+        <img src="img/activities/act2.jpg" alt="Community">
         <div class="card-body">
           <h5>Community Events</h5>
-          <p>Engage in activities that bring communities together in healing.</p>
+          <p>Group activities that nurture connection and collective wellbeing.</p>
         </div>
-      </div>
-      <div class="bento-card" data-aos="fade-up" data-parallax="0.4">
-        <img src="img/activities/act3.jpg" alt="Activity 3">
+      </article>
+
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="120" data-parallax="0.26">
+        <img src="img/activities/act3.jpg" alt="Workshops">
         <div class="card-body">
           <h5>Workshops</h5>
-          <p>Participate in interactive workshops for skills and self-discovery.</p>
+          <p>Practical interactive workshops for skills-building and growth.</p>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
-  <!-- JS Dependencies -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- Optional CTA strip -->
+  <section class="container centered" style="padding-bottom:60px;">
+    <div class="d-inline-flex gap-3 align-items-center">
+      <a href="contact.html" class="btn btn-success">Book Us</a>
+      <a href="contact.html" class="btn btn-outline-success">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- JS dependencies (Bootstrap, AOS) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
+
   <script>
+    // init AOS first
     AOS.init({
-      duration: 1000,
-      once: true
+      duration: 900,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
     });
+
+    /***** Smooth, lightweight parallax for elements with [data-parallax] *****/
+    (function(){
+      const nodes = Array.from(document.querySelectorAll('[data-parallax]'));
+
+      // Map items with a per-element speed
+      const items = nodes.map(el => ({
+        el,
+        speed: Math.max(0, parseFloat(el.getAttribute('data-parallax')) || 0.2)
+      }));
+
+      // update on scroll using rAF for performance
+      let ticking = false;
+      function updateParallax() {
+        const vpCenter = window.innerHeight / 2;
+        items.forEach(item => {
+          const rect = item.el.getBoundingClientRect();
+          // distance from viewport center (local effect)
+          const distance = rect.top - vpCenter;
+          // small multiplier so movement is subtle and consistent across elements
+          let translate = -distance * item.speed * 0.06;
+          // clamp to avoid huge offsets
+          const clamp = 120;
+          if (translate > clamp) translate = clamp;
+          if (translate < -clamp) translate = -clamp;
+          item.el.style.transform = `translateY(${translate}px)`;
+        });
+        ticking = false;
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }
+
+      // run on load + events
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      // small delay so AOS initial animation can run without being overridden immediately
+      window.addEventListener('load', () => {
+        setTimeout(() => updateParallax(), 120);
+      });
+    })();
   </script>
 </body>
 </html>

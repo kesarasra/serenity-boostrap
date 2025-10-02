@@ -382,4 +382,25 @@ main, section {
   will-change: transform;
 }
 
+/* Clamp text inside all frosted cards (default preview) */
+.frosted-card p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 3.2em;
+  transition: max-height 0.4s ease, -webkit-line-clamp 0.4s ease;
+}
 
+/* First card only: on hover show full text */
+.bento-card:hover .frosted-card {
+  height: 100%;               /* expand overlay to cover whole image */
+  backdrop-filter: blur(14px);
+}
+
+.bento-card:hover .frosted-card p {
+  -webkit-line-clamp: unset;  /* remove clamp */
+  max-height: 1000px;         /* allow expansion */
+  overflow-y: auto;           /* scroll if text is really long */
+}

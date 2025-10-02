@@ -143,7 +143,17 @@
         <img src="img/services/IndividualCounseling.jpg" alt="Individual Counseling">
         <div class="frosted-card" data-aos="fade-up" data-aos-delay="50"  data-parallax="0.9">
           <h5>Individual Counseling</h5>
-          <p>Private counseling sessions tailored to your needs. (45-60 minutes)</p>
+            <p>
+            Private counseling sessions tailored to your needs. (45-60 minutes) 
+            This service focuses on emotional well-being, resilience, and long-term growth, 
+            helping individuals manage challenges with professional support.
+            Private counseling sessions tailored to your needs. (45-60 minutes) 
+            This service focuses on emotional well-being, resilience, and long-term growth, 
+            helping individuals manage challenges with professional support.
+            Private counseling sessions tailored to your needs. (45-60 minutes) 
+            This service focuses on emotional well-being, resilience, and long-term growth, 
+            helping individuals manage challenges with professional support.
+            </p>
         </div>
       </article>
 
@@ -244,26 +254,45 @@
     <div class="bento-grid">
       <!-- 3 cards -->
       <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/activities/act1.jpg" alt="Retreats">
+        <img src="img/services/SuicidePrevention.jpg" alt="Suicide Prevention">
         <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
-          <h5>Retreats</h5>
-          <p>Immersive retreats focused on rest, reflection and recovery.</p>
+          <h5>Suicide Prevention Sharing Circle</h5>
+          <p>Runs every Tuesday at 8PM (MM Time) via ZOOM, and opens free for everyone
+            This session provides a safe and empathetic space for individuals who are struggling with suicidal 
+            thoughts, as well as for those who want to offer mental health support and understanding. 
+            Led by trained lay counselors, these sessions focus on fostering connection, 
+            promoting emotional well-being, and providing resources to help prevent suicide.
+          </p>
         </div>
       </article>
 
       <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/activities/act2.jpg" alt="Community">
+        <img src="img/services/SupervisionSession.jpg" alt="Supervision Session">
         <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
-          <h5>Community Events</h5>
-          <p>Group activities that nurture connection and collective wellbeing.</p>
+          <h5>Serenity Supervision Sessions</h5>
+          <p>Runs on Mondays (twice a month) at 7:00 - 8:30 PM (MM Time), and opens free for Serenity Alumni.
+            1. Skill Development: Discussing cases with a supervisor as well as getting constructive feedback 
+            to allow practicing case workers and case managers to gain insight into their own performance and skills.
+            2. Self-care and Emotional Support: Supervision sessions serve as a safe space where case workers and 
+            case managers can openly discuss challenging cases and personal reactions, helping professionals manage 
+            their own self-care and overall well-being.
+            3. Ethical Guidance: Supervisors help professionals navigate complex ethical dilemmas and ensure 
+            that they adhere to ethical standards and guidelines in their own practice. This is especially important 
+            in the mental health field, where client well-being is of great importance.
+          </p>
         </div>
       </article>
 
       <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/activities/act3.jpg" alt="Workshops">
+        <img src="img/services/EmotionalSupport.jpg" alt="Emotional Support">
         <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
-          <h5>Workshops</h5>
-          <p>Practical interactive workshops for skills-building and growth.</p>
+          <h5>Emotional Support Session (Fridays)</h5>
+          <p>Runs every Friday at 8 PM (MM Time) via ZOOM and is one of our free session for each and everyone.
+            The primary goal of Serenity emotional sessions is to provide emotional support, guidance, and a 
+            safe space for the individuals to express and explore their feelings, thoughts, and concerns. 
+            Overall, Serenity emotional support sessions provide a valuable opportunity for each and every 
+            one to process their emotions, gain perspective, and develop skills to better manage their psychological well-being.
+          </p>
         </div>
       </article>
     </div>
@@ -334,6 +363,15 @@
         setTimeout(() => updateParallax(), 120);
       });
     })();
-  </script>
+  
+        document.querySelectorAll('.read-more').forEach(link => {
+            link.addEventListener('click', function() {
+            const card = this.closest('.frosted-card');
+            card.classList.toggle('expanded');
+            this.textContent = card.classList.contains('expanded') ? "Read Less" : "Read More";
+            });
+        });
+    </script>
+
 </body>
 </html>

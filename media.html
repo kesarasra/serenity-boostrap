@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media - Serenity</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="img/serenity-favicon.svg">
+
+  <style>
+    body {
+      background: #f9f9f9;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    .page-title-wrapper { padding-top: 120px; padding-bottom: 12px; }
+    h1.section-main { margin-bottom: 6px; font-weight: 700; }
+    p.lead-sub { margin-bottom: 32px; color: #5b6b5b; }
+
+    /* Slimmer media bento grid */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .bento-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      transition: transform .25s ease, box-shadow .25s ease;
+      cursor: pointer;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .bento-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .frosted-card {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      backdrop-filter: blur(8px);
+      background: rgba(196,119,226,0.55);
+      color: #130606;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .frosted-card a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+    }
+
+    section { padding: 56px 0; }
+    section:first-of-type { padding-top: 120px; }
+    .section-title { font-size: 1.4rem; margin-bottom: 18px; font-weight: 700; }
+    .centered { text-align: center; }
+
+    @media (max-width: 767px) {
+      .bento-card img { height: 120px; }
+      .page-title-wrapper { padding-top: 100px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="site-header" class="position-fixed w-100 top-0 d-flex justify-content-between align-items-center px-4 py-3" style="z-index:1000;">
+    <div class="dropdown">
+      <button class="btn btn-outline-light" id="hamburgerBtn">&#9776;</button>
+      <ul class="dropdown-menu" id="menuDropdown">
+        <li><a class="dropdown-item" href="about.html">About</a></li>
+        <li><a class="dropdown-item" href="counselors.html">Counselors</a></li>
+        <li><a class="dropdown-item" href="services.html">Services</a></li>
+        <li><a class="dropdown-item" href="media.html">Media</a></li>
+        <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <a href="index.html"><img src="img/g630.png" alt="Serenity Logo" class="logo-img"></a>
+    <a href="index.html" class="fs-4 text-light">🏠</a>
+  </header>
+
+  <!-- Page Title -->
+  <div class="container page-title-wrapper" data-aos="fade-left" data-aos-delay="100" data-parallax="0.25">
+    <h1 class="section-main">Our Media</h1>
+    <p class="lead lead-sub">Explore Serenity across social platforms, podcasts, videos, and gallery highlights.</p>
+  </div>
+
+  <!-- Category 1: Social -->
+  <section class="container" aria-labelledby="social-title">
+    <h2 id="social-title" class="section-title" data-aos="fade-up">Social</h2>
+    <div class="bento-grid">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="img/social/facebook.jpg" alt="Facebook">
+        <div class="frosted-card"><a href="https://facebook.com" target="_blank">Facebook</a></div>
+      </article>
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="150">
+        <img src="img/social/instagram.jpg" alt="Instagram">
+        <div class="frosted-card"><a href="https://instagram.com" target="_blank">Instagram</a></div>
+      </article>
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="200">
+        <img src="img/social/twitter.jpg" alt="Twitter">
+        <div class="frosted-card"><a href="https://twitter.com" target="_blank">Twitter</a></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Category 2: Podcast & Video -->
+  <section class="container" aria-labelledby="podcast-title">
+    <h2 id="podcast-title" class="section-title" data-aos="fade-up">Podcasts & Videos</h2>
+    <div class="bento-grid">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="img/media/podcast.jpg" alt="Podcast">
+        <div class="frosted-card"><a href="https://spotify.com" target="_blank">Spotify Podcast</a></div>
+      </article>
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="150">
+        <img src="img/media/youtube.jpg" alt="YouTube">
+        <div class="frosted-card"><a href="https://youtube.com" target="_blank">YouTube Channel</a></div>
+      </article>
+      <!-- Example embed (optional inline) -->
+      <!--
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="200">
+        <iframe width="100%" height="180" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+      </article>
+      -->
+    </div>
+  </section>
+
+  <!-- Category 3: Gallery -->
+  <section class="container" aria-labelledby="gallery-title">
+    <h2 id="gallery-title" class="section-title" data-aos="fade-up">Gallery</h2>
+    <div class="bento-grid">
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="img/gallery/sample1.jpg" alt="Gallery">
+        <div class="frosted-card"><a href="https://photos.app.goo.gl/" target="_blank">View Gallery</a></div>
+      </article>
+      <article class="bento-card" data-aos="fade-up" data-aos-delay="150">
+        <img src="img/gallery/sample2.jpg" alt="Gallery 2">
+        <div class="frosted-card"><a href="https://flickr.com" target="_blank">Flickr Album</a></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- JS dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, easing: 'ease-in-out', once: true, mirror: false });
+
+    // Simple parallax effect
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll("[data-parallax]").forEach(el => {
+        const factor = parseFloat(el.getAttribute("data-parallax")) || 0.3;
+        const y = window.scrollY * factor * -1;
+        el.style.transform = `translateY(${y}px)`;
+      });
+    });
+  </script>
+</body>
+</html>

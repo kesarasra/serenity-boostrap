@@ -16,9 +16,77 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="img/serenity-favicon.svg">
-</head>
+  <style>
+    /* Home section */
+    #home {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    #home iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(2.5);
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    /* Horizontal Swipe Containers */
+    .swipe-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 1rem;
+      padding: 2rem 0;
+    }
+    .panel {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      width: 300px;
+      min-height: 200px;
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+    .panel:hover {
+      transform: scale(1.05);
+    }
 
-<script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
+    /* Footer */
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 2rem 0;
+    }
+
+    #home-text {
+      z-index: 10;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+    #home-text h2 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
 
 <body>
 
@@ -49,17 +117,13 @@
         src="https://player.vimeo.com/video/1059479707?h=c04bcdd312&autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0&controls=0"
         frameborder="0"
         allow="autoplay; fullscreen"
-        class="w-auto h-auto min-vh-100 min-vw-100 position-absolute top-50 start-50 translate-middle"
-        style="transform: scale(2.9);"
       ></iframe>
     </div>
 
-    <div id="home-text">
-      <div class="p-4 rounded-3 shadow-lg bg-fuchsia-50 bg-opacity-30">
-        <h3 class="mb-3">Welcome to</h3>
-        <h2 class="mb-4">Serenity Counseling and Mental Health Services</h2>
+    <div id="home-text" data-aos="fade-up">
+        <h3>Welcome to</h3>
+        <h2>Serenity Counseling and Mental Health Services</h2>
         <a href="#about" class="btn btn-fuchsia pulse-glow">Learn More</a>
-      </div>
     </div>
 
     <div id="scroll-indicator">↓</div>
@@ -73,7 +137,6 @@
         <a href="counselors.html" class="bento-section" id="bento-counselors">Counselors</a>
         <a href="services.html" class="bento-section" id="bento-services">Services</a>
         <a href="media.html" class="bento-section" id="bento-media">Media</a>
-        <a href="contact.html" class="bento-section" id="bento-contact">Contact</a>
       </div>
     </div>
   </section>
@@ -133,6 +196,12 @@
       <div class="panel">Contact Panel 2</div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <small>&copy; 2025 Serenity Mental Health Service</small>
+  </footer>
+
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

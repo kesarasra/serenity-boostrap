@@ -55,6 +55,16 @@
       object-fit: cover;
     }
 
+    /* On hover – reveal the paragraph */
+    .bento-card:hover .frosted-card {
+      max-height: 120px; /* expand to fit both h4 and p */
+    }
+
+    .bento-card:hover .frosted-card p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .frosted-card {
       position: absolute;
       bottom: 0;
@@ -66,6 +76,9 @@
       color: #130606;
       text-align: center;
       font-weight: 600;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      max-height: 40px;
     }
 
     .frosted-card a {
@@ -73,6 +86,41 @@
       text-decoration: none;
       display: block;
     }
+
+    .frosted-card h4 {
+      margin: 0;
+    }
+
+    .frosted-card p {
+      margin: 6px 0 0;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .video-card {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .video-card img {
+      display: block;
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .video-card .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      color: white;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      pointer-events: none;
+    }
+
 
     section { padding: 56px 0; }
     section:first-of-type { padding-top: 120px; }
@@ -117,7 +165,10 @@
       <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <a href="https://www.facebook.com/serenitymentalhealthservice" target="_blank">
           <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook - Serenity">
-          <div class="frosted-card">Serenity Page</div>
+          <div class="frosted-card">
+            <h4>Serenity Page</h4>
+            <p>Stay up to date with us on Facebook</p>
+          </div>
         </a>
       </article>
 
@@ -125,7 +176,10 @@
       <article class="bento-card" data-aos="fade-up" data-aos-delay="150">
         <a href="https://www.facebook.com/mudramentalhealthsupport" target="_blank">
           <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook - Mudra">
-          <div class="frosted-card">Mudra Page</div>
+          <div class="frosted-card">
+            <h4>Mudra (FREE)</h4>
+            <p>Our Free Counseling service on Facebook</p>
+          </div>
         </a>
       </article>
 
@@ -133,7 +187,10 @@
       <article class="bento-card" data-aos="fade-up" data-aos-delay="200">
         <a href="https://www.youtube.com/@TheSerenityMentalHealthTeam" target="_blank">
           <img src="https://cdn.simpleicons.org/youtube/FF0000" alt="YouTube - Serenity">
-          <div class="frosted-card">Serenity</div>
+          <div class="frosted-card">
+            <h4>Serenity Channel</h4>
+            <p>Watch our YouTube videos here!</p>
+          </div>
         </a>
       </article>
     </div>
@@ -144,20 +201,34 @@
   <section class="container" aria-labelledby="podcast-title">
     <h2 id="podcast-title" class="section-title" data-aos="fade-up">Podcasts & Videos</h2>
     <div class="bento-grid">
+      <article class="bento-card video-card" data-aos="fade-up" data-aos-delay="200" data-video-id="lucjIKHPaoE">
+        <!-- Thumbnail -->
+        <img src="https://img.youtube.com/vi/lucjIKHPaoE/hqdefault.jpg" alt="YouTube Preview 1">
+        <div class="play-button">▶</div>
+      </article>
+
+      <article class="bento-card video-card" data-aos="fade-up" data-aos-delay="200" data-video-id="4yLRDgZejI0">
+        <!-- Thumbnail -->
+        <img src="https://img.youtube.com/vi/4yLRDgZejI0/hqdefault.jpg" alt="YouTube Preview 2">
+        <div class="play-button">▶</div>
+      </article>
+
+      <article class="bento-card video-card" data-aos="fade-up" data-aos-delay="200" data-video-id="Cjs_OgRGBQw">
+        <!-- Thumbnail -->
+        <img src="https://img.youtube.com/vi/Cjs_OgRGBQw/hqdefault.jpg" alt="YouTube Preview 3">
+        <div class="play-button">▶</div>
+      </article>
+
+      <article class="bento-card video-card" data-aos="fade-up" data-aos-delay="200" data-video-id="48k8C2LwjV4">
+        <!-- Thumbnail -->
+        <img src="https://img.youtube.com/vi/48k8C2LwjV4/hqdefault.jpg" alt="YouTube Preview">
+        <div class="play-button">▶</div>
+      </article>
+
       <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
         <img src="img/media/podcast.jpg" alt="Podcast">
         <div class="frosted-card"><a href="https://spotify.com" target="_blank">Spotify Podcast</a></div>
       </article>
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="150">
-        <img src="img/media/youtube.jpg" alt="YouTube">
-        <div class="frosted-card"><a href="https://youtube.com" target="_blank">YouTube Channel</a></div>
-      </article>
-      <!-- Example embed (optional inline) -->
-      <!--
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="200">
-        <iframe width="100%" height="180" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-      </article>
-      -->
     </div>
   </section>
 
@@ -180,6 +251,141 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const videoCards = Array.from(document.querySelectorAll('.video-card'));
+      if (!videoCards.length) return;
+
+      const PREVIEW_MS = 10000; // preview duration in ms (10s)
+      let cycleTimer = null;
+      let cycling = false;
+      let currentIndex = 0;
+
+      // build thumbnail markup (keeps your play-button overlay)
+      const buildThumbnailHtml = (videoId) => `
+        <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg"
+            alt="YouTube preview"
+            style="width:100%; height:180px; object-fit:cover;">
+        <div class="play-button">▶</div>
+      `;
+
+      // restore card thumbnail
+      function restoreCard(idx) {
+        const card = videoCards[idx];
+        if (!card) return;
+        const vid = card.getAttribute('data-video-id');
+        card.innerHTML = buildThumbnailHtml(vid);
+        card.classList.remove('playing');
+      }
+
+      // show autoplay muted preview (replaces thumbnail)
+      function playCard(idx) {
+        const card = videoCards[idx];
+        if (!card) return;
+        const vid = card.getAttribute('data-video-id');
+        // replace with a muted autoplay iframe (browsers allow muted autoplay)
+        card.innerHTML = `
+          <iframe width="100%" height="180"
+            src="https://www.youtube.com/embed/${vid}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1"
+            title="YouTube video preview" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>`;
+        card.classList.add('playing');
+      }
+
+      // single step of the cycle: play current, schedule restore+next
+      function step() {
+        playCard(currentIndex);
+        cycleTimer = setTimeout(() => {
+          restoreCard(currentIndex);
+          currentIndex = (currentIndex + 1) % videoCards.length;
+          step();
+        }, PREVIEW_MS);
+      }
+
+      // start cycling from a given index
+      function startCyclingFrom(idx) {
+        if (cycling) return;
+        cycling = true;
+        // ensure all cards are in thumbnail state
+        videoCards.forEach((_, i) => restoreCard(i));
+        currentIndex = idx % videoCards.length;
+        step();
+      }
+
+      function stopCycling() {
+        cycling = false;
+        if (cycleTimer) {
+          clearTimeout(cycleTimer);
+          cycleTimer = null;
+        }
+      }
+
+      // clicking any card promotes it to an unmuted player and stops cycling
+      videoCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          const vid = card.getAttribute('data-video-id');
+          // stop the automatic cycle
+          stopCycling();
+          // replace with an unmuted player (keeps same size so layout doesn't jump)
+          card.innerHTML = `
+            <iframe width="100%" height="180"
+              src="https://www.youtube.com/embed/${vid}?autoplay=1&mute=0"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>`;
+          card.classList.add('playing');
+        });
+      });
+
+      // Use IntersectionObserver to find the first card that becomes visible (50% visible)
+      const observer = new IntersectionObserver((entries, obs) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const idx = videoCards.indexOf(entry.target);
+            if (idx !== -1) {
+              obs.disconnect();            // we only need one starting point
+              startCyclingFrom(idx);
+              break;
+            }
+          }
+        }
+      }, { threshold: 0.5 });
+
+      videoCards.forEach(c => observer.observe(c));
+
+      // Pause the cycle when document is hidden; resume if visible and it was running
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          if (cycleTimer) { clearTimeout(cycleTimer); cycleTimer = null; }
+        } else {
+          // resume cycle if it was active (give a short breathing delay)
+          if (cycling && !cycleTimer) {
+            cycleTimer = setTimeout(() => {
+              // start next step (if a card is currently playing, restore it first)
+              restoreCard(currentIndex);
+              currentIndex = currentIndex % videoCards.length;
+              step();
+            }, 500);
+          }
+        }
+      });
+    });
+
+    document.querySelectorAll(".video-card").forEach(card => {
+      card.addEventListener("click", function() {
+        const videoId = this.getAttribute("data-video-id");
+        this.innerHTML = `
+          <iframe width="100%" height="180"
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>`;
+      });
+    });
+
     AOS.init({ duration: 900, easing: 'ease-in-out', once: true, mirror: false });
 
     // Simple parallax effect

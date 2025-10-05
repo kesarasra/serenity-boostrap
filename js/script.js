@@ -115,7 +115,32 @@ if (hamburgerBtn && menuDropdown) {
 // AOS init
 // --------------------
 function initAOS() {
-  if (typeof AOS !== "undefined") AOS.init({ once: true });
+  if (typeof AOS !== "undefined") {
+    AOS.init({ 
+      duration: 900,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+  }
+}
+
+// --------------------
+// Read More / Read Less (Services page only)
+// --------------------
+function initReadMoreLinks() {
+  const servicesSection = document.getElementById('services');
+  if (!servicesSection) return;
+
+  servicesSection.querySelectorAll('.read-more').forEach(link => {
+    link.addEventListener('click', function() {
+      const card = this.closest('.frosted-card');
+      if (!card) return;
+
+      card.classList.toggle('expanded');
+      this.textContent = card.classList.contains('expanded') ? "Read Less" : "Read More";
+    });
+  });
 }
 
 // --------------------
@@ -192,15 +217,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Sequentially load pages
   pages.reduce((p, page) => p.then(() => loadPage(page)), Promise.resolve())
        .then(() => {
-           initAOS(); // existing
-           initCounselorBioNavigation(); // <-- NEW function you add for prev/next buttons
+           initAOS();               // <-- AOS with services settings
+           initReadMoreLinks();     // <-- Read More / Read Less
+           initCounselorBioNavigation(); // Counselor profile prev/next
        });
 });
 
 // ----------------------------
 // Counselor Profile Navigation
 // ----------------------------
-
 function initCounselorBioNavigation() {
   const profiles = document.querySelectorAll('.counselor-profile-page');
   if (!profiles.length) return;
@@ -229,4 +254,5 @@ function initCounselorBioNavigation() {
 
   showProfile(currentIndex);
 }
+
 

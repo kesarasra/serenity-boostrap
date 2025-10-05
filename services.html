@@ -1,370 +1,177 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Services - Serenity</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Your main CSS (keeps site-wide styles consistent) -->
-  <link rel="stylesheet" href="css/styles.css">
-
-  <!-- AOS CSS (same beta version used elsewhere) -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.css" rel="stylesheet">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="img/serenity-favicon.svg">
-
-  <style>
-    /* --- layout & bento styles --- */
-    body {
-      background: #f9f9f9;
-      color: #222;
-      overflow-x: hidden;
-    }
-
-    /* ensure header space */
-    .page-title-wrapper { padding-top: 120px; padding-bottom: 8px; }
-
-    h1.section-main {
-      margin-bottom: 6px;
-      font-weight: 700;
-    }
-    p.lead-sub { margin-bottom: 28px; color: #5b6b5b; }
-
-    /* Bento grid */
-    .bento-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      align-items: start;
-    }
-
-    .bento-card {
-        position: relative;
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(10,10,10,0.08);
-        transition: transform .28s ease, box-shadow .28s ease;
-        }
-
-        .bento-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 14px 30px rgba(10,10,10,0.12);
-        }
-
-        .bento-card img {
-        width: 100%;
-        height: 420px; /* make a square-like card */
-        object-fit: cover;
-        display: block;
-        }
-
-        /* overlay text frosted card */
-        .bento-card .frosted-card {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 40%; /* covers bottom 40% */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 16px;
-        box-sizing: border-box;
-        backdrop-filter: blur(10px);
-        background: rgba(196, 119, 226, 0.55); /* frosted look */
-        color: #130606;
-        transition: transform 0.4s ease, opacity 0.4s ease;
-    }
-
-    .bento-card .card-body {
-      padding: 14px 16px;
-    }
-
-    /* Tighter section spacing */
-    section { padding: 56px 0; }
-    section:first-of-type { padding-top: 120px; }
-
-    /* Section title styling */
-    .section-title { font-size: 1.4rem; margin-bottom: 18px; font-weight: 700; text-align: left; }
-
-    /* small helpers */
-    .centered { text-align: center; }
-    @media (max-width: 767px) {
-      .bento-card img { height: 160px; }
-      .page-title-wrapper { padding-top: 100px; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Header (same header you use across the site) -->
-  <header id="site-header" class="position-fixed w-100 top-0 d-flex justify-content-between align-items-center px-4 py-3"
-          style="z-index:1000;">
-    <div class="dropdown">
-      <button class="btn btn-outline-light" id="hamburgerBtn">&#9776;</button>
-      <ul class="dropdown-menu" id="menuDropdown">
-        <li><a class="dropdown-item" href="about.html">About</a></li>
-        <li><a class="dropdown-item" href="counselors.html">Counselors</a></li>
-        <li><a class="dropdown-item" href="services.html">Services</a></li>
-        <li><a class="dropdown-item" href="media.html">Media</a></li>
-        <li><a class="dropdown-item" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <a href="index.html">
-      <img src="img/g630.png" alt="Serenity Logo" class="logo-img">
-    </a>
-
-    <a href="index.html" class="fs-4 text-light">🏠</a>
-  </header>
-
-  <!-- Page title -->
-  <div class="container page-title-wrapper" data-aos="fade-left" data-aos-delay="120" data-parallax="0.25">
-    <div class="row">
-      <div class="col-12">
-        <h1 class="section-main">Our Services</h1>
-        <p class="lead lead-sub">Explore our professional services, training opportunities, and community activities — designed to support wellbeing at every stage.</p>
-      </div>
+<!-- Page Title -->
+<div class="container page-title-wrapper" data-aos="fade-left" data-aos-delay="120" data-parallax="0.25">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="section-main">Our Services</h1>
+      <p class="lead lead-sub">
+        Explore our professional services, training opportunities, and community activities — designed to support wellbeing at every stage.
+      </p>
     </div>
   </div>
+</div>
 
-  <!-- Category 1: Services -->
-  <section class="container" aria-labelledby="services-title">
-    <h2 id="services-title" class="section-title" data-aos="fade-up" data-aos-delay="60">Services</h2>
-
-    <div class="bento-grid">
-      <!-- 6 cards -->
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/services/IndividualCounseling.jpg" alt="Individual Counseling">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50"  data-parallax="0.9">
+<!-- Services Section -->
+<section id="services" class="container" aria-labelledby="services-title">
+  <h2 id="services-title" class="section-title" data-aos="fade-up" data-aos-delay="60">Services</h2>
+  <div class="row g-4">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="bento-card">
+        <img src="img/services/IndividualCounseling.jpg" alt="Individual Counseling session">
+        <div class="frosted-card">
           <h5>Individual Counseling</h5>
-            <p>
-            Private counseling sessions tailored to your needs. (45-60 minutes) 
-            This service focuses on emotional well-being, resilience, and long-term growth, 
-            helping individuals manage challenges with professional support.
-            </p>
+          <p>Private counseling sessions tailored to your needs. (45-60 minutes) This service focuses on emotional well-being, resilience, and long-term growth, helping individuals manage challenges with professional support.</p>
         </div>
-      </article>
+      </div>
+    </div>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100" >
-        <img src="img/services/GroupCounseling.jpg" alt="Group Counseling">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="120">
+      <div class="bento-card">
+        <img src="img/services/GroupCounseling.jpg" alt="Small group counseling circle">
+        <div class="frosted-card">
           <h5>Group Counseling</h5>
           <p>Group counseling sessions tailored to your needs. (60-90 mins)</p>
         </div>
-      </article>
+      </div>
+    </div>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/services/CoupleCounseling.jpg" alt="Couple Counseling">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="140">
+      <div class="bento-card">
+        <img src="img/services/CoupleCounseling.jpg" alt="Couple counseling therapy">
+        <div class="frosted-card">
           <h5>Couple Counseling</h5>
           <p>Specialised trauma-focused therapy with trained clinicians. (60-90 mins)</p>
         </div>
-      </article>
+      </div>
+    </div>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/services/EmployeeCounseling.jpg" alt="Employee Counseling">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+      <div class="bento-card">
+        <img src="img/services/EmployeeCounseling.jpg" alt="Employee wellness program">
+        <div class="frosted-card">
           <h5>Employee Well-being Program</h5>
           <p>Practical mindfulness training to reduce stress and sharpen attention.</p>
         </div>
-      </article>
+      </div>
+    </div>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/services/Workshops.jpg" alt="Workshops">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="180">
+      <div class="bento-card">
+        <img src="img/services/Workshops.jpg" alt="Workshop presentation">
+        <div class="frosted-card">
           <h5>Workshops & Webinars</h5>
           <p>Employee wellbeing and workplace counseling services for organisations.</p>
         </div>
-      </article>
+      </div>
+    </div>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/services/Psychosocial.jpg" alt="Psychosocial">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="bento-card">
+        <img src="img/services/Psychosocial.jpg" alt="Family psychosocial support">
+        <div class="frosted-card">
           <h5>Mental Health & Psychosocial Support</h5>
           <p>Dedicated support programs for young people and families.</p>
         </div>
-      </article>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Category 2: Training -->
-  <section class="container" aria-labelledby="training-title">
-    <h2 id="training-title" class="section-title" data-aos="fade-up" data-aos-delay="60">Training</h2>
-
-    <div class="bento-grid">
-      <!-- 5 cards -->
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/training/train1.jpg" alt="Basic counseling">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
+<!-- Training Section -->
+<section id="training" class="container mt-5" aria-labelledby="training-title">
+  <h2 id="training-title" class="section-title" data-aos="fade-up" data-aos-delay="60">Training</h2>
+  <div class="row g-4">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="bento-card">
+        <img src="img/training/train1.jpg" alt="Basic counseling workshop">
+        <div class="frosted-card">
           <h5>Basic Counseling Skills</h5>
           <p>Practical skills for listening, responding and supporting others.</p>
         </div>
-      </article>
+      </div>
+    </div>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/training/train2.jpg" alt="Trauma">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="120">
+      <div class="bento-card">
+        <img src="img/training/train2.jpg" alt="Trauma informed training">
+        <div class="frosted-card">
           <h5>Trauma-Informed Care</h5>
           <p>Practical training for supporting trauma survivors safely.</p>
         </div>
-      </article>
+      </div>
+    </div>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/training/train3.jpg" alt="Mindfulness Workshop">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="140">
+      <div class="bento-card">
+        <img src="img/training/train3.jpg" alt="Mindfulness workshop session">
+        <div class="frosted-card">
           <h5>Mindfulness Workshops</h5>
           <p>Hands-on workshops to integrate mindful practice into life and work.</p>
         </div>
-      </article>
+      </div>
+    </div>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/training/train4.jpg" alt="PFA">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+      <div class="bento-card">
+        <img src="img/training/train4.jpg" alt="Psychological first aid session">
+        <div class="frosted-card">
           <h5>Psychological First Aid</h5>
           <p>Immediate support techniques for people in crisis or distress.</p>
         </div>
-      </article>
+      </div>
+    </div>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/training/train5.jpg" alt="Leadership">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="180">
+      <div class="bento-card">
+        <img src="img/training/train5.jpg" alt="Leadership training">
+        <div class="frosted-card">
           <h5>Leadership & Empathy</h5>
           <p>Develop leadership skills grounded in empathy and ethical practice.</p>
         </div>
-      </article>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Category 3: Activities -->
-  <section class="container" aria-labelledby="activities-title">
-    <h2 id="activities-title" class="section-title" data-aos="fade-up" data-aos-delay="60">Activities</h2>
-
-    <div class="bento-grid">
-      <!-- 3 cards -->
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/services/SuicidePrevention.jpg" alt="Suicide Prevention">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
+<!-- Activities Section -->
+<section id="activities" class="container mt-5" aria-labelledby="activities-title">
+  <h2 id="activities-title" class="section-title" data-aos="fade-up" data-aos-delay="60">Activities</h2>
+  <div class="row g-4">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="bento-card">
+        <img src="img/services/SuicidePrevention.jpg" alt="Suicide prevention group">
+        <div class="frosted-card">
           <h5>Suicide Prevention Sharing Circle</h5>
-          <p>Runs every Tuesday at 8PM (MM Time) via ZOOM, and opens free for everyone
-            This session provides a safe and empathetic space for individuals who are struggling with suicidal 
-            thoughts, as well as for those who want to offer mental health support and understanding. 
-            Led by trained lay counselors, these sessions focus on fostering connection, 
-            promoting emotional well-being, and providing resources to help prevent suicide.
-          </p>
+          <p>Runs every Tuesday at 8PM (MM Time) via ZOOM, free for everyone. This session provides a safe and empathetic space for individuals struggling with suicidal thoughts, fostering connection, promoting emotional well-being, and providing resources.</p>
         </div>
-      </article>
+      </div>
+    </div>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/services/SupervisionSession.jpg" alt="Supervision Session">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="120">
+      <div class="bento-card">
+        <img src="img/services/SupervisionSession.jpg" alt="Supervision session group">
+        <div class="frosted-card">
           <h5>Serenity Supervision Sessions</h5>
-          <p>Runs on Mondays (twice a month) at 7:00 - 8:30 PM (MM Time), and opens free for Serenity Alumni.
-            1. Skill Development: Discussing cases with a supervisor as well as getting constructive feedback 
-            to allow practicing case workers and case managers to gain insight into their own performance and skills.
-            2. Self-care and Emotional Support: Supervision sessions serve as a safe space where case workers and 
-            case managers can openly discuss challenging cases and personal reactions, helping professionals manage 
-            their own self-care and overall well-being.
-            3. Ethical Guidance: Supervisors help professionals navigate complex ethical dilemmas and ensure 
-            that they adhere to ethical standards and guidelines in their own practice. This is especially important 
-            in the mental health field, where client well-being is of great importance.
-          </p>
+          <p>Runs Mondays (twice a month) at 7:00 - 8:30 PM (MM Time) for alumni. Provides skill development, emotional support, and ethical guidance.</p>
         </div>
-      </article>
+      </div>
+    </div>
 
-      <article class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/services/EmotionalSupport.jpg" alt="Emotional Support">
-        <div class="frosted-card" data-aos="fade-up" data-aos-delay="50" data-parallax="0.9">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="140">
+      <div class="bento-card">
+        <img src="img/services/EmotionalSupport.jpg" alt="Emotional support session">
+        <div class="frosted-card">
           <h5>Emotional Support Session (Fridays)</h5>
-          <p>Runs every Friday at 8 PM (MM Time) via ZOOM and is one of our free session for each and everyone.
-            The primary goal of Serenity emotional sessions is to provide emotional support, guidance, and a 
-            safe space for the individuals to express and explore their feelings, thoughts, and concerns. 
-            Overall, Serenity emotional support sessions provide a valuable opportunity for each and every 
-            one to process their emotions, gain perspective, and develop skills to better manage their psychological well-being.
-          </p>
+          <p>Runs Fridays at 8 PM (MM Time) via ZOOM, free for everyone. Provides a safe space to express and explore feelings and gain perspective on mental well-being.</p>
         </div>
-      </article>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Optional CTA strip -->
-  <section class="container centered" style="padding-bottom:60px;">
-    <div class="d-inline-flex gap-3 align-items-center">
-      <a href="contact.html" class="btn btn-success">Book Us</a>
-      <a href="contact.html" class="btn btn-outline-success">Contact Us</a>
-    </div>
-  </section>
-
-  <!-- JS dependencies (Bootstrap, AOS) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
-
-  <script>
-    // init AOS first
-    AOS.init({
-      duration: 900,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
-
-    /***** Smooth, lightweight parallax for elements with [data-parallax] *****/
-    (function(){
-      const nodes = Array.from(document.querySelectorAll('[data-parallax]'));
-
-      // Map items with a per-element speed
-      const items = nodes.map(el => ({
-        el,
-        speed: Math.max(0, parseFloat(el.getAttribute('data-parallax')) || 0.2)
-      }));
-
-      // update on scroll using rAF for performance
-      let ticking = false;
-      function updateParallax() {
-        const vpCenter = window.innerHeight / 2;
-        items.forEach(item => {
-          const rect = item.el.getBoundingClientRect();
-          // distance from viewport center (local effect)
-          const distance = rect.top - vpCenter;
-          // small multiplier so movement is subtle and consistent across elements
-          let translate = -distance * item.speed * 0.06;
-          // clamp to avoid huge offsets
-          const clamp = 120;
-          if (translate > clamp) translate = clamp;
-          if (translate < -clamp) translate = -clamp;
-          item.el.style.transform = `translateY(${translate}px)`;
-        });
-        ticking = false;
-      }
-
-      function onScroll() {
-        if (!ticking) {
-          window.requestAnimationFrame(updateParallax);
-          ticking = true;
-        }
-      }
-
-      // run on load + events
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll);
-      // small delay so AOS initial animation can run without being overridden immediately
-      window.addEventListener('load', () => {
-        setTimeout(() => updateParallax(), 120);
-      });
-    })();
-  
-        document.querySelectorAll('.read-more').forEach(link => {
-            link.addEventListener('click', function() {
-            const card = this.closest('.frosted-card');
-            card.classList.toggle('expanded');
-            this.textContent = card.classList.contains('expanded') ? "Read Less" : "Read More";
-            });
-        });
-    </script>
-
-</body>
-</html>
+<!-- CTA Section -->
+<section class="container centered cta-strip">
+  <div class="d-inline-flex gap-3 align-items-center">
+    <a href="contact.html" class="btn btn-success">Book Us</a>
+    <a href="contact.html" class="btn btn-outline-success">Contact Us</a>
+  </div>
+</section>

@@ -346,7 +346,154 @@ html {
   opacity: 1;
 }
 
+/* =========================
+   SERVICES PAGE
+========================= */
+#services {
+  background: #f9f9f9;
+  color: #222;
+}
 
+#services .page-title-wrapper {
+  padding-top: calc(var(--site-header-height) + 1.25rem);
+  padding-bottom: 8px;
+}
 
+#services h1.section-main {
+  margin-bottom: 6px;
+  font-weight: 700;
+}
 
+#services p.lead-sub {
+  margin-bottom: 28px;
+  color: #5b6b5b;
+}
+
+/* Grid system: use Bootstrap’s .row + .col but add spacing */
+#services .row.g-4 {
+  margin-top: 1rem;
+}
+
+/* Bento card base */
+#services .bento-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(10,10,10,0.08);
+  transition: transform .28s ease, box-shadow .28s ease;
+  display: flex;
+  flex-direction: column;
+  height: 420px; /* fixed height for all cards */
+}
+#services .bento-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(10,10,10,0.12);
+}
+
+/* Force all service images to align */
+#services .bento-card img {
+  width: 100%;
+  height: 180px;           /* ✅ fixed card height for consistency */
+  object-fit: cover;       /* ✅ crop to fit */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Frosted overlay */
+#services .bento-card .frosted-card {
+  flex-grow: 1; /* ✅ ensures equal alignment under each image */
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  background: rgba(196, 119, 226, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #130606;
+}
+
+/* Expandable state */
+#services .bento-card .frosted-card.expanded {
+  max-height: 800px;
+}
+
+/* Section spacing */
+#services section {
+  padding: 56px 0;
+}
+#services section:first-of-type {
+  padding-top: calc(var(--site-header-height) + 1.25rem);
+}
+
+/* Titles */
+#services .section-title {
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+/* Centered CTA */
+#services .centered {
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  #services .bento-card img {
+    height: 160px;   /* shorter images on small screens */
+  }
+  #services .page-title-wrapper {
+    padding-top: calc(var(--site-header-height-mobile) + 0.4rem);
+  }
+}
+
+/* ==========================================================
+   FORCE CONSISTENT BENTO CARD SIZING FOR INJECTED PAGES
+   (applies only to content injected into #page-content)
+   ========================================================= */
+#page-content .bento-card {
+  display: flex;
+  flex-direction: column;
+  height: 420px;          /* fixed card height (desktop) */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(10,10,10,0.08);
+  transition: transform .28s ease, box-shadow .28s ease;
+  background: white;
+}
+
+#page-content .bento-card img {
+  width: 100% !important;
+  height: 180px !important;   /* uniform image height */
+  object-fit: cover !important;
+  display: block;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+#page-content .bento-card .frosted-card {
+  flex: 1 1 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.9); /* subtle card background */
+  color: #222;
+}
+
+/* keep text clamp behavior intact but safe */
+#page-content .bento-card .frosted-card p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* mobile adjustments - allow cards to expand vertically on very narrow screens */
+@media (max-width: 767px) {
+  #page-content .bento-card {
+    height: auto;
+  }
+  #page-content .bento-card img {
+    height: 160px !important;
+  }
+}
 

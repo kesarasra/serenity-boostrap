@@ -1,71 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Counselors - Serenity</title>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
+  <!-- Link your main CSS -->
   <link rel="stylesheet" href="css/styles.css">
-
-  <!-- AOS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.css" rel="stylesheet">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="img/serenity-favicon.svg">
-
-  <style>
-    /* Adjust spacing */
-    #counselor-bio {
-      margin-top: 20px; /* closer to carousel */
-    }
-
-    #contact-buttons {
-      padding: 30px 0;
-      background-color: #f8f9fa;
-    }
-
-    .carousel-caption {
-      bottom: -50px;
-      max-width: 500px;
-    }
-    .page-title-wrapper {
-        padding: 100px 0 0; /* reduce from 150px if desired */
-    }
-
-  </style>
 </head>
 
-<body>
 
-  <!-- Header -->
-  <header id="site-header" class="position-fixed w-100 top-0 d-flex justify-content-between align-items-center px-4 py-3">
-    <div class="dropdown">
-      <button class="btn btn-outline-light" id="hamburgerBtn">&#9776;</button>
-      <ul class="dropdown-menu" id="menuDropdown">
-        <li><a class="dropdown-item" href="about.html">About</a></li>
-        <li><a class="dropdown-item" href="counselors.html">Counselors</a></li>
-        <li><a class="dropdown-item" href="services.html">Services</a></li>
-        <li><a class="dropdown-item" href="blogs.html">Blogs</a></li>
-        <li><a class="dropdown-item" href="media.html">Media</a></li>
-        <li><a class="dropdown-item" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <a href="index.html">
-      <img src="img/g630.png" alt="Serenity Logo" class="logo-img">
-    </a>
-
-    <a href="index.html" class="fs-4 text-light">🏠</a>
-  </header>
-
-  <!-- Section Title -->
+<section>  <!-- Section Title -->
   <div class="container page-title-wrapper" style="padding:150px 0 0;"
        data-aos="fade-left" 
-       data-aos-delay="150" 
+       data-aos-delay="10" 
        data-parallax="0.9">
     <div class="row">
       <div class="col-12">
@@ -79,171 +24,301 @@
        style="z-index: 0;" 
        data-aos="fade-up" 
        data-aos-delay="50" 
-       data-parallax="0.9">
+       data-parallax="0.6">
     <img src="img/counselors/SerenityTeam.jpg" 
          alt="Our Team" 
          class="img-fluid shadow" 
          style="width: 90vw; height: auto; border-radius: 0; position: relative; z-index: 0;">
   </div>
+</section>
 
-  <!-- Counselor Carousels -->
-  <section id="counselors" style="background-color:#eaf5ea; padding:40px 0;">
-    <div class="container">
-      <div class="row g-4 justify-content-center">
-        <!-- Left Carousel -->
-        <div class="col-12 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-parallax="0.7">
-          <div id="carouselLeft" class="carousel slide shadow-lg rounded overflow-hidden w-100" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <!-- Agnes -->
-              <div class="carousel-item active">
-                <img src="img/counselors/MaAgnes.jpg" class="d-block w-100 counselor-img" alt="Agnes" data-counselor="agnes" style="object-fit: cover; height: 500px;">
-                <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
-                  <h5>Agnes</h5>
-                  <p>Specialist in trauma therapy and family counseling. Passionate about helping clients rebuild resilience.</p>
-                </div>
-              </div>
-              <!-- Grace -->
-              <div class="carousel-item">
-                <img src="img/counselors/MaGrace.jpg" class="d-block w-100 counselor-img" alt="Grace" data-counselor="grace" style="object-fit: cover; height: 500px;">
-                <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
-                  <h5>Grace</h5>
-                  <p>Experienced in stress management and mindfulness-based therapy. Dedicated to holistic well-being.</p>
-                </div>
-              </div>
-              <!-- Jula -->
-              <div class="carousel-item">
-                <img src="img/counselors/MaJula.jpg" class="d-block w-100 counselor-img" alt="Jula" data-counselor="jula" style="object-fit: cover; height: 500px;">
-                <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
-                  <h5>Jula</h5>
-                  <p>Focused on trauma-informed therapy and holistic counseling for individuals and families.</p>
-                </div>
-              </div>
-              <!-- JJ -->
-              <div class="carousel-item">
-                <img src="img/counselors/KoJJ.jpg" class="d-block w-100 counselor-img" alt="JJ" data-counselor="jj" style="object-fit: cover; height: 500px;">
-                <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
-                  <h5>JJ</h5>
-                  <p>Specialist in youth counseling and personal development. Empowers clients through positive psychology.</p>
-                </div>
+<!-- Counselor Carousels -->
+<section id="counselors" style="background-color:#eaf5ea; padding:40px 0;">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      <!-- Left Carousel -->
+      <div class="col-12 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-parallax="0.7">
+        <div id="carouselLeft" class="carousel slide shadow-lg rounded overflow-hidden w-100" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active position-relative">
+              <img src="img/counselors/MaAgnes.jpg" class="d-block w-100 counselor-img" alt="Agnes" data-counselor="agnes">
+              <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
+                <h5>Agnes</h5>
+                <p>Specialist in trauma therapy and family counseling. Passionate about helping clients rebuild resilience.</p>
               </div>
             </div>
-            <!-- Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselLeft" data-bs-slide="prev"></button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselLeft" data-bs-slide="next"></button>
+            <div class="carousel-item position-relative">
+              <img src="img/counselors/MaGrace.jpg" class="d-block w-100 counselor-img" alt="Grace" data-counselor="grace">
+              <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
+                <h5>Grace</h5>
+                <p>Experienced in stress management and mindfulness-based therapy. Dedicated to holistic well-being.</p>
+              </div>
+            </div>
+            <div class="carousel-item position-relative">
+              <img src="img/counselors/MaJula.jpg" class="d-block w-100 counselor-img" alt="Jula" data-counselor="jula">
+              <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
+                <h5>Jula</h5>
+                <p>Focused on trauma-informed therapy and holistic counseling for individuals and families.</p>
+              </div>
+            </div>
+            <div class="carousel-item position-relative">
+              <img src="img/counselors/KoJJ.jpg" class="d-block w-100 counselor-img" alt="JJ" data-counselor="jj">
+              <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
+                <h5>JJ</h5>
+                <p>Specialist in youth counseling and personal development. Empowers clients through positive psychology.</p>
+              </div>
+            </div>
           </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselLeft" data-bs-slide="prev"></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselLeft" data-bs-slide="next"></button>
         </div>
+      </div>
 
-        <!-- Right Carousel -->
-        <div class="col-12 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-parallax="0.7">
-          <div id="carouselRight" class="carousel slide shadow-lg rounded overflow-hidden w-100" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <!-- May Myat Thu -->
-              <div class="carousel-item active position-relative">
-                <img src="img/counselors/MaMayMyatThu.jpg" class="d-block w-100 counselor-img" alt="May Myat Thu" data-counselor="may-myat-thu" style="object-fit: cover; height: 500px;">
-                <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
-                  <h5>May Myat Thu</h5>
-                  <p>Experienced in stress management and mindfulness-based therapy. Dedicated to holistic well-being.</p>
-                </div>
-              </div>
-              <!-- Htike -->
-              <div class="carousel-item">
-                <img src="img/counselors/MaHtike.jpg" class="d-block w-100 counselor-img" alt="Htike" data-counselor="htike" style="object-fit: cover; height: 500px;">
-                <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
-                  <h5>Htike</h5>
-                  <p>Expert in workplace wellness programs and stress reduction techniques.</p>
-                </div>
-              </div>
-              <!-- Sandy -->
-              <div class="carousel-item">
-                <img src="img/counselors/Sandy.jpg" class="d-block w-100 counselor-img" alt="Sandy" data-counselor="sandy" style="object-fit: cover; height: 500px;">
-                <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
-                  <h5>Sandy</h5>
-                  <p>Focused on building resilience through mindfulness and community support.</p>
-                </div>
+      <!-- Right Carousel -->
+      <div class="col-12 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-parallax="0.7">
+        <div id="carouselRight" class="carousel slide shadow-lg rounded overflow-hidden w-100" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active position-relative">
+              <img src="img/counselors/MaMayMyatThu.jpg" class="d-block w-100 counselor-img" alt="May Myat Thu" data-counselor="may-myat-thu">
+              <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
+                <h5>May Myat Thu</h5>
+                <p>Experienced in stress management and mindfulness-based therapy. Dedicated to holistic well-being.</p>
               </div>
             </div>
-            <!-- Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselRight" data-bs-slide="prev"></button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselRight" data-bs-slide="next"></button>
+            <div class="carousel-item position-relative">
+              <img src="img/counselors/MaHtike.jpg" class="d-block w-100 counselor-img" alt="Htike" data-counselor="htike">
+              <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
+                <h5>Htike</h5>
+                <p>Expert in workplace wellness programs and stress reduction techniques.</p>
+              </div>
+            </div>
+            <div class="carousel-item position-relative">
+              <img src="img/counselors/Sandy.jpg" class="d-block w-100 counselor-img" alt="Sandy" data-counselor="sandy">
+              <div class="carousel-caption d-block frosted-card" data-aos-delay="100" data-parallax="0.2">
+                <h5>Sandy</h5>
+                <p>Focused on building resilience through mindfulness and community support.</p>
+              </div>
+            </div>
           </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselRight" data-bs-slide="prev"></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselRight" data-bs-slide="next"></button>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Full Bio Section -->
-    <section id="counselor-bio" class="container" style="display:none;">
-    <div class="d-flex justify-content-between mb-3">
-        <button id="prevCounselor" class="frosted-card btn">Previous</button>
-        <button id="nextCounselor" class="frosted-card btn">Next</button>
+<!-- Full Bio Section -->
+<section id="counselor-bio" class="container">
+  <div class="d-flex justify-content-between mb-3">
+      <button id="prevCounselor" class="frosted-card btn">Previous</button>
+      <button id="nextCounselor" class="frosted-card btn">Next</button>
+  </div>
+
+  <!-- Agnes -->
+  <div class="counselor-profile-page active">
+      <div class="text-card name-card">
+        <h1>Agnes</h1>
+      </div>
+
+    <div class="profile-banner" style="background-image: url('../img/counselors/MaAgnes.jpg'); height: 350px; background-size: cover; background-position: center;"></div>
+
+    <div class="text-blocks">
+      <div class="text-card degrees-card frosted-card p-2" data-parallax="0.5">
+        <h2>Degrees</h2>
+        <ul>
+          <li>M.Sc in Counseling Psychology, EMDR Therapist</li>
+        </ul>
+      </div>
+      <div class="text-card frosted-card p-4" data-parallax="0.5">
+        <h2>About</h2>
+        <p>Ms. Agnes Mary is a Psychotherapist & Counseling Psychologist, a founder of Serenity counseling and psychological services. She holds a Master of Science in Counseling Psychology from Assumption University, Thailand. She is also a trauma-focused EMDR therapist. Having the passion to work for people and to understand the people who she is working with, occasionally she attended the training related to the field of psychology and remarkably in 2009, she joined the Diploma in Applied Psychology at the University of Yangon. She has recently completed ‘Mental Health in Complex Emergencies’ course provided by Fordham University, New York. Currently, she is studying Ph.D. Program in Women’s Gender and Sexuality Program at Chiang Mai University, Thailand.
+
+        In addition, she worked with UNFPA Myanmar as part of MHPSS (Mental Health and Psychosocial Support) Roster Team. She has experience in working with the refugees and migrant workers from different countries. She worked with the Issara Institute as community outreach and empowerment officer for the Myanmar migrant workers across Thailand. Also, she served as a workplace counselor at TDCX, Thailand. Basically, she provides individual counseling to adolescents and adults from various background and age group. She takes integrative approach to her therapeutic practice from different psychological approaches including Cognitive Behavior Therapy (CBT), Eye Movement Desensitization and Reprocessing (EMDR) and Mindfulness.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grace -->
+  <div class="counselor-profile-page">
+    <div class="text-card name-card">
+      <h1>Grace</h1>
     </div>
 
-    <div id="bio-content"></div>
+    <div class="profile-banner" style="background-image: url('../img/counselors/MaGrace.jpg'); height: 350px; background-size: cover; background-position: center;"></div>
 
-    <!-- Book Us & Contact Us Buttons (moved here) -->
-    <div class="text-center mt-4 mb-50">
-        <a href="services.html" class="btn btn-success mx-2">Book Us</a>
-        <a href="contact.html" class="btn btn-outline-success mx-2">Contact Us</a>
+    <div class="text-blocks">
+      <div class="text-card degrees-card frosted-card p-2" data-parallax="0.5" style="margin-bottom: 30px;">
+        <h2>Degrees</h2>
+        <ul>
+          <li>M.Sc. in Counseling Psychology</li>
+        </ul>
+      </div>
+
+      <div class="text-card frosted-card p-4" data-parallax="0.5">
+        <h2>About</h2>
+        <p>Ms. Naw Aye Thiri Myint @ Grace is a Counseling Psychologist and holds a Master of Science in Counseling Psychology from Assumption University, Thailand. She is currently working as an Assistant Lecturer in the Social Studies Department of the Myanmar Institute of Theology (Liberal Arts Program). She has experience in school (or) guidance counseling and works with teaching and counseling. She worked as a guidance counseling intern at Pan-Asia International School in Bangkok, Thailand from 2016-2017.
+
+          She is currently teaching Social Studies and Social Psychology to students majoring in Social Psychology and Personality Psychology at the Myanmar Institute of Theology, as well as guiding students to improve their self-esteem, coping with stress and anxiety while studying.</p>
+      </div>
     </div>
-    </section>
+  </div>
 
+  <!-- Jula -->
+  <div class="counselor-profile-page">
+    <div class="text-card name-card">
+      <h1>Jula</h1>
+    </div>
 
-  <!-- Bootstrap & AOS JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true, mirror: true });
+    <div class="profile-banner" style="background-image: url('../img/counselors/MaJula.jpg'); height: 350px; background-size: cover; background-position: center;"></div>
 
-    // Simple parallax
-    window.addEventListener("scroll", () => {
-      document.querySelectorAll("[data-parallax]").forEach(el => {
-        const factor = parseFloat(el.getAttribute("data-parallax")) || 0.3;
-        const y = window.scrollY * factor * -1; 
-        el.style.transform = `translateY(${y}px)`;
-      });
-    });
+    <div class="text-blocks">
+      <div class="text-card degrees-card frosted-card p-2" data-parallax="0.5" style="margin-bottom: 30px;">
+        <h2>Degrees</h2>
+        <ul>
+          <li>M.Sc. in Counseling Psychology</li>
+        </ul>
+      </div>
 
-    // Counselor click + bio logic
-    const counselors = ['agnes','grace','jula','jj','may-myat-thu','htike','sandy'];
-    let currentIndex = 0;
+      <div class="text-card frosted-card p-4" data-parallax="0.5">
+        <h2>About</h2>
+        <p>Provides career and life coaching for young adults.</p>
+      </div>
+    </div>
+  </div>
 
-    function loadCounselorProfile(name) {
-      fetch(`profiles/${name}.html`)
-        .then(res => { if(!res.ok) throw new Error("Profile not found"); return res.text(); })
-        .then(html => {
-          document.getElementById('bio-content').innerHTML = html;
-          const bioSection = document.getElementById('counselor-bio');
-          bioSection.style.display = 'block';
-          const offset = 10;
-          const top = bioSection.getBoundingClientRect().top + window.pageYOffset - offset;
-          window.scrollTo({ top: top, behavior: 'smooth' });
-        })
-        .catch(err => {
-          document.getElementById('bio-content').innerHTML = `<p class="text-danger">Profile not available.</p>`;
-          console.error(err);
-        });
-    }
+  <!-- JJ -->
+  <div class="counselor-profile-page">
+    <div class="text-card name-card">
+      <h1>JJ</h1>
+    </div>
 
-    document.querySelectorAll('.counselor-img').forEach(img => {
-      img.addEventListener('click', () => {
-        const name = img.dataset.counselor;
-        currentIndex = counselors.indexOf(name);
-        loadCounselorProfile(name);
-      });
-    });
+    <div class="profile-banner" style="background-image: url('../img/counselors/KoJJ.jpg'); height: 350px; background-size: cover; background-position: center;"></div>
 
-    document.getElementById('prevCounselor').addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + counselors.length) % counselors.length;
-      loadCounselorProfile(counselors[currentIndex]);
-    });
+    <div class="text-blocks">
+      <div class="text-card degrees-card frosted-card p-2" data-parallax="0.5" style="margin-bottom: 30px;">
+        <h2>Degrees</h2>
+        <ul>
+          <li>M.A. in Music Therapy</li>
+        </ul>
+      </div>
 
-    document.getElementById('nextCounselor').addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % counselors.length;
-      loadCounselorProfile(counselors[currentIndex]);
-    });
+      <div class="text-card frosted-card p-4" data-parallax="0.5">
+        <h2>About</h2>
+        <p>Focuses on mindfulness-based stress reduction.</p>
+      </div>
+    </div>
+  </div>
 
-    // Pre-load first counselor
-    loadCounselorProfile(counselors[0]);
-  </script>
-</body>
-</html>
+  <!-- May Myat Thu -->
+  <div class="counselor-profile-page">
+    <div class="text-card name-card">
+      <h1>May Myat Thu</h1>
+    </div>
+
+    <div class="profile-banner" style="background-image: url('../img/counselors/MaMayMyatThu.jpg'); height: 350px; background-size: cover; background-position: center;"></div>
+
+    <div class="text-blocks">
+      <div class="text-card degrees-card frosted-card p-2" data-parallax="0.5" style="margin-bottom: 30px;">
+        <h2>Degrees</h2>
+        <ul>
+          <li>M.A. in Mental Health Counseling</li>
+        </ul>
+      </div>
+
+      <div class="text-card frosted-card p-4" data-parallax="0.5">
+        <h2>About</h2>
+        <p>Experienced in anxiety and depression support.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Htike -->
+  <div class="counselor-profile-page">
+    <div class="text-card name-card">
+      <h1>Htike</h1>
+    </div>
+
+    <div class="profile-banner" style="background-image: url('../img/counselors/MaHtike.jpg'); height: 350px; background-size: cover; background-position: center;"></div>
+
+    <div class="text-blocks">
+      <div class="text-card degrees-card frosted-card p-2" data-parallax="0.5" style="margin-bottom: 30px;">
+        <h2>Degrees</h2>
+        <ul>
+          <li>M.Sc. in Counseling Psychology candidate</li>
+          <li>Diploma in HR Management</li>
+          <li>Diploma in Child Psychology</li>
+        </ul>
+      </div>
+
+      <div class="text-card frosted-card p-4" data-parallax="0.5">
+        <h2>About</h2>
+        <p>Specialist in trauma-informed therapy.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sandy -->
+  <div class="counselor-profile-page">
+    <div class="text-card name-card">
+      <h1>Sandy</h1>
+    </div>
+
+    <div class="profile-banner" style="background-image: url('../img/counselors/Sandy.jpg'); height: 350px; background-size: cover; background-position: center;"></div>
+
+    <div class="text-blocks">
+      <div class="text-card degrees-card frosted-card p-2" data-parallax="0.5" style="margin-bottom: 30px;">
+        <h2>Degrees</h2>
+        <ul>
+          <li>M.Sc in Counseling Psychology</li>
+        </ul>
+      </div>
+
+      <div class="text-card frosted-card p-4" data-parallax="0.5">
+        <h2>About</h2>
+        <p>Ms. Sudawan Kumar @ Sandy is a counseling psychologist, holds a Master’s Degree in Counseling Psychology from Assumption University, Thailand. She is a Certified Clinical Anxiety Treatment Professional (CCATP) and a Certified Coach and facilitator for individuals in addiction and families with addicted loved ones. She received training in providing mental health counseling & workshops to corporate employees under professionals providing the Employee Assistance Program.
+
+        She received training in Alcohol & Substance Abuse from a licensed American substance abuse specialist. She was trained in counseling and Social & Emotional skills training for children with developmental delays from age 6-17 yrs under a licensed Child & Adolescent Psychologist from Australia and Italy. She also works with orphaned children and single mothers living in institutionalized environments.
+
+        Her areas of counseling approach & experiences include: an eclectic approach, which means using one or more or in a combination of ways to approach an issue. She provides individual counseling to adolescents and adults from various backgrounds and age groups. She experienced in working with stress, anxiety & depression, trauma (PTSD) & Grief, RAD (Reactive attachment disorder), Workplace stress, Client with HIV & Substance Abuse, Chem Sex & Gambling addiction, LGBT: Gender identity & Confusion, and Sexual Orientation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Book Us & Contact Us Buttons -->
+  <div class="text-center mt-4 mb-50">
+      <a href="services.html" class="btn btn-success mx-2">Book Us</a>
+      <a href="contact.html" class="btn btn-outline-success mx-2">Contact Us</a>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const profiles = document.querySelectorAll('.counselor-profile-page');
+  let currentIndex = 0;
+
+  function showProfile(index) {
+    // Hide all profiles
+    profiles.forEach(profile => profile.classList.remove('active'));
+
+    // Show the selected profile
+    profiles[index].classList.add('active');
+  }
+
+  const prevBtn = document.getElementById('prevCounselor');
+  const nextBtn = document.getElementById('nextCounselor');
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + profiles.length) % profiles.length;
+    showProfile(currentIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % profiles.length;
+    showProfile(currentIndex);
+  });
+
+  // Show the initial profile
+  showProfile(currentIndex);
+});
+</script>

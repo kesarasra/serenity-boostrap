@@ -521,11 +521,12 @@ html {
 #services .bento-card img,
 #training .bento-card img,
 #activities .bento-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 180px;      /* ✅ consistent height */
+  height: 100%;      /* ✅ fill the entire card */
   object-fit: cover;  /* ✅ crop properly */
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
 }
 
 /* Frosted overlay stays uniform */
@@ -543,6 +544,7 @@ html {
   background: rgba(196, 119, 226, 0.55);
   color: #130606;
   transition: max-height 0.4s ease;
+  z-index: 1;
 }
 
 /* Hover state: expand full height */

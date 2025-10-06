@@ -374,30 +374,6 @@ html {
   margin-top: 1rem;
 }
 
-/* Bento card base */
-#services .bento-card {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(10,10,10,0.08);
-  transition: transform .28s ease, box-shadow .28s ease;
-  display: flex;
-  flex-direction: column;
-  height: 420px; /* fixed height for all cards */
-}
-#services .bento-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 14px 30px rgba(10,10,10,0.12);
-}
-
-/* Force all service images to align */
-#services .bento-card img {
-  width: 100%;
-  height: 180px;           /* ✅ fixed card height for consistency */
-  object-fit: cover;       /* ✅ crop to fit */
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
 
 /* Frosted overlay */
 #services .bento-card .frosted-card {
@@ -432,11 +408,6 @@ html {
   font-weight: 700;
 }
 
-/* Centered CTA */
-#services .centered {
-  text-align: center;
-}
-
 /* Responsive adjustments */
 @media (max-width: 767px) {
   #services .bento-card img {
@@ -463,8 +434,8 @@ html {
 }
 
 #page-content .bento-card img {
-  width: 100% !important;
-  height: 180px !important;   /* uniform image height */
+  width: 100%;
+  height: 100%;          /* uniform image height */
   object-fit: cover !important;
   display: block;
   border-top-left-radius: 12px;
@@ -508,7 +479,8 @@ html {
   transition: transform .28s ease, box-shadow .28s ease;
   display: flex;
   flex-direction: column;
-  height: 420px; /* consistent height */
+  width: 100%;
+  padding-top: 66.66%; /* 2:3 aspect ratio = height / width * 100 */
 }
 #services .bento-card:hover,
 #training .bento-card:hover,
@@ -527,6 +499,8 @@ html {
   width: 100%;
   height: 100%;      /* ✅ fill the entire card */
   object-fit: cover;  /* ✅ crop properly */
+  border-radius: 12px;  /* match card rounding */
+  z-index: 0;           /* behind frosted overlay */
 }
 
 /* Frosted overlay stays uniform */
@@ -577,4 +551,6 @@ html {
   margin-bottom: 0; /* optional: keeps spacing clean */
   line-height: 1.45;
 }
+
+
 

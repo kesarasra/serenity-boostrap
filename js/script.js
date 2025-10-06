@@ -220,6 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
            initAOS();               // <-- AOS with services settings
            initReadMoreLinks();     // <-- Read More / Read Less
            initCounselorBioNavigation(); // Counselor profile prev/next
+           initMediaSection();      // Media section videos
        });
 });
 
@@ -256,3 +257,111 @@ function initCounselorBioNavigation() {
 }
 
 
+// ------------------------------
+// Media Section (Video Cards)
+// ------------------------------
+function initMediaSection() {
+  const videoCards = Array.from(document.querySelectorAll('#page-content .video-card'));
+  if (!videoCards.length) return;
+
+  const PREVIEW_MS = 10000; // 10s preview
+  let cycleTimer = null;
+  let cycling = false;
+  let currentIndex = 0;
+
+  const buildThumbnailHtml = (videoId) => `
+    <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg"
+         alt="YouTube preview"
+         style="width:100%; height:180px; object-fit:cover;">
+    <div class="play-button">▶</div>
+  `;
+
+  function restoreCard(idx) {
+    const card = videoCards[idx];
+    if (!card) return;
+    const vid = card.getAttribute('data-video-id');
+    card.innerHTML = buildThumbnailHtml(vid);
+    card.classList.remove('playing');
+  }
+
+  function playCard(idx) {
+    const card = videoCards[idx];
+    if (!card) return;
+    const vid = card.getAttribute('data-video-id');
+    card.innerHTML = `
+      <iframe width="100%" height="180"
+        src="https://www.youtube.com/embed/${vid}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1"
+        title="YouTube video preview" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>`;
+    card.classList.add('playing');
+  }
+
+  function step() {
+    playCard(currentIndex);
+    cycleTimer = setTimeout(() => {
+      restoreCard(currentIndex);
+      currentIndex = (currentIndex + 1) % videoCards.length;
+      step();
+    }, PREVIEW_MS);
+  }
+
+  function startCyclingFrom(idx) {
+    if (cycling) return;
+    cycling = true;
+    videoCards.forEach((_, i) => restoreCard(i));
+    currentIndex = idx % videoCards.length;
+    step();
+  }
+
+  function stopCycling() {
+    cycling = false;
+    if (cycleTimer) { clearTimeout(cycleTimer); cycleTimer = null; }
+  }
+
+  // Click: unmuted playback & stop cycling
+  videoCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const vid = card.getAttribute('data-video-id');
+      stopCycling();
+      card.innerHTML = `
+        <iframe width="100%" height="180"
+          src="https://www.youtube.com/embed/${vid}?autoplay=1&mute=0"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>`;
+      card.classList.add('playing');
+    });
+  });
+
+  // IntersectionObserver to start cycle when first visible
+  const observer = new IntersectionObserver((entries, obs) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        const idx = videoCards.indexOf(entry.target);
+        if (idx !== -1) {
+          obs.disconnect();
+          startCyclingFrom(idx);
+          break;
+        }
+      }
+    }
+  }, { threshold: 0.5 });
+
+  videoCards.forEach(c => observer.observe(c));
+
+  // Pause cycle on tab hidden
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (cycleTimer) { clearTimeout(cycleTimer); cycleTimer = null; }
+    } else if (cycling && !cycleTimer) {
+      cycleTimer = setTimeout(() => {
+        restoreCard(currentIndex);
+        currentIndex = currentIndex % videoCards.length;
+        step();
+      }, 500);
+    }
+  });
+}

@@ -497,3 +497,82 @@ html {
   }
 }
 
+/* Shared card styling for Services, Training, and Activities */
+#services .bento-card,
+#training .bento-card,
+#activities .bento-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(10,10,10,0.08);
+  transition: transform .28s ease, box-shadow .28s ease;
+  display: flex;
+  flex-direction: column;
+  height: 420px; /* consistent height */
+}
+#services .bento-card:hover,
+#training .bento-card:hover,
+#activities .bento-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(10,10,10,0.12);
+}
+
+/* Force all section images to align */
+#services .bento-card img,
+#training .bento-card img,
+#activities .bento-card img {
+  width: 100%;
+  height: 180px;      /* ✅ consistent height */
+  object-fit: cover;  /* ✅ crop properly */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Frosted overlay stays uniform */
+#services .bento-card .frosted-card,
+#training .bento-card .frosted-card,
+#activities .bento-card .frosted-card {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 40%;   /* show only 40% of card height by default */
+  overflow: hidden;
+  padding: 1rem;
+  backdrop-filter: blur(6px);
+  background: rgba(196, 119, 226, 0.55);
+  color: #130606;
+  transition: max-height 0.4s ease;
+}
+
+/* Hover state: expand full height */
+#services .bento-card:hover .frosted-card,
+#training .bento-card:hover .frosted-card,
+#activities .bento-card:hover .frosted-card {
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+
+@media (max-width: 767px) {
+  #services .bento-card img,
+  #training .bento-card img,
+  #activities .bento-card img {
+    height: 160px; /* smaller on mobile */
+  }
+}
+
+#services .frosted-card h5,
+#training .frosted-card h5,
+#activities .frosted-card h5 {
+  margin-bottom: 0.1rem; /* tighten space under title */
+}
+
+#services .frosted-card p,
+#training .frosted-card p,
+#activities .frosted-card p {
+  margin-top: 0;  /* kill top margin */
+  margin-bottom: 0; /* optional: keeps spacing clean */
+  line-height: 1.45;
+}
+

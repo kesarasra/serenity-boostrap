@@ -593,13 +593,13 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   transition: transform .25s ease, box-shadow .25s ease;
   cursor: pointer;
-  aspect-ratio: 4 / 3; 
-  transform: scale(0.85);
+  aspect-ratio: 16 / 9; 
+  transform: scale(0.8);
   transform-origin: center;
 }
 
@@ -634,8 +634,8 @@ html {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
+  background: rgba(196, 119, 226, 0.55);
+  backdrop-filter: blur(6px);
   text-align: center;
   max-height: 90px;
   transition: max height 0.3s ease;
@@ -644,6 +644,20 @@ html {
 #media .bento-card:hover .frosted-card {
   max-height: 100px;
 }
+
+/* =========================
+   MEDIA SECTION TITLES
+========================= */
+#media .section-title {
+  max-width: 960px;       /* same width as grid */
+  margin: 0 auto 16px;    /* center horizontally */
+  padding-left: 65px;      /* small inset to align with first column */
+  font-weight: 600;
+  font-size: 1.75rem;
+  color: #222;
+  text-align: left;
+}
+
 
 /* Responsive: 2 per row tablets, 1 per row mobile */
 @media (max-width: 991px) {

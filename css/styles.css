@@ -333,6 +333,13 @@ html {
   padding: 0 20px;    /* optional: padding for smaller screens */
 }
 
+#counselor-bio .text-card {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  width: 90%;
+}
+
 #counselor-bio .btn.frosted-card {
   
   backdrop-filter:blur(6px);

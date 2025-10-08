@@ -21,6 +21,16 @@ html {
   will-change: transform;
 }
 
+footer {
+  height: 10vh;
+  background-color: rgba(248, 206, 89, 0.7);
+  backdrop-filter: blur(10px);
+  color: black;
+  padding: 3vh 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
 /* =========================
    HEADER
 ========================= */
@@ -429,7 +439,7 @@ html {
 /* Responsive adjustments */
 @media (max-width: 767px) {
   #services .bento-card img {
-    height: 16vh;   /* shorter images on small screens */
+    height: 20vh;   /* shorter images on small screens */
   }
   #services .page-title-wrapper {
     padding-top: calc(var(--site-header-height-mobile) + 0.4rem);
@@ -481,7 +491,7 @@ html {
     height: auto;
   }
   #page-content .bento-card img {
-    height: 5vh !important;
+    height: 55vh !important;
   }
 }
 

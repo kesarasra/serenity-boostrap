@@ -326,7 +326,13 @@ html {
 }
 
 /* Bio Section */
-#counselor-bio { margin:50px 0; }
+#counselor-bio {
+  width: 90%;
+  max-width: 950px;   /* or whatever width you want */
+  margin: 0 auto;     /* centers horizontally */
+  padding: 0 20px;    /* optional: padding for smaller screens */
+}
+
 #counselor-bio .btn.frosted-card {
   
   backdrop-filter:blur(6px);

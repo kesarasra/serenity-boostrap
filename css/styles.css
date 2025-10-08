@@ -181,12 +181,13 @@ html {
 .bento-box { display:flex; flex-wrap:wrap; gap:0.5rem; }
 .bento-section {
   flex:1 1 calc(20% - 0.5rem);
-  min-width:15%; height:15vh;
+  min-width:15%; height:20vh;
   display:flex; align-items:center; justify-content:center;
   font-weight:bold; font-size:1.25rem;
   border-radius:0.5rem;
   transition: transform 0.3s, box-shadow 0.3s;
   cursor:pointer; color:#222;
+  margin-top: 2vh;
 }
 .bento-section.active {
   transform:scale(1.2);
@@ -440,7 +441,7 @@ html {
 #page-content .bento-card {
   display: flex;
   flex-direction: column;
-  height: 4.2vh;          /* fixed card height (desktop) */
+  height: 40vh;          /* fixed card height (desktop) */
   overflow: hidden;
   border-radius: 1.2vh;
   box-shadow: 0 0.8vh 2vh rgba(10,10,10,0.08);
@@ -478,7 +479,7 @@ html {
     height: auto;
   }
   #page-content .bento-card img {
-    height: 1.6vh !important;
+    height: 5vh !important;
   }
 }
 
@@ -650,7 +651,7 @@ html {
   left: 0;
   width: 100%;
   background: rgba(196, 119, 226, 0.55);
-  backdrop-filter: blur(00.6vh);
+  backdrop-filter: blur(0.6vh);
   text-align: center;
   max-height: 90px;
   transition: max height 0.3s ease;
@@ -689,7 +690,6 @@ html {
 
 /* -------------------------
 Contact section (styles)
-migrate this into css/styles.css
 ------------------------- */
 
 #contact {
@@ -771,7 +771,7 @@ display: none; /* toggled by JS */
 @media (max-width: 767px) {
   #contact {
   padding-top: calc(var(--site-header-height-mobile) + 0.5rem);
-  padding-bottom: 4vh;
+  padding-bottom: 5vh;
   }
   #contact .contact-card { padding: 1rem; }
   #contact .social-links { font-size: 1.4rem; gap: 1rem; }

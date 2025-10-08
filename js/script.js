@@ -364,4 +364,101 @@ function initMediaSection() {
       }, 500);
     }
   });
+
+  //
+  // initContactSection()
+  // - call this after you inject/append the contact fragment into the DOM
+  // - it auto-runs if #contact is already present
+  // - supports EmailJS when the form has data-emailjs-service & data-emailjs-template set
+  //   otherwise falls back to Formspree using the form action attribute.
+  //
+
+  function initContactSection() {
+  const form = document.getElementById('contact-form');
+  const alertEl = document.getElementById('contact-alert');
+  if (!form) return;
+
+  function showAlert(type, message) {
+  alertEl.className = 'alert'; // reset classes
+  alertEl.classList.add(type === 'success' ? 'alert-success' : 'alert-danger', 'show');
+  alertEl.textContent = message;
+  // auto-hide after 6s
+  setTimeout(() => {
+  alertEl.classList.remove('show');
+  alertEl.textContent = '';
+  }, 6000);
+  }
+
+  form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+  if (submitBtn) submitBtn.disabled = true;
+
+  const formData = new FormData(form);
+
+  // EMAILJS config pulled from data attributes (set them on the <form> tag)
+  const emailjsService = form.getAttribute('data-emailjs-service') || form.dataset.emailjsService;
+  const emailjsTemplate = form.getAttribute('data-emailjs-template') || form.dataset.emailjsTemplate;
+
+  // If EmailJS is available and configured, use it
+  if (window.emailjs && emailjsService && emailjsTemplate && typeof emailjs.sendForm === 'function') {
+    emailjs.sendForm(emailjsService, emailjsTemplate, form)
+      .then(() => {
+        showAlert('success', 'Thanks — your message has been sent!');
+        form.reset();
+      })
+      .catch((err) => {
+        console.error('EmailJS error', err);
+        showAlert('error', 'Oops — there was a problem sending your message.');
+      })
+      .finally(() => { if (submitBtn) submitBtn.disabled = false; });
+    return;
+  }
+
+  // Fallback: POST to form.action (Formspree)
+  const action = form.action || '';
+  const method = (form.method || 'POST').toUpperCase();
+  if (!action) {
+    showAlert('error', 'No form action configured.');
+    if (submitBtn) submitBtn.disabled = false;
+    return;
+  }
+
+  fetch(action, {
+    method,
+    headers: { 'Accept': 'application/json' },
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) return response.json().catch(() => ({}));
+    return response.json().then(err => Promise.reject(err));
+  })
+  .then(() => {
+    showAlert('success', 'Thanks — your message has been sent!');
+    form.reset();
+  })
+  .catch(err => {
+    console.error('Form submit error', err);
+    showAlert('error', 'Oops — there was a problem sending your message.');
+  })
+  .finally(() => {
+    if (submitBtn) submitBtn.disabled = false;
+  });
+
+  });
+  }
+
+  // expose so dynamic loader can call after injection
+  window.initContactSection = initContactSection;
+
+  // auto-init if the contact fragment is already in the DOM
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  if (document.getElementById('contact')) initContactSection();
+  } else {
+  document.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('contact')) initContactSection();
+  });
+  }
+
 }

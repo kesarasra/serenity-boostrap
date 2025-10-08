@@ -671,3 +671,97 @@ html {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* -------------------------
+Contact section (styles)
+migrate this into css/styles.css
+------------------------- */
+
+#contact {
+/* keep spacing consistent with other sections */
+padding-top: calc(var(--site-header-height) + 1rem);
+padding-bottom: 56px;
+background: transparent;
+color: #222;
+}
+
+/* container used inside the fragment keeps bootstrap container width */
+#contact .section-title {
+text-align: center;
+margin-bottom: 24px;
+font-size: 1.4rem;
+font-weight: 700;
+}
+
+/* The main card that contains the form; uses your frosted-card visual system */
+#contact .contact-card {
+max-width: 75%;
+margin: 0 auto;
+padding: 1.25rem;
+box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+border-radius: 12px;
+background: rgba(196, 119, 226, 0.55);
+backdrop-filter: blur(6px);
+}
+
+
+/* Inputs: make them comfortable & consistent */
+#contact .form-control {
+border-radius: 6px;
+box-shadow: none;
+}
+
+/* submit button full width on small screens, consistent on desktop */
+#contact button[type="submit"] {
+min-height: 44px;
+border-radius: 8px;
+}
+
+/* Alert area (success / error) */
+#contact-alert {
+max-width: 820px;
+margin: 0.75rem auto 0;
+display: none; /* toggled by JS */
+}
+#contact-alert.show { display: block; }
+
+/* Contact info (phone + social icons) */
+#contact .contact-info p {
+  margin-bottom: 0.5rem;
+  color: #2a2a2a;
+  }
+#contact .social-links {
+  display: inline-flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+
+  }
+
+/* Social hover behaviour (migrated from inline style) */
+#contact .social-links a {
+  font-size: 2.5rem;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+#contact .social-links a:hover {
+  transform: scale(1.25);
+  filter: brightness(1.15);
+}
+
+/* Small screens adjustments */
+@media (max-width: 767px) {
+  #contact {
+  padding-top: calc(var(--site-header-height-mobile) + 0.5rem);
+  padding-bottom: 40px;
+  }
+  #contact .contact-card { padding: 1rem; }
+  #contact .social-links { font-size: 1.4rem; gap: 1rem; }
+  }
+
+  /* small helper classes used by the fragment */
+  #contact .muted-small { color: #5b6b5b; font-size: 0.95rem; }
+  #contact .fs-5 { font-size: 1.125rem; }

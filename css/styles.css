@@ -262,8 +262,8 @@ html {
    PAGE TITLES (shared)
 ========================= */
 :root {
-  --site-header-height: 100px;
-  --site-header-height-mobile: 60px;
+  --site-header-height: 10vh;
+  --site-header-height-mobile: 6vh;
 }
 .page-title-wrapper {
   padding-top: calc(var(--site-header-height) + 1.25rem);
@@ -281,27 +281,27 @@ html {
 ========================= */
 #about, #mottos, #activities {
   background:#eaf5ea;
-  padding:60px 0;
+  padding:6vh 0;
 }
-#mottos .frosted-card { background:rgba(255,0,255,0.3); padding:20px; }
-#activities img { width:90vw; max-width:1200px; border-radius:0; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
-#activities .frosted-card { margin-top:-150px; max-width:600px; z-index:2; }
+#mottos .frosted-card { background:rgba(255,0,255,0.3); padding:2vh; }
+#activities img { width:90vw; max-width:1200px; border-radius:0; box-shadow:0 0.4vh 1.2vh rgba(0,0,0,0.15); }
+#activities .frosted-card { margin-top:-15vh; max-width:600px; z-index:2; }
 
 /* =========================
    COUNSELORS SECTION
 ========================= */
 #counselors {
   background:#eaf5ea;
-  padding:60px 0;
+  padding:6vh 0;
 }
 #counselors img.counselor-img {
   object-fit:cover; 
-  height:500px; 
+  height:50vh; 
   width:100%;
 }
 .carousel {
-  border-radius:12px; overflow:hidden;
-  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  border-radius:1.2rem; overflow:hidden;
+  box-shadow:0 0.8vh 2vh rgba(0,0,0,0.15);
 }
 .carousel-caption.frosted-card {
   position: absolute;
@@ -311,7 +311,7 @@ html {
   max-height: 40%;        /* only occupy bottom 40% */
   padding: 1rem 1.5rem;
   background: rgba(190, 159, 74, 0.7);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(0.8vh);
   overflow-y: auto;       /* scroll if content is too tall */
   box-sizing: border-box;
   color: #000;
@@ -330,9 +330,9 @@ html {
 /* Bio Section */
 #counselor-bio {
   width: 90%;
-  max-width: 950px;   /* or whatever width you want */
+  max-width: 95%;
   margin: 0 auto;     /* centers horizontally */
-  padding: 0 20px;    /* optional: padding for smaller screens */
+  padding: 0 2vw;    /* optional: padding for smaller screens */
 }
 
 #counselor-bio .text-card {
@@ -344,7 +344,7 @@ html {
 
 #counselor-bio .btn.frosted-card {
   
-  backdrop-filter:blur(6px);
+  backdrop-filter:blur(0.6vh);
   border:1px solid rgba(0,0,0,0.1);
 }
 
@@ -371,16 +371,16 @@ html {
 
 #services .page-title-wrapper {
   padding-top: calc(var(--site-header-height) + 1.25rem);
-  padding-bottom: 8px;
+  padding-bottom: 0.5rem;
 }
 
 #services h1.section-main {
-  margin-bottom: 6px;
+  margin-bottom: 0.6vh;
   font-weight: 700;
 }
 
 #services p.lead-sub {
-  margin-bottom: 28px;
+  margin-bottom: 2.8vh;
   color: #5b6b5b;
 }
 
@@ -394,7 +394,7 @@ html {
 #services .bento-card .frosted-card {
   flex-grow: 1; /* ✅ ensures equal alignment under each image */
   padding: 1rem;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(1vh);
   background: rgba(196, 119, 226, 0.55);
   backdrop-filter: blur(6px);
   display: flex;
@@ -405,12 +405,12 @@ html {
 
 /* Expandable state */
 #services .bento-card .frosted-card.expanded {
-  max-height: 800px;
+  max-height: 80vh;
 }
 
 /* Section spacing */
 #services section {
-  padding: 56px 0;
+  padding: 5.6vh 0;
 }
 #services section:first-of-type {
   padding-top: calc(var(--site-header-height) + 1.25rem);
@@ -419,14 +419,14 @@ html {
 /* Titles */
 #services .section-title {
   font-size: 1.4rem;
-  margin-bottom: 18px;
+  margin-bottom: 1.8vh;
   font-weight: 700;
 }
 
 /* Responsive adjustments */
 @media (max-width: 767px) {
   #services .bento-card img {
-    height: 160px;   /* shorter images on small screens */
+    height: 16vh;   /* shorter images on small screens */
   }
   #services .page-title-wrapper {
     padding-top: calc(var(--site-header-height-mobile) + 0.4rem);
@@ -440,10 +440,10 @@ html {
 #page-content .bento-card {
   display: flex;
   flex-direction: column;
-  height: 420px;          /* fixed card height (desktop) */
+  height: 4.2vh;          /* fixed card height (desktop) */
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(10,10,10,0.08);
+  border-radius: 1.2vh;
+  box-shadow: 0 0.8vh 2vh rgba(10,10,10,0.08);
   transition: transform .28s ease, box-shadow .28s ease;
   background: #eaf5ea;
 }
@@ -453,8 +453,8 @@ html {
   height: 100%;          /* uniform image height */
   object-fit: cover !important;
   display: block;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-top-left-radius: 1.2vh;
+  border-top-right-radius: 1.2vh;
 }
 
 #page-content .bento-card .frosted-card {
@@ -478,7 +478,7 @@ html {
     height: auto;
   }
   #page-content .bento-card img {
-    height: 160px !important;
+    height: 1.6vh !important;
   }
 }
 
@@ -487,9 +487,9 @@ html {
 #training .bento-card,
 #activities .bento-card {
   position: relative;
-  border-radius: 12px;
+  border-radius: 1.2vh;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(10,10,10,0.08);
+  box-shadow: 0 0.8vh 2vh rgba(10,10,10,0.08);
   transition: transform .28s ease, box-shadow .28s ease;
   display: flex;
   flex-direction: column;
@@ -499,8 +499,8 @@ html {
 #services .bento-card:hover,
 #training .bento-card:hover,
 #activities .bento-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 14px 30px rgba(10,10,10,0.12);
+  transform: translateY(-0.8vh);
+  box-shadow: 0 1.4vh 3vh rgba(10,10,10,0.12);
 }
 
 /* Force all section images to align */
@@ -513,7 +513,7 @@ html {
   width: 100%;
   height: 100%;      /* ✅ fill the entire card */
   object-fit: cover;  /* ✅ crop properly */
-  border-radius: 12px;  /* match card rounding */
+  border-radius: 1.2vh;  /* match card rounding */
   z-index: 0;           /* behind frosted overlay */
 }
 
@@ -528,7 +528,7 @@ html {
   max-height: 40%;   /* show only 40% of card height by default */
   overflow: hidden;
   padding: 1rem;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(00.6vh);
   background: rgba(196, 119, 226, 0.55);
   color: #130606;
   transition: max-height 0.4s ease;
@@ -548,7 +548,7 @@ html {
   #services .bento-card img,
   #training .bento-card img,
   #activities .bento-card img {
-    height: 160px; /* smaller on mobile */
+    height: 1.6vh; /* smaller on mobile */
   }
 }
 
@@ -576,17 +576,17 @@ html {
 }
 
 #media .page-title-wrapper {
-  padding-top: 120px;
-  padding-bottom: 12px;
+  padding-top: 1.2vh;
+  padding-bottom: 1.2vh;
 }
 
 #media h1.section-main {
-  margin-bottom: 6px;
+  margin-bottom: 0.6vh;
   font-weight: 700;
 }
 
 #media p.lead-sub {
-  margin-bottom: 32px;
+  margin-bottom: 3.2vh;
   color: #5b6b5b;
 }
 
@@ -594,7 +594,7 @@ html {
 #media .bento-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
-  gap: 16px !important;
+  gap: 1.6vh !important;
   max-width: 960px;   /* constrain total width */
   margin: 0 auto;     /* center grid */
 }
@@ -608,9 +608,9 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 16px;
+  border-radius: 1.6vh;
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 0.6vh 1.6vh rgba(0,0,0,0.08);
   transition: transform .25s ease, box-shadow .25s ease;
   cursor: pointer;
   aspect-ratio: 16 / 9; 
@@ -639,18 +639,18 @@ html {
 
 /* Video play button */
 #media .video-card .play-button {
-  font-size: 28px;   /* smaller for compact cards */
+  font-size: 2.8vh;   /* smaller for compact cards */
 }
 
 /* Frosted overlay */
 #media .frosted-card {
-  padding: 8px;
+  padding: 0.8vh;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   background: rgba(196, 119, 226, 0.55);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(00.6vh);
   text-align: center;
   max-height: 90px;
   transition: max height 0.3s ease;
@@ -665,8 +665,8 @@ html {
 ========================= */
 #media .section-title {
   max-width: 960px;       /* same width as grid */
-  margin: 0 auto 16px;    /* center horizontally */
-  padding-left: 65px;      /* small inset to align with first column */
+  margin: 0 auto 1.6vh;    /* center horizontally */
+  padding-left: 6.5vh;      /* small inset to align with first column */
   font-weight: 600;
   font-size: 1.75rem;
   color: #222;
@@ -695,7 +695,7 @@ migrate this into css/styles.css
 #contact {
 /* keep spacing consistent with other sections */
 padding-top: calc(var(--site-header-height) + 1rem);
-padding-bottom: 56px;
+padding-bottom: 5.6vh;
 background: transparent;
 color: #222;
 }
@@ -703,7 +703,7 @@ color: #222;
 /* container used inside the fragment keeps bootstrap container width */
 #contact .section-title {
 text-align: center;
-margin-bottom: 24px;
+margin-bottom: 2.4vh;
 font-size: 1.4rem;
 font-weight: 700;
 }
@@ -713,23 +713,23 @@ font-weight: 700;
 max-width: 75%;
 margin: 0 auto;
 padding: 1.25rem;
-box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-border-radius: 12px;
+box-shadow: 0 1vh 3vh rgba(0,0,0,0.08);
+border-radius: 1.2vh;
 background: rgba(196, 119, 226, 0.55);
-backdrop-filter: blur(6px);
+backdrop-filter: blur(0.6vh);
 }
 
 
 /* Inputs: make them comfortable & consistent */
 #contact .form-control {
-border-radius: 6px;
+border-radius: 0.6vh;
 box-shadow: none;
 }
 
 /* submit button full width on small screens, consistent on desktop */
 #contact button[type="submit"] {
 min-height: 44px;
-border-radius: 8px;
+border-radius: 0.8vh;
 }
 
 /* Alert area (success / error) */
@@ -771,7 +771,7 @@ display: none; /* toggled by JS */
 @media (max-width: 767px) {
   #contact {
   padding-top: calc(var(--site-header-height-mobile) + 0.5rem);
-  padding-bottom: 40px;
+  padding-bottom: 4vh;
   }
   #contact .contact-card { padding: 1rem; }
   #contact .social-links { font-size: 1.4rem; gap: 1rem; }

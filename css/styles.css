@@ -6,6 +6,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  color: #222; /* or your site’s main text color */
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 main, section {
@@ -23,11 +33,10 @@ html {
 
 footer {
   height: 10vh;
-  background-color: rgba(248, 206, 89, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
-  color: black;
+  color: white;
   padding: 3vh 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 

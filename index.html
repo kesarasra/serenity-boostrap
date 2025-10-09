@@ -18,6 +18,8 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="img/serenity-favicon.svg">
 
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     /* Home section */
     #home {
@@ -88,25 +90,31 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      font-family: 'Ubuntu', sans-serif;
       font-weight: bold;
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       border-radius: 0.5rem;
       color: #222;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background-color: rgba(255,255,255,0.35); /* semi-transparent overlay */
       text-align: center;
+      text-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.3);
     }
 
+    #bento .bento-section {
+      text-decoration: none; /* removes underline from the <a> link */
+    }     
+
     /* Different overlay colors per section */
-    #bento-about .bento-overlay      { background-color: rgba(241, 228, 106, 0.5); } /* #f0e68c */
-    #bento-counselors .bento-overlay { background-color: rgba(240, 230, 140, 0.5); } /* #90ee90 */
-    #bento-services .bento-overlay   { background-color: rgba(241, 228, 106, 0.5); } /* #ffb6c1 */
-    #bento-media .bento-overlay      { background-color: rgba(240, 230, 140, 0.5); } /* #90ee90 */
+    #bento-about .bento-overlay      { background-color: rgba(241, 228, 106, 0.7); } /* #f0e68c */
+    #bento-counselors .bento-overlay { background-color: rgba(240, 230, 140, 0.7); } /* #90ee90 */
+    #bento-services .bento-overlay   { background-color: rgba(241, 228, 106, 0.7); } /* #ffb6c1 */
+    #bento-media .bento-overlay      { background-color: rgba(240, 230, 140, 0.7); } /* #90ee90 */
 
     /* Hover effect */
     .bento-section:hover .bento-overlay {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transform: scale(1.1);
+      filter: brightness(1.2);
+      transition: all 0.3s ease;
     }
 
   </style>

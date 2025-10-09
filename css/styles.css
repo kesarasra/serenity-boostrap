@@ -438,13 +438,6 @@ footer {
   padding-top: calc(var(--site-header-height) + 1.25rem);
 }
 
-/* Titles */
-#services .section-title {
-  font-size: 1.4rem;
-  margin-bottom: 1.8vh;
-  font-weight: 700;
-}
-
 /* Responsive adjustments */
 @media (max-width: 767px) {
   #services .bento-card img {
@@ -802,3 +795,82 @@ display: none; /* toggled by JS */
   /* small helper classes used by the fragment */
   #contact .muted-small { color: #5b6b5b; font-size: 0.95rem; }
   #contact .fs-5 { font-size: 1.125rem; }
+
+
+/* ===== Global Typography ===== */
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  color: #222;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* Headings (Ubuntu = confident, modern) */
+h1, h2, h4, h5, h6 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #302f2f;
+}
+
+h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #747272;
+}
+
+/* Section Titles */
+section h2 {
+  font-size: 2.0rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2vh;
+  color: #747373;
+}
+
+/* Paragraphs and text blocks */
+p, li, small {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Frosted Card Text */
+.frosted-card {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Bento Menu */
+#bento .bento-overlay {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #292929;
+  text-decoration: none;
+  text-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#bento .bento-overlay:hover {
+  transform: scale(1.08);
+  filter: brightness(1.2);
+}
+
+/* Buttons */
+button, .btn {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+h1 { font-size: clamp(2.2rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.8rem, 3vw, 2.0rem); }
+h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); }
+

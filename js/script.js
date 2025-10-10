@@ -4,8 +4,10 @@
 window.addEventListener('load', () => {
   setTimeout(() => {
     const homeText = document.getElementById('home-text');
-    if (homeText) homeText.classList.add('show');
-  }, 3000);
+    if (homeText) {
+      homeText.classList.add('bounce-in');
+    }
+  }, 3000); // delay before bounce
 });
 
 // --------------------

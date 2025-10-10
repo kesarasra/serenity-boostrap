@@ -596,7 +596,7 @@ height: 40vh;
 overflow: hidden;
 border-radius: var(--radius);
 box-shadow: var(--shadow-soft);
-transition: transform .28s ease, box-shadow .28s ease;
+transition: transform .22s ease-out, box-shadow .22s ease-out;
 background: var(--bg);
 }
 #page-content .bento-card img {
@@ -721,7 +721,7 @@ margin: 0 auto;
 /* media cards */
 #media .bento-card,
 #media .video-card{
-width:95%;
+width:90%;
 margin: 0 auto;
 display:flex;
 flex-direction: column;
@@ -729,8 +729,8 @@ justify-content:center;
 align-items:center;
 border-radius: 1.6vh;
 overflow:hidden;
-box-shadow: 0 1vh 3vh rgba(0,0,0,0.2);
-transition: transform .25s ease, box-shadow .25s ease;
+background: var(--bg-secondary);
+transition: transform .25s ease;
 cursor:pointer;
 aspect-ratio: 16 / 9;
 transform: scale(0.8);

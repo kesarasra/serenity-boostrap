@@ -79,7 +79,7 @@ if (hamburgerBtn && menuDropdown) {
     items = nodes.map(el => ({
       el,
       target: el.querySelector('.frosted-card, img') || el,
-      speed: Math.max(0, parseFloat(el.getAttribute('data-parallax')) || 0.2),
+      speed: Math.max(0, parseFloat(el.getAttribute('data-parallax')) || 0.01),
       initialTop: el.getBoundingClientRect().top + window.pageYOffset
     }));
   }
@@ -118,11 +118,11 @@ if (hamburgerBtn && menuDropdown) {
 // --------------------
 function initAOS() {
   if (typeof AOS !== "undefined") {
-    AOS.init({ 
-      duration: 900,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
+    AOS.init({
+      duration: 300,      // shorter fade time
+      easing: 'ease-out', // snappier easing
+      once: true,         // don't replay on scroll up
+      offset: 60,         // triggers slightly earlier
     });
   }
 }

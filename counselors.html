@@ -303,16 +303,30 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const profiles = document.querySelectorAll('.counselor-profile-page');
+  const carouselImages = document.querySelectorAll('.counselor-img');
   let currentIndex = 0;
 
   function showProfile(index) {
-    // Hide all profiles
     profiles.forEach(profile => profile.classList.remove('active'));
-
-    // Show the selected profile
     profiles[index].classList.add('active');
+    profiles[index].scrollIntoView({ behavior: 'smooth' });
+    currentIndex = index;
   }
 
+  // --- click a carousel image to show that counselor's bio ---
+  carouselImages.forEach(img => {
+    img.addEventListener('click', () => {
+      const counselorName = img.dataset.counselor?.trim().toLowerCase();
+      const targetIndex = Array.from(profiles).findIndex(profile => {
+        const h1 = profile.querySelector('h1');
+        return h1 && h1.textContent.trim().toLowerCase().replace(/\s+/g, '-') === counselorName;
+      });
+
+      if (targetIndex !== -1) showProfile(targetIndex);
+    });
+  });
+
+  // --- next/previous buttons ---
   const prevBtn = document.getElementById('prevCounselor');
   const nextBtn = document.getElementById('nextCounselor');
 
@@ -326,7 +340,8 @@ document.addEventListener('DOMContentLoaded', () => {
     showProfile(currentIndex);
   });
 
-  // Show the initial profile
-  showProfile(currentIndex);
+  // --- show first profile by default ---
+  showProfile(0);
 });
+
 </script>

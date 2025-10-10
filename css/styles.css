@@ -425,7 +425,6 @@ COUNSELORS SECTION
 ========================= */
 #counselors {
 background: var(--bg-secondary);
-padding: 6vh 0;
 }
 #counselors img.counselor-img{
 object-fit: cover;
@@ -466,7 +465,6 @@ color: var(--text-midprimary);
     background: var(--bg-secondary);
     width: 100%;
     margin: 0 auto;
-    
 }
 #counselor-bio .text-card { 
     margin-left:auto; 
@@ -512,12 +510,39 @@ border: 1px solid rgba(0,0,0,0.1);
 .counselor-profile-page{ display:none; opacity:0; transition: opacity 0.3s ease-in-out; }
 .counselor-profile-page.active{ display:block; opacity:1; }
 
+/* === Counselor Bio Spacing Fix === */
+#counselor-bio {
+  padding-top: 4vh;
+}
+
+/* Normalize banner heights to prevent long empty scroll zones */
+.profile-banner {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 2vh;
+}
+
+/* Standardize all text-card spacing */
+#counselor-bio .text-card {
+  width: 90%;
+  margin: 0 auto 9vh auto; /* space between cards */
+  padding: 2.5vh;
+}
+
+/* Keep name cards spaced correctly without pushing too far down */
+#counselor-bio .text-card.name-card {
+  margin-bottom: 1vh;
+  padding-top: 3vh;
+}
+
+
 /* =========================
 SERVICES
 ========================= */
 #services{ background: var(--bg); color: var(--text-primary); }
 
-#services .page-title-wrapper{ padding-top: calc(var(--site-header-height) + 1.25rem); padding-bottom: 0.5rem; }
+#services .page-title-wrapper{ padding-bottom: 6.5rem; }
 
 #services h1.section-main{ margin-bottom: 0.6vh; font-weight:700; }
 #services p.lead-sub{ margin-bottom: 2.8vh; color: var(--text-secondary); }

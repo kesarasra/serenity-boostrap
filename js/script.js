@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
     if (homeText) {
       homeText.classList.add('bounce-in');
     }
-  }, 3000); // delay before bounce
+  }, 2500); // delay before bounce
 });
 
 // --------------------

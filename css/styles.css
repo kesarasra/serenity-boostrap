@@ -202,7 +202,6 @@ HOME TEXT OVERLAY
 /* White text with dark glow/shadow */
 #home-text h2,
 #home-text h3 {
-    font-family: 'Lora', serif;
     color: rgb(224, 223, 223);
     text-shadow: 0 0 8px rgba(0,0,0,0.8), 0 0 12px rgba(0,0,0,0.6);
     text-transform: none;
@@ -218,9 +217,9 @@ HOME TEXT OVERLAY
 
 /* Company name — larger and bolder */
 #home-text h2 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    line-height: 1.2;
+    font-family: 'Satisfy', cursive;
+    font-size: 10.5rem;
+    font-weight: 400;
 }
 
 /* Bounce-in animation */
@@ -242,6 +241,12 @@ HOME TEXT OVERLAY
 .bounce-in {
   animation: bounceIn 1s ease forwards;
 }
+
+@media (max-width: 768px) {
+  #home-text h3 { font-size: 1.8rem; }
+  #home-text h2 { font-size: 2.4rem; }
+}
+
 
 /* =========================
 BUTTONS

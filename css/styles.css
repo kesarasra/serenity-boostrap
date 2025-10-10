@@ -489,6 +489,28 @@ border: 1px solid rgba(0,0,0,0.1);
     color: var(--text-secondary);
 }
 
+#prevCounselor, #nextCounselor {
+    font-size: 2rem; /* size of the chevrons */
+    background-color: var(--accent); /* your preferred button bg */
+    color: var(--text-primary);
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+#prevCounselor:hover, #nextCounselor:hover {
+    background-color: var(--accent-strong); /* slightly darker on hover */
+}
+#prevCounselor i, #nextCounselor i {
+  font-size: 2.2rem;           /* bigger size */
+  -webkit-text-stroke: 3px;    /* adds visual thickness */
+}
+
+
+
 /* profile visibility */
 .counselor-profile-page{ display:none; opacity:0; transition: opacity 0.3s ease-in-out; }
 .counselor-profile-page.active{ display:block; opacity:1; }

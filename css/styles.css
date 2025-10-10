@@ -13,7 +13,7 @@ Design tokens (single source of truth)
 --font-sans: 'Nunito', sans-serif;
 --font-heading: 'Ubuntu', sans-serif;
 
---bg: #daf8da;
+--bg: #daf8e2;
 --bg-secondary: #89d389;
 --accent: rgba(236, 192, 69, 0.7);
 --accent-strong: rgba(248, 206, 89, 0.9);
@@ -490,7 +490,8 @@ border: 1px solid rgba(0,0,0,0.1);
 }
 
 #prevCounselor, #nextCounselor {
-    font-size: 2rem; /* size of the chevrons */
+    font-size: 2.2rem;           /* bigger size */
+    -webkit-text-stroke: 3px;    /* adds visual thickness */
     background-color: var(--accent); /* your preferred button bg */
     color: var(--text-primary);
     border-radius: 0.5rem;
@@ -503,10 +504,6 @@ border: 1px solid rgba(0,0,0,0.1);
 }
 #prevCounselor:hover, #nextCounselor:hover {
     background-color: var(--accent-strong); /* slightly darker on hover */
-}
-#prevCounselor i, #nextCounselor i {
-  font-size: 2.2rem;           /* bigger size */
-  -webkit-text-stroke: 3px;    /* adds visual thickness */
 }
 
 

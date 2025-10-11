@@ -14,9 +14,9 @@ Design tokens (single source of truth)
 --font-heading: 'Ubuntu', sans-serif;
 
 --bg: #daf8e2;
---bg-secondary: #89d389;
+--bg-secondary: #4ba97a;
 --accent: rgba(236, 192, 69, 0.7);
---accent-strong: rgba(248, 206, 89, 0.9);
+--accent-strong: #d4a32b;
 --accent-light: rgba(248, 212, 112, 0.7);
 --surface: rgba(255,255,255,0.85);
 
@@ -419,6 +419,13 @@ margin-top: -15vh;
 max-width: 600px;
 z-index: 2;
 }
+#about h4,
+#mottos h4,
+#activities h4 {
+  letter-spacing: 0.3rem;
+  font-weight: 700;
+}
+
 
 /* =========================
 COUNSELORS SECTION
@@ -430,6 +437,9 @@ background: var(--bg-secondary);
 object-fit: cover;
 height: 50vh;
 width: 100%;
+}
+#counselors h2 {
+  letter-spacing: 0.7rem;
 }
 .carousel{
 border-radius: var(--card-radius);
@@ -447,10 +457,10 @@ background: var(--accent);
 backdrop-filter: blur(0.8vh);
 overflow-y: auto;
 box-sizing: border-box;
-color: var(--text-midprimary);
+color: var(--text-primary);
 }
 .carousel-caption.frosted-card h5 {
-    color: var(--text-midprimary);
+    color: var(--text-primary);
     font-weight: 600; 
     margin-bottom: 0.5rem; 
 }
@@ -473,18 +483,15 @@ color: var(--text-midprimary);
 }
 
 #counselor-bio .text-card.name-card h1{
-    color: var(--text-midprimary);
+    color: var(--text-white);
     text-align: center;
+    letter-spacing: 0.3rem;
     padding-left: -20vw;
 }
 
 #counselor-bio .btn.frosted-card{
 backdrop-filter: blur(0.6vh);
 border: 1px solid rgba(0,0,0,0.1);
-}
-
-#counselor-bio h3 {
-    color: var(--text-secondary);
 }
 
 #prevCounselor, #nextCounselor {
@@ -509,6 +516,11 @@ border: 1px solid rgba(0,0,0,0.1);
 /* profile visibility */
 .counselor-profile-page{ display:none; opacity:0; transition: opacity 0.3s ease-in-out; }
 .counselor-profile-page.active{ display:block; opacity:1; }
+
+.counselor-profile-page.active p,
+.counselor-profile-page.active ul {
+  font-weight: 800;
+}
 
 /* === Counselor Bio Spacing Fix === */
 #counselor-bio {
@@ -574,6 +586,9 @@ transition: max-height var(--transition-medium) ease;
 /* Section titles across all sections */
 .section-title {
   color: var(--text-secondary);
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 #services section:first-of-type { 
@@ -776,9 +791,81 @@ margin: 0 auto 0vh;
 padding: 9vh 0 0 9vh;
 font-weight:600;
 font-size: 2.2rem;
-color: var(--text-secondary);
+color: var(--text-midprimary);
 text-align: left;
 }
+
+/* Social Card Styles */
+.social-card {
+  background: var(--bg-secondary); /* Your green background */
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.25s ease;
+  
+}
+
+.social-card:hover {
+  transform: translateY(-0.4vh);
+  box-shadow: 0 1.2vh 3vh rgba(0, 0, 0, 0.3);
+}
+
+/* Social link layout */
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 2rem 1rem;
+  height: 100%;
+  color: var(--text-primary);
+}
+
+/* Facebook SVG Icon */
+.social-icon {
+  width: 15rem;
+  height: 15rem;
+  fill: white; /* Initial color */
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+/* Pop effect on hover */
+.social-link:hover .social-icon {
+  fill: #1877F2; /* Facebook Blue */
+  filter: drop-shadow(0 0 10px rgba(24, 119, 242, 0.8));
+  transform: scale(1.15);
+}
+
+/* Text inside frosted-card */
+.social-card .frosted-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(0.6vh);
+  text-align: center;
+  border-radius: 1rem;
+  padding: 1rem;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.social-card:hover .frosted-card {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ========== Telegram Variant ========== */
+.social-card.telegram .social-icon {
+  fill: white;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+}
+
+.social-card.telegram:hover .social-icon {
+  fill: #26A5E4; /* Telegram Blue */
+  filter: drop-shadow(0 0 10px rgba(38, 165, 228, 0.9));
+  transform: scale(1.15);
+}
+
+
 
 /* media responsive grid */
 @media (max-width: 991px){ #media .bento-grid{ grid-template-columns: repeat(2,1fr) !important; } }
@@ -833,13 +920,23 @@ backdrop-filter: blur(0.6vh);
 #contact .muted-small{ color: #5b6b5b; font-size: 0.95rem; }
 #contact .fs-5{ font-size: 1.125rem; }
 
+.form-label {
+  font-weight: 800 !important;
+}
+
+
 /* =========================
 Small typography refinements and component rules
 ========================= */
 /* headings color tweaks */
-h1,h2,h4,h5,h6{ color: #302f2f; letter-spacing:0.05em; }
+h1,h2,h4,h6{ color: #302f2f; letter-spacing:0.05em; }
 
-h3 { color: #535252; letter-spacing:0.05em; }
+h5 {
+  color: var(--text-primary); 
+  letter-spacing:0.05em;
+}
+
+h3 { color: var(--text-white); letter-spacing:0.05em; }
 
 /* section title style */
 section h2{

@@ -266,7 +266,7 @@ function initMediaSection() {
   const videoCards = Array.from(document.querySelectorAll('#page-content .video-card'));
   if (!videoCards.length) return;
 
-  const PREVIEW_MS = 10000; // 10s preview
+  const PREVIEW_MS = 5000; // 10s preview
   let cycleTimer = null;
   let cycling = false;
   let currentIndex = 0;

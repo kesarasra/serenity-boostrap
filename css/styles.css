@@ -31,7 +31,7 @@ Design tokens (single source of truth)
 
 --radius: 1.2vh;            /* consistent corner radius */
 --card-radius: 1rem;        /* for smaller elements */
---site-header-height: 10vh;
+--site-header-height: clamp(8vh, 10vw, 10vh);
 --site-header-height-mobile: 6vh;
 
 --transition-fast: 0.18s;
@@ -122,9 +122,9 @@ background-color: var(--accent-strong);
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(10px);
 box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-transition: transform var(--transition-medium) ease-in-out;
+transition: all var(--transition-medium) ease-in-out;
 z-index: 999;
-padding: 0 1rem;
+padding: 0 clamp(0.8rem, 2vw, 2rem);
 display: flex;
 align-items: center;
 justify-content: space-between;
@@ -141,7 +141,7 @@ min-height: 4.4vh;
 }
 
 .logo-img {
-max-height: 8vh;
+max-height: clamp(6vh, 8vw, 10vh);
 height: auto;
 transition: max-height 0.3s ease;
 }
@@ -1000,8 +1000,9 @@ ENHANCED MOBILE HEADER
   }
 
   #hamburgerBtn {
-    min-width: 6vh !important;
-    min-height: 6vh !important;
+    min-width: clamp(3.2vh, 4.5vw, 4.8vh) !important;
+    min-height: clamp(3.2vh, 4.5vw, 4.8vh) !important;
+    transition: all 0.3s ease;
   }
 
   #site-header a,
@@ -1009,10 +1010,20 @@ ENHANCED MOBILE HEADER
   #site-header button {
     font-size: 1.2rem !important;  /* make nav text/buttons easier to tap */
   }
-}
+
+
+  #site-header a,
+  #site-header button {
+    display: flex;
+    align-items: center;
+  }
+
 
   #site-header a i.bi {
-  font-size: clamp(1.8rem, 5vw, 2.4rem) !important;
+    font-size: clamp(1.8rem, 5vw, 2.4rem) !important;
+    line-height: 1;
+    transition: font-size 0.3s ease;
+  }
 }
 
 /* end of stylesheet */

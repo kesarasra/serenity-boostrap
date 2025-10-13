@@ -1026,4 +1026,17 @@ ENHANCED MOBILE HEADER
   }
 }
 
+/* Adjust motto section spacing for mobile */
+@media (max-width: 768px) {
+  #mottos {
+    padding-top: 1.2rem !important;  /* smaller top padding */
+    margin-top: -2rem !important;    /* move the whole section up */
+  }
+
+  #mottos .frosted-card {
+    padding-top: 0.5rem !important;  /* reduce card padding for tighter look */
+  }
+}
+
+
 /* end of stylesheet */

@@ -980,4 +980,39 @@ transition: transform var(--transition-medium), filter var(--transition-medium);
 /* Buttons global */
 button, .btn{ font-family: var(--font-heading); font-weight:500; letter-spacing:0.02em; }
 
+/* =========================
+ENHANCED MOBILE HEADER
+========================= */
+@media (max-width: 768px) {
+  :root {
+    --site-header-height-mobile: 10vh; /* increase header height */
+  }
+
+  #site-header {
+    height: var(--site-header-height-mobile);
+    padding: 1rem 1.5rem;
+  }
+
+  #site-header a img,
+  .logo-img {
+    height: 7vh !important;   /* make logo more prominent */
+    max-height: 8vh !important;
+  }
+
+  #hamburgerBtn {
+    min-width: 6vh !important;
+    min-height: 6vh !important;
+  }
+
+  #site-header a,
+  #site-header span,
+  #site-header button {
+    font-size: 1.2rem !important;  /* make nav text/buttons easier to tap */
+  }
+}
+
+  #site-header a i.bi {
+  font-size: clamp(1.8rem, 5vw, 2.4rem) !important;
+}
+
 /* end of stylesheet */

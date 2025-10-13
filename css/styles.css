@@ -580,8 +580,9 @@ SERVICES
 #services .bento-card .frosted-card{
 flex-grow: 1;
 padding: 1rem;
-backdrop-filter: blur(0.8vh);
-background: var(--accent);
+background: rgba(236, 192, 69, 0.8);
+filter: brightness(1.03);
+will-change: opacity, transform;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
@@ -621,51 +622,36 @@ FORCE CONSISTENT BENTO CARD SIZING FOR INJECTED PAGES
 #page-content .bento-card {
 display:flex;
 flex-direction:column;
-height: 40vh;
+height: 45vh;
 overflow: hidden;
 border-radius: var(--radius);
-box-shadow: var(--shadow-soft);
+box-shadow: var(--shadow-medium);
 transition: transform .22s ease-out, box-shadow .22s ease-out;
-background: var(--bg);
-}
-#page-content .bento-card img {
-width:100%;
-height:100%;
-object-fit: cover !important;
-display: block;
-border-top-left-radius: var(--radius);
-border-top-right-radius: var(--radius);
-}
-#page-content .bento-card .frosted-card {
-flex: 1 1 auto;
-padding: 1rem;
-display:flex;
-flex-direction:column;
-justify-content: space-between;
-color: var(--text-primary);
 }
 
 /* allow expansion on mobile */
 @media (max-width: 767px){
 #page-content .bento-card{ height:auto; }
-#page-content .bento-card img{ height: 55vh !important; }
+#page-content .bento-card img{ height: 45vh !important; }
 }
 
 /* Shared card styling for Services, Training, Activities */
 #services .bento-card,
 #training .bento-card,
-#activities .bento-card{
-position: relative;
-border-radius: var(--radius);
-overflow: hidden;
-box-shadow: var(--shadow-soft);
-transition: transform .28s ease, box-shadow .28s ease;
-box-shadow: 0 1vh 3vh rgba(0,0,0,0.2);
-display:flex;
-flex-direction:column;
-width:100%;
-padding-top: 66.66%; /* 2:3 aspect ratio box */
+#activities .bento-card {
+  position: relative;
+  aspect-ratio: 3 / 2; /* same ratio, smoother rendering */
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  transition: transform .28s ease, box-shadow .28s ease;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--bg);
+  will-change: transform; /* smoother scroll and hover */
 }
+
 #services .bento-card:hover,
 #training .bento-card:hover,
 #activities .bento-card:hover{
@@ -688,25 +674,51 @@ z-index:0;
 /* frosted overlay placement */
 #services .bento-card .frosted-card,
 #training .bento-card .frosted-card,
-#activities .bento-card .frosted-card{
-position:absolute;
-bottom:0; left:0; right:0;
-max-height: 40%;
-overflow: hidden;
-padding: 1rem;
-backdrop-filter: blur(0.6vh);
-background: var(--accent);
-color: #130606;
-transition: max-height var(--transition-medium) ease;
-z-index:1;
+#activities .bento-card .frosted-card {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  max-height: 40%;             /* initial collapsed height */
+  overflow: hidden;
+
+  padding: 1rem;
+  background: rgba(236, 192, 69, 0.75); /* semi-transparent accent for fast rendering */
+  color: #130606;
+
+  transition: max-height var(--transition-medium) ease, background 0.2s ease;
+  z-index: 1;
+
+  /* smoother rendering */
+  will-change: max-height, opacity;
+  pointer-events: auto;       /* ensures overlay is interactive if needed */
 }
 
-/* expand overlay on hover */
+/* Hover / expanded state */
 #services .bento-card:hover .frosted-card,
 #training .bento-card:hover .frosted-card,
-#activities .bento-card:hover .frosted-card{
-max-height: 100%;
-overflow-y: auto;
+#activities .bento-card:hover .frosted-card {
+  max-height: 100%;
+  overflow-y: auto;
+  /* optional: slight brightness change for subtle feedback */
+  background: rgba(236, 192, 69, 0.85);
+}
+
+/* Mobile adjustments for performance */
+@media (max-width: 767px) {
+  #services .bento-card .frosted-card,
+  #training .bento-card .frosted-card,
+  #activities .bento-card .frosted-card {
+    max-height: none !important;
+    overflow: visible;
+    background: rgba(236, 192, 69, 0.8); /* keep consistent opacity */
+    transition: none !important;
+  }
+}
+
+.bento-card img, .bento-card .frosted-card {
+  will-change: transform, opacity;
 }
 
 /* avoid accidental tiny mobile heights (fixed previous 1.6vh error) */

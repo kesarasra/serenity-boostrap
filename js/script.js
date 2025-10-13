@@ -119,10 +119,10 @@ if (hamburgerBtn && menuDropdown) {
 function initAOS() {
   if (typeof AOS !== "undefined") {
     AOS.init({
-      duration: 300,      // shorter fade time
+      duration:600,      // shorter fade time
       easing: 'ease-out', // snappier easing
       once: true,         // don't replay on scroll up
-      offset: 60,         // triggers slightly earlier
+      offset: 120,         // triggers slightly earlier
     });
   }
 }

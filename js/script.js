@@ -263,7 +263,7 @@ function initCounselorBioNavigation() {
 // Media Section (Video Cards)
 // ------------------------------
 function initMediaSection() {
-  const videoCards = Array.from(document.querySelectorAll('#page-content .video-card'));
+  const videoCards = Array.from(document.querySelectorAll('#page-content .video-card[data-video-id]'));
   if (!videoCards.length) return;
 
   const PREVIEW_MS = 5000; // 10s preview
@@ -282,6 +282,7 @@ function initMediaSection() {
     const card = videoCards[idx];
     if (!card) return;
     const vid = card.getAttribute('data-video-id');
+    if (!vid) return;  // <-- skip non-YouTube cards
     card.innerHTML = buildThumbnailHtml(vid);
     card.classList.remove('playing');
   }
@@ -290,6 +291,7 @@ function initMediaSection() {
     const card = videoCards[idx];
     if (!card) return;
     const vid = card.getAttribute('data-video-id');
+    if (!vid) return;  // <-- skip non-YouTube cards
     card.innerHTML = `
       <iframe width="100%" height="180"
         src="https://www.youtube.com/embed/${vid}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1"

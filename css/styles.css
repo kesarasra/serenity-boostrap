@@ -742,6 +742,26 @@ margin-bottom:0;
 line-height:1.45;
 }
 
+/* Spotify-specific adjustments */
+.bento-card.social-card.spotify .social-icon {
+  width: 22vw;      /* same width as other social icons */
+  height: 22vh;     /* keep aspect ratio square */
+  margin-bottom: 6vh; /* space between icon and frosted card */
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.7));
+}
+
+.bento-card.social-card.spotify .frosted-card h4 {
+  font-size: 1rem;   /* match other social cards */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.bento-card.social-card.spotify .frosted-card p {
+  font-size: 0.85rem; /* match description text */
+  margin-top: 0.6vh;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+
 /* =========================
 MEDIA SECTION STYLES
 ========================= */

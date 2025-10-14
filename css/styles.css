@@ -55,6 +55,12 @@ font-weight: 400;
 color: var(--text-primary);
 line-height: 1.6;
 letter-spacing: 0.02em;
+overflow-y: overlay;
+overflow-x: hidden; 
+}
+
+html {
+  scrollbar-gutter: stable both-edges;
 }
 
 /* Headings — Ubuntu (consistent weight & spacing) */
@@ -117,17 +123,18 @@ footer small {
 HEADER
 ========================= */
 #site-header{
-height: var(--site-header-height);
-background-color: var(--accent-strong);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-transition: all var(--transition-medium) ease-in-out;
-z-index: 999;
-padding: 0 clamp(0.8rem, 2vw, 2rem);
-display: flex;
-align-items: center;
-justify-content: space-between;
+  height: var(--site-header-height);
+  background-color: var(--accent-strong);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all var(--transition-medium) ease-in-out;
+  z-index: 999;
+  padding: 0 clamp(0.8rem, 2vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 #site-header a img{
@@ -152,7 +159,7 @@ transition: max-height 0.3s ease;
 @media (max-width: 768px){
 #site-header { height: var(--site-header-height-mobile); padding: 0.5rem 1rem; }
 #site-header a img { height: 4.5vh; }
-.dropdown-menu { width: 100vw; left: 0; right: 0; }
+.dropdown-menu { width: 100%; left: 0; right: 0; }
 }
 
 /* =========================
@@ -1069,6 +1076,43 @@ ENHANCED MOBILE HEADER
     padding-top: 0.5rem !important;  /* reduce card padding for tighter look */
   }
 }
+
+/* 🌿 Frosted Scrollbar Effect */
+
+/* Default hidden state */
+body::-webkit-scrollbar {
+  opacity: 0;
+  transition: opacity 0.4s ease, width 0.3s ease;
+}
+
+/* Scrollbar visible when user scrolls */
+body.scrolling::-webkit-scrollbar {
+  opacity: 1;
+  width: 20px;
+}
+
+/* Apply frosted styling ONLY when visible */
+body.scrolling::-webkit-scrollbar-track {
+  background: rgba(76, 240, 131, 0.5);
+  backdrop-filter: blur(1vh);
+  -webkit-backdrop-filter: blur(1vh);
+  border-radius: 1vh;
+}
+
+body.scrolling::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  backdrop-filter: blur(1vh);
+  -webkit-backdrop-filter: blur(1vh);
+  border-radius: 1vh;
+  border: 0.2vh solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 1vh rgba(255, 255, 255, 0.5);
+  transition: background 0.3s ease;
+}
+
+body.scrolling::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-strong);
+}
+
 
 
 /* end of stylesheet */

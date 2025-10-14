@@ -465,4 +465,16 @@ function initMediaSection() {
   });
   }
 
+  let scrollTimer;
+
+  window.addEventListener('scroll', () => {
+    document.body.classList.add('scrolling');
+
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      document.body.classList.remove('scrolling');
+    }, 2500); // 2.5 second after scroll stops
+  });
+
+
 }

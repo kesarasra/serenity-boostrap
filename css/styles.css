@@ -859,6 +859,10 @@ color: var(--text-midprimary);
 text-align: left;
 }
 
+#media .bento-card .frosted-card * {
+  text-shadow: none;
+}
+
 /* Social Card Styles */
 .social-card {
   background: var(--bg-secondary); /* Your green background */

@@ -625,6 +625,65 @@ transition: max-height var(--transition-medium) ease;
 #services .page-title-wrapper{ padding-top: calc(var(--site-header-height-mobile) + 0.4rem); }
 }
 
+/* =========================
+SUB-BENTO (Services/Training/Activities selector)
+========================= */
+/* Full-width background for bento button section */
+#section-selector {
+  width: 100%;            /* full width of parent */
+  background-color: var(--bg-secondary);
+  padding: 1.5rem 2rem;      /* vertical spacing */
+  
+}
+
+#section-selector .bento-box {
+  max-width: 1200px;      /* keeps buttons aligned with page content */
+  margin: 0 auto;         /* center horizontally */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;              /* spacing between buttons */
+}
+
+#section-selector .bento-section {
+  flex: 1 1 25%;
+  min-width: 200px;
+  height: 16vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#section-selector .bento-section:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.6vh 2vh rgba(0,0,0,0.2);
+}
+
+#section-selector .bento-section.active {
+  transform: scale(1.1);
+  box-shadow: 0 0.8vh 2vh rgba(0,0,0,0.3);
+}
+
+/* Colors (adjust as needed) */
+#bento-services-toggle { background: #ffb6c1; }
+#bento-training-toggle { background: #90ee90; }
+#bento-activities-toggle { background: #f0e68c; }
+
+@media (max-width: 768px) {
+  #section-selector .bento-section {
+    flex: 1 1 45%;
+    height: 12vh;
+    font-size: 1rem;
+  }
+}
+
+
+
 /* ==========================================================
 FORCE CONSISTENT BENTO CARD SIZING FOR INJECTED PAGES
 ========================================================= */

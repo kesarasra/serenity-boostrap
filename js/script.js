@@ -223,6 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
            initReadMoreLinks();     // <-- Read More / Read Less
            initCounselorBioNavigation(); // Counselor profile prev/next
            initMediaSection();      // Media section videos
+           if (document.getElementById('services')) initServicesBento();  // <-- initialize services bento grid
        });
 });
 
@@ -257,6 +258,33 @@ function initCounselorBioNavigation() {
 
   showProfile(currentIndex);
 }
+
+// ----------------------------
+// Services Bento UI Grid Display
+// ----------------------------
+function initServicesBento() {
+  const buttons = document.querySelectorAll('#services .bento-section');
+  const grids = document.querySelectorAll('#services-grid, #training-grid, #activities-grid');
+
+  if (!buttons.length) return; // fragment not loaded
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Toggle active buttons
+      buttons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      // Hide all grids
+      grids.forEach(grid => grid.style.display = 'none');
+
+      // Show selected grid
+      const targetId = button.dataset.target;
+      const targetGrid = document.getElementById(targetId);
+      if (targetGrid) targetGrid.style.display = '';
+    });
+  });
+}
+
 
 
 // ------------------------------

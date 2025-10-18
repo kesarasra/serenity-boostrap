@@ -31,7 +31,8 @@
     #home {
       position: relative;
       height: 100vh;
-      overflow: hidden;
+      width: 100vw;
+      overflow-x: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -43,7 +44,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(2.5);
-      width: 100%;
+      width: 100vw;
       height: 100%;
       pointer-events: none;
       z-index: -1;
@@ -130,15 +131,16 @@
       color: #ffffff;
       background-color: #5a5959;
       padding: 2vh 0;
+      width: 100vw;
     }
 
   </style>
 </head>
 
-<body>
+<body class="container-fluid p-0">
 
   <!-- Header -->
-  <header id="site-header" class="position-fixed w-100 top-0 d-flex justify-content-between align-items-center px-4 py-3">
+  <header id="site-header" class="position-fixed top-0 d-flex justify-content-between align-items-center">
     <div class="dropdown">
       <button class="btn btn-header btn-outline-dark" id="hamburgerBtn">&#9776;</button>
       <ul class="dropdown-menu" id="menuDropdown">
@@ -154,14 +156,14 @@
       <img src="img/g630.png" alt="Serenity Logo" class="logo-img">
     </a>
 
-    <a href="index.html" class="fs-1 text-dark">
+    <a href="index.html" class="fs-1 text-dark" style="padding-right: 2.5vw;">
       <i class="bi bi-house-door-fill"></i>
     </a>
   </header>
 
   <!-- Home Section -->
-  <section id="home" class="position-relative vh-100 overflow-hidden">
-    <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden" style="z-index:-1;">
+  <section id="home" class="position-relative">
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index:-1;">
       <iframe
         src="https://player.vimeo.com/video/1059479707?h=c04bcdd312&autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0&controls=0"
         frameborder="0"

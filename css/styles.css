@@ -46,7 +46,7 @@ GLOBAL SITE STRUCTURE & TYPOGRAPHY
 html { scroll-behavior: smooth; }
 
 body {
-background-color: var(--bg);
+background-color: var(--bg-secondary);
 min-height: 100vh;
 display: flex;
 flex-direction: column;
@@ -55,14 +55,17 @@ font-weight: 400;
 color: var(--text-primary);
 line-height: 1.6;
 letter-spacing: 0.02em;
-max-width: 100vw;
-overflow-y: overlay;
-overflow-x: hidden; 
+margin: 0;
+padding: 0;
+width: 100%;
+overflow-y: overlay; 
+overflow-x: hidden;
 }
 
 html {
-  max-width: 100vw;
-  scrollbar-gutter: stable both-edges;
+  margin: 0;
+  padding: 0;
+
 }
 
 /* Headings — Ubuntu (consistent weight & spacing) */
@@ -121,6 +124,11 @@ footer small {
   }
 }
 
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* =========================
 HEADER
 ========================= */
@@ -133,14 +141,15 @@ HEADER
   transition: all var(--transition-medium) ease-in-out;
   z-index: 999;
   padding: 0 clamp(0.8rem, 2vw, 2rem);
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
 }
 
 #site-header a img{
-height: 9.5vh;
+height: 10vh;
 max-height: 12vh;
 }
 
@@ -191,15 +200,24 @@ transform: translateY(0);
 /* =========================
 VIDEO BACKGROUND (hero)
 ========================= */
+#home {
+  width: 100vw;       /* fills full viewport width */
+  min-height: 100vh;  /* fills full viewport height */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 #home iframe{
 position: absolute;
 top: var(--site-header-height);
 left: 0;
-width: 100%;
+width: 100vw;
 height: calc(100vh - var(--site-header-height));
 z-index: -1;
 object-fit: cover;
 border: none;
+overflow-x: hidden;
 }
 @media (max-width: 768px){
 #home iframe { top: var(--site-header-height-mobile); height: calc(100vh - var(--site-header-height-mobile)); }
@@ -331,6 +349,7 @@ BENTO SECTIONS (nav grid)
 .bento-box{ display:flex; flex-wrap:wrap; gap:0.5rem; }
 
 .bento-section{
+  width: 100vw;
 flex:1 1 calc(20% - 0.5rem);
 min-width: 15%;
 height: 20vh;
@@ -426,6 +445,7 @@ ABOUT / MOTTOS / ACTIVITIES
 #about, #mottos, #activities {
 background: var(--bg);
 padding: 6vh 0;
+width: 100vw;
 }
 #mottos .frosted-card{
 background: var(--accent);
@@ -455,6 +475,7 @@ COUNSELORS SECTION
 ========================= */
 #counselors {
 background: var(--bg-secondary);
+width: 100vw;
 }
 #counselors img.counselor-img{
 object-fit: cover;
@@ -496,7 +517,7 @@ color: var(--text-primary);
 /* Bio Section */
 #counselor-bio {
     background: var(--bg-secondary);
-    width: 100%;
+    width: 100vw;
     margin: 0 auto;
 }
 #counselor-bio .text-card { 
@@ -575,7 +596,11 @@ border: 1px solid rgba(0,0,0,0.1);
 /* =========================
 SERVICES
 ========================= */
-#services{ background: var(--bg); color: var(--text-primary); }
+#services { 
+  background: var(--bg); 
+  color: var(--text-primary); 
+  width: 100vw;
+}
 
 #services .page-title-wrapper{ padding-bottom: 6.5rem; }
 
@@ -635,7 +660,7 @@ SUB-BENTO (Services/Training/Activities selector)
 ========================= */
 /* Full-width background for bento button section */
 #section-selector {
-  width: 100%;            /* full width of parent */
+  width: 100vw;            /* full width of parent */
   background-color: var(--bg-secondary);
   padding: 1.5rem 2rem;      /* vertical spacing */
 
@@ -910,7 +935,7 @@ MEDIA SECTION STYLES
   background: var(--bg-secondary); 
   color: var(--text-primary); 
   overflow-x: hidden;
-  width: 100%;
+  width: 100vw;
   max-width: 100vw;
   box-sizing: border-box;
 }
@@ -1092,10 +1117,12 @@ text-align: left;
 Contact section (styles)
 ------------------------- */
 #contact{
-padding-top: calc(var(--site-header-height) + 1rem);
-padding-bottom: 5.6vh;
-background: transparent;
-color: var(--text-primary);
+  padding-top: calc(var(--site-header-height) + 1rem);
+  padding-bottom: 5.6vh;
+  background: var(--bg);
+  color: var(--text-primary);
+  width: 100%;
+  
 }
 #contact .section-title{ text-align:center; margin-bottom:2vh; font-size:2rem; font-weight:700; }
 
@@ -1247,6 +1274,7 @@ ENHANCED MOBILE HEADER
 body::-webkit-scrollbar {
   opacity: 0;
   transition: opacity 0.4s ease, width 0.3s ease;
+  width: 8px;
 }
 
 /* Scrollbar visible when user scrolls */
@@ -1257,7 +1285,7 @@ body.scrolling::-webkit-scrollbar {
 
 /* Apply frosted styling ONLY when visible */
 body.scrolling::-webkit-scrollbar-track {
-  background: rgba(76, 240, 131, 0.5);
+  background: rgba(76, 240, 131, 0.3);
   backdrop-filter: blur(1vh);
   -webkit-backdrop-filter: blur(1vh);
   border-radius: 1vh;
@@ -1267,7 +1295,7 @@ body.scrolling::-webkit-scrollbar-thumb {
   background: var(--accent);
   backdrop-filter: blur(1vh);
   -webkit-backdrop-filter: blur(1vh);
-  border-radius: 1vh;
+  border-radius: 10px;
   border: 0.2vh solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 0 1vh rgba(255, 255, 255, 0.5);
   transition: background 0.3s ease;

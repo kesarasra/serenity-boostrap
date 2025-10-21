@@ -34,6 +34,9 @@ Design tokens (single source of truth)
 --site-header-height: clamp(8vh, 10vw, 10vh);
 --site-header-height-mobile: 6vh;
 
+--frost-bg: rgba(255, 255, 255, 0.2);
+--frost-border: rgba(255, 255, 255, 0.4);
+--blur: 10px;
 --transition-fast: 0.18s;
 --transition-medium: 0.3s;
 --shadow-soft: 0 0.8vh 2vh rgba(10,10,10,0.08);
@@ -74,6 +77,7 @@ font-family: var(--font-heading);
 font-weight: 700;
 letter-spacing: 0.03em;
 color: var(--text-primary);
+transition: opacity var(--transition-medium);
 }
 
 /* Responsive heading scale */
@@ -1303,5 +1307,7 @@ body.scrolling::-webkit-scrollbar-thumb {
 body.scrolling::-webkit-scrollbar-thumb:hover {
   background: var(--accent-strong);
 }
+
+
 
 /* end of stylesheet */

@@ -58,7 +58,7 @@ letter-spacing: 0.02em;
 margin: 0;
 padding: 0;
 width: 100%;
-overflow-y: overlay; 
+overflow-y: auto; 
 overflow-x: hidden;
 }
 
@@ -530,7 +530,6 @@ color: var(--text-primary);
     color: var(--text-white);
     text-align: center;
     letter-spacing: 0.3rem;
-    padding-left: -20vw;
 }
 
 #counselor-bio .btn.frosted-card{

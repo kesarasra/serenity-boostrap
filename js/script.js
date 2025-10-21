@@ -209,7 +209,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         if (window.bootstrap) {
           document.querySelectorAll('.carousel').forEach(el => {
-            new bootstrap.Carousel(el, { interval: 5000 });
+            try {
+              new bootstrap.Carousel(el, { interval: 5000 });
+            } catch (err) {
+              console.warn("Skipping broken carousel config:", el, err);
+            }
           });
           initCarouselCaptions();
         }
@@ -504,5 +508,12 @@ function initMediaSection() {
     }, 2500); // 2.5 second after scroll stops
   });
 
+// ----------------------------
+// FreeTranslate public API
+// GOES BELOW...
+// ----------------------------
+
+
+/* ADD more script here...*/
 
 }

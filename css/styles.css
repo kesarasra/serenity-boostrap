@@ -615,7 +615,7 @@ SERVICES
   letter-spacing: 0.7rem;
   color: var(--text-midmuted);
 }
-#services p.lead-sub{ margin-bottom: 2.8vh; color: var(--text-midprimary); }
+#services p.lead-sub{ margin-top: 2.8vh; color: var(--text-midprimary); }
 
 /* Grid spacing */
 #services .row.g-4{ margin-top: 1rem; }

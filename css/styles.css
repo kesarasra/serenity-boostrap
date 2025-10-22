@@ -1327,15 +1327,14 @@ body.lang-mm .text-mm { display: inline; }
 
 /* Frosted Glass Button */
 .lang-toggle {
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: var(--frost-bg);
-  border: 1px solid var(--frost-border);
+  position: relative;
+  margin-right: 2vw;
+  background: var(--text-primary);
+  border: 0.1vh solid var(--text-primary);
   backdrop-filter: blur(var(--blur));
   border-radius: 2rem;
-  padding: 0.6rem 1.2rem;
-  color: #fff;
+  padding: 0.4rem 0.9rem;
+  color: var(--accent-strong);
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;

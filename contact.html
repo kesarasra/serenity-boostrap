@@ -1,7 +1,10 @@
 <!-- Contact fragment — put this inside #page-content in index.html -->
 
 <section id="contact" class="container py-5" aria-labelledby="contact-title" data-aos="fade-up">
-  <h2 id="contact-title" class="section-title" style="padding-bottom: 2vh;">Contact Us</h2>
+  <h2 id="contact-title" class="section-title" style="padding-bottom: 2vh; letter-spacing: 0.7rem;">
+    <span class="text-en">Contact Us</span>
+    <span class="text-mm">ဆက်သွယ်ရန်</span>
+  </h2>
 
   <!-- Form card -->
 
@@ -14,26 +17,41 @@
   <form id="contact-form" action="https://formspree.io/f/mnqeyggo" method="POST"
     data-emailjs-service="" data-emailjs-template="">
     <div class="mb-3">
-      <label for="name" class="form-label" style="font-weight:700; text-shadow:0 0 0.5px currentColor;">Full Name</label>
+      <label for="name" class="form-label" style="font-weight:700; text-shadow:0 0 0.5px currentColor;">
+        <span class="text-en">Full Name</span>
+        <span class="text-mm">အမည်အပြည့်အစုံ</span>
+      </label>
       <input name="name" id="name" type="text" class="form-control" required>
     </div>
 
     <div class="mb-3">
-      <label for="email" class="form-label" style="font-weight:700; text-shadow:0 0 0.5px currentColor;">Email Address</label>
+      <label for="email" class="form-label" style="font-weight:700; text-shadow:0 0 0.5px currentColor;">
+        <span class="text-en">Email Address</span>
+        <span class="text-mm">အီးမေးလ်လိပ်စာ</span>
+      </label>
       <input name="email" id="email" type="email" class="form-control" required>
     </div>
 
     <div class="mb-3">
-      <label for="subject" class="form-label" style="font-weight:700; text-shadow:0 0 0.5px currentColor;">Subject</label>
+      <label for="subject" class="form-label" style="font-weight:700; text-shadow:0 0 0.5px currentColor;">
+        <span class="text-en">Subject</span>
+        <span class="text-mm">အကြောင်းအရာ</span>
+      </label>
       <input name="subject" id="subject" type="text" class="form-control">
     </div>
 
     <div class="mb-3">
-      <label for="message" class="form-label" style="font-weight:700; text-shadow:0 0 0.5px currentColor;">Message</label>
+      <label for="message" class="form-label" style="font-weight:700; text-shadow:0 0 0.5px currentColor;">
+        <span class="text-en">Message</span>
+        <span class="text-mm">စာသား</span>
+      </label>
       <textarea name="message" id="message" rows="5" class="form-control" required></textarea>
     </div>
 
-    <button type="submit" class="btn btn-fuchsia w-100">Send Message</button>
+    <button type="submit" class="btn btn-fuchsia w-100">
+      <span class="text-en">Send Message</span>
+      <span class="text-mm">စာပေးပို့ရန်</span>
+    </button>
   </form>
 
 
@@ -45,10 +63,16 @@
       <p class="fs-5">
         <i class="bi bi-telephone-fill me-2 fs-4"></i>
         <strong><a href="tel:+959776884275" class="text-decoration-none text-dark">+959 776 884 275</a></strong><br>
-        <small class="muted-small">Office Hours: 9:00 a.m. – 5:00 p.m. (MMT)</small>
+        <small class="muted-small">
+          <span class="text-en">Office Hours: 9:00 a.m. – 5:00 p.m. (MMT)</span>
+          <span class="text-mm">အဖွဲ့အစည်းဖွင့်ချိန် - မနက် ၉:၀၀ မှ ညနေ ၅:၀၀ (မြန်မာအချိန်)</span>
+        </small>
       </p>
 
-  <p class="mt-3 fs-5 muted-small">This number is also available on:</p>
+  <p class="mt-3 fs-5 muted-small">
+    <span class="text-en">This number is also available on:</span>
+    <span class="text-mm">ဤဖုန်းနံပါတ်ကိုလည်း အောက်ပါပလက်ဖောင်းများတွင် အသုံးပြုနိုင်ပါသည်။</span>
+  </p>
 
   <div class="social-links">
     <a href="https://wa.me/959776884275" target="_blank" title="WhatsApp" aria-label="WhatsApp" class="text-success">

@@ -485,7 +485,7 @@ width: 100vw;
 }
 #counselors img.counselor-img{
 object-fit: cover;
-height: 50vh;
+height: 70vh;
 width: 100%;
 }
 #counselors h2 {
@@ -501,7 +501,7 @@ position: absolute;
 bottom: 0;
 left: 0;
 width: 100%;
-max-height: 40%;
+max-height: 39%;
 padding: 1rem 1.5rem;
 background: var(--accent);
 backdrop-filter: blur(0.8vh);

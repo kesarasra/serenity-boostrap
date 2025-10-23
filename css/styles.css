@@ -1349,7 +1349,7 @@ body.lang-mm .text-mm { display: inline; }
 
 /* small responsive tweak */
 @media (max-width: 480px) {
-  .lang-toggle { right: 0.8rem; top: 0.9rem; padding: 0.45rem 0.9rem; font-size: .9rem; }
+  .lang-toggle { padding: 0.45rem 0.9rem; font-size: .5rem; }
 }
 
 

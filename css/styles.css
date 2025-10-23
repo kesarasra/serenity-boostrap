@@ -155,7 +155,7 @@ HEADER
 }
 
 #site-header a img{
-height: 10vh;
+height: 12vh;
 max-height: 12vh;
 }
 
@@ -165,17 +165,17 @@ min-height: 4.4vh;
 }
 
 .logo-img {
-max-height: clamp(6vh, 8vw, 10vh);
+max-height: clamp(12vh, 12vw, 12vh);
 height: auto;
 transition: max-height 0.3s ease;
 }
-@media (min-width: 768px) { .logo-img { max-height: 9vh; } }
-@media (min-width: 1200px){ .logo-img { max-height: 10vh; } }
+@media (min-width: 768px) { .logo-img { max-height: 12vh; } }
+@media (min-width: 1200px){ .logo-img { max-height: 12vh; } }
 
 /* Mobile header */
 @media (max-width: 768px){
 #site-header { height: var(--site-header-height-mobile); padding: 0.5rem 1rem; }
-#site-header a img { height: 4.5vh; }
+#site-header a img { height: 12vh; }
 .dropdown-menu { width: 100%; left: 0; right: 0; }
 }
 

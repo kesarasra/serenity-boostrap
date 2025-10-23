@@ -13,8 +13,8 @@ Design tokens (single source of truth)
 --font-sans: 'Nunito', sans-serif;
 --font-heading: 'Ubuntu', sans-serif;
 
---bg: #daf8e2;
---bg-secondary: #4ba97a;
+--bg: #e6f7ea;
+--bg-secondary: #3e8963;
 --accent: rgba(236, 192, 69, 0.7);
 --accent-strong: #d4a32b;
 --accent-light: rgba(248, 212, 112, 0.7);

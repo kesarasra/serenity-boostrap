@@ -905,7 +905,7 @@ RESPONSIVE 3-BUTTON BENTO UI (Fluid Scaling)
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  font-size: clamp(0.8rem, 1.9vw, 1.35rem);
   border-radius: clamp(0.3rem, 1vw, 0.5rem);
   transition: transform var(--transition-medium), box-shadow var(--transition-medium);
   cursor: pointer;
@@ -1298,7 +1298,7 @@ ENHANCED MOBILE HEADER
 body::-webkit-scrollbar {
   opacity: 0;
   transition: opacity 0.4s ease, width 0.3s ease;
-  width: 8px;
+  width: 0.1px;
 }
 
 /* Scrollbar visible when user scrolls */

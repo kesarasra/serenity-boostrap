@@ -14,7 +14,7 @@ Design tokens (single source of truth)
 --font-heading: 'Ubuntu', sans-serif;
 
 --bg: #e6f7ea;
---bg-secondary: #3e8963;
+--bg-secondary: #5ea883;
 --accent: rgba(236, 192, 69, 0.7);
 --accent-strong: #d4a32b;
 --accent-light: rgba(248, 212, 112, 0.7);
@@ -491,6 +491,9 @@ width: 100%;
 #counselors h2 {
   letter-spacing: 0.7rem;
 }
+#counselors.frosted-card {
+  background: var(--accent-light);
+}
 .carousel{
 border-radius: var(--card-radius);
 overflow: hidden;
@@ -510,12 +513,12 @@ box-sizing: border-box;
 color: var(--text-primary);
 }
 .carousel-caption.frosted-card h5 {
-    color: var(--text-primary);
+    color: var(--text-white);
     font-weight: 600; 
     margin-bottom: 0.5rem; 
 }
 .carousel-caption.frosted-card p { 
-    color: var(--text-primary);
+    color: var(--text-white);
     margin:0; 
     line-height:1.4; 
 }
@@ -539,8 +542,8 @@ color: var(--text-primary);
 }
 
 #counselor-bio .btn.frosted-card{
-backdrop-filter: blur(0.6vh);
-border: 1px solid rgba(0,0,0,0.1);
+  backdrop-filter: blur(0.6vh);
+  border: 1px solid rgba(0,0,0,0.1);
 }
 
 #prevCounselor, #nextCounselor {
@@ -586,6 +589,7 @@ border: 1px solid rgba(0,0,0,0.1);
 
 /* Standardize all text-card spacing */
 #counselor-bio .text-card {
+  color: var(--text-white);
   width: 90%;
   margin: 0 auto 9vh auto; /* space between cards */
   padding: 2.5vh;
@@ -938,7 +942,7 @@ MEDIA SECTION STYLES
 ========================= */
 #media { 
   background: var(--bg-secondary); 
-  color: var(--text-primary); 
+  color: var(--text-white); 
   overflow-x: hidden;
   width: 100vw;
   max-width: 100vw;
@@ -980,12 +984,12 @@ transform-origin: center;
 }
 
 #media .bento-card h4 {
-    color: var(--text-midprimary);
+    color: var(--text-white);
     font-size: 1.4rem;
 }
 
 #media .bento-card p {
-    color: var(--text-primary);
+    color: var(--text-white);
     font-size: 1.2rem;
 }
 
@@ -1000,7 +1004,7 @@ position:absolute;
 bottom:0; left:0;
 width:100%;
 background: var(--accent);
-color: var(--text-primary);
+color: var(--text-white);
 font-size: 1rem;
 backdrop-filter: blur(0.6vh);
 text-align:center;
@@ -1015,7 +1019,7 @@ margin: 0 auto 0vh;
 padding: 9vh 0 4vh 9vh;
 font-weight:600;
 font-size: 2.2rem;
-color: var(--text-midprimary);
+color: var(--text-white);
 text-align: left;
 }
 

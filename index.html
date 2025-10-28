@@ -52,7 +52,7 @@
     #home-text {
       z-index: 10;
       max-width: 600px;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.35);
       backdrop-filter: blur(12px);
       padding: 2rem;
       border-radius: 1rem;
@@ -99,7 +99,7 @@
       font-weight: bold;
       font-size: 1.4rem;
       border-radius: 0.5rem;
-      color: #222;
+      color: whitesmoke;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
       text-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.3);
@@ -110,10 +110,10 @@
     }     
 
     /* Different overlay colors per section */
-    #bento-about .bento-overlay      { background-color: rgba(241, 228, 106, 0.7); } /* #f0e68c */
-    #bento-counselors .bento-overlay { background-color: rgba(240, 230, 140, 0.7); } /* #90ee90 */
-    #bento-services .bento-overlay   { background-color: rgba(241, 228, 106, 0.7); } /* #ffb6c1 */
-    #bento-media .bento-overlay      { background-color: rgba(240, 230, 140, 0.7); } /* #90ee90 */
+    #bento-about .bento-overlay      { background-color: rgba(243, 226, 74, 0.4); } /* #f0e68c */
+    #bento-counselors .bento-overlay { background-color: rgba(243, 228, 96, 0.4); } /* #90ee90 */
+    #bento-services .bento-overlay   { background-color: rgba(243, 226, 74, 0.4); } /* #ffb6c1 */
+    #bento-media .bento-overlay      { background-color: rgba(243, 228, 96, 0.4); } /* #90ee90 */
 
     /* Hover effect */
     .bento-section:hover .bento-overlay {
@@ -140,7 +140,7 @@
   <!-- Header -->
   <header id="site-header" class="position-fixed top-0 d-flex justify-content-between align-items-center">
     <div class="dropdown">
-      <button class="btn btn-header btn-outline-dark" id="hamburgerBtn">&#9776;</button>
+      <button class="btn btn-header" id="hamburgerBtn">&#9776;</button>
       <ul class="dropdown-menu" id="menuDropdown">
         <li><a class="dropdown-item" href="#about">
           <span class="text-en">About</span>
@@ -171,7 +171,7 @@
 
     <div class="d-flex align-items-center gap-2 pe-3">
       <button class="lang-toggle" id="langToggle">မြန်မာ</button>
-      <a href="index.html" class="fs-1 text-dark">
+      <a href="index.html" class="fs-1 text-light">
         <i class="bi bi-house-door-fill"></i>
       </a>
     </div>
@@ -212,25 +212,25 @@
     <div class="container">
       <div class="bento-box">
         <a href="#about" class="bento-section" id="bento-about">
-          <div class="bento-overlay">
+          <div class="bento-overlay" style="color: whitesmoke; filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.6));">
             <span class="text-en">About</span>
             <span class="text-mm">အကြောင်းအရာ</span>
           </div>
         </a>
         <a href="#counselors" class="bento-section" id="bento-counselors">
-          <div class="bento-overlay">
+          <div class="bento-overlay" style="color: whitesmoke; filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.6));">
             <span class="text-en">Counselors</span>
             <span class="text-mm">အကြံပေးဆရာများ</span>
           </div>
         </a>
         <a href="#services" class="bento-section" id="bento-services">
-          <div class="bento-overlay">
+          <div class="bento-overlay" style="color: whitesmoke; filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.6));">
             <span class="text-en">Services</span>
             <span class="text-mm">ဝန်ဆောင်မှုများ</span>
           </div>
         </a>
         <a href="#media" class="bento-section" id="bento-media">
-          <div class="bento-overlay">
+          <div class="bento-overlay" style="color: whitesmoke; filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.6));">
             <span class="text-en">Media</span>
             <span class="text-mm">မီဒီယာ</span>
           </div>

@@ -13,8 +13,8 @@ Design tokens (single source of truth)
 --font-sans: 'Nunito', sans-serif;
 --font-heading: 'Ubuntu', sans-serif;
 
---bg: #e6f7ea;
---bg-secondary: #5ea883;
+--bg: #edf5ef;
+--bg-secondary: #7ab899;
 --accent: rgba(236, 192, 69, 0.7);
 --accent-strong: #d4a32b;
 --accent-light: rgba(248, 212, 112, 0.7);
@@ -163,12 +163,16 @@ max-height: 11h;
 #hamburgerBtn{
 min-width: 4.4vh;
 min-height: 4.4vh;
+background: var(--text-white);
+opacity: 0.8;
 }
 
 .logo-img {
-max-height: clamp(12vh, 12vw, 12vh);
-height: auto;
-transition: max-height 0.3s ease;
+  max-height: clamp(12vh, 12vw, 12vh);
+  height: auto;
+  transition: max-height 0.3s ease;
+  filter: drop-shadow(0 0 0.8vh rgba(255, 255, 255, 0.8))
+          drop-shadow(0 0 1.4vh rgba(255, 255, 255, 0.6));
 }
 @media (min-width: 768px) { .logo-img { max-height: 12vh; } }
 @media (min-width: 1200px){ .logo-img { max-height: 12vh; } }
@@ -368,7 +372,7 @@ font-size:1.25rem;
 border-radius: 0.5rem;
 transition: transform var(--transition-medium), box-shadow var(--transition-medium);
 cursor:pointer;
-color: var(--text-primary);
+color: var(--text-white);
 margin-top: 1vh;
 margin-bottom: 1vh;
 }
@@ -450,6 +454,7 @@ z-index: 10;
 ABOUT / MOTTOS / ACTIVITIES
 ========================= */
 #about, #mottos, #activities {
+  transform: translateY(2vh);
 background: var(--bg);
 align-items: center;
 width: 100%;
@@ -460,12 +465,22 @@ width: 100%;
 background: var(--bg);
 align-items: center;
 width: 100%;
-}}
+margin-bottom: 4vh;
+}
+#mottos .wallstuck {
+  margin-bottom: 2vh;
+  transform: translateY(8vh);
+}
+#mottos .runnerup {
+  transform: translateY(-10vh);
+}
+}
 
 #mottos .frosted-card{
 background: var(--accent);
 padding: 2vh;
 }
+
 #activities img{
 width: 100%;
 max-width: 1200px;
@@ -473,7 +488,7 @@ border-radius: 0;
 box-shadow: 0 0.4vh 1.2vh rgba(0,0,0,0.15);
 }
 #activities .frosted-card{
-margin-top: -15vh;
+margin-top: -10vh;
 max-width: 600px;
 z-index: 2;
 }
@@ -530,7 +545,7 @@ color: var(--text-primary);
     margin-bottom: 0.5rem; 
 }
 .carousel-caption.frosted-card p { 
-    color: var(--text-white);
+    color: var(--text-primary);
     margin:0; 
     line-height:1.4; 
 }
@@ -563,7 +578,7 @@ color: var(--text-primary);
     font-size: 2.2rem;           /* bigger size */
     -webkit-text-stroke: 3px;    /* adds visual thickness */
     background-color: var(--accent); /* your preferred button bg */
-    color: var(--text-primary);
+    color: var(--text-white);
     border-radius: 0.5rem;
     border: none;
     padding: 0.5rem 1rem;
@@ -643,7 +658,6 @@ SERVICES
 flex-grow: 1;
 padding: 1rem;
 background: rgba(236, 192, 69, 0.8);
-filter: brightness(1.03);
 will-change: opacity, transform;
 display: flex;
 flex-direction: column;
@@ -746,7 +760,7 @@ background: rgba(248, 230, 67, 0.8);
   #section-selector .bento-section {
     flex: 1 1 45%;
     height: 12vh;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -817,18 +831,13 @@ z-index:0;
   bottom: 0;
   left: 0;
   right: 0;
-
   max-height: 40%;             /* initial collapsed height */
   overflow: hidden;
-
   padding: 1rem;
-  background: rgba(236, 192, 69, 0.75); /* semi-transparent accent for fast rendering */
+  background: var(--accent-light); /* semi-transparent accent for fast rendering */
   color: #130606;
-
   transition: max-height var(--transition-medium) ease, background 0.2s ease;
   z-index: 1;
-
-  /* smoother rendering */
   will-change: max-height, opacity;
   pointer-events: auto;       /* ensures overlay is interactive if needed */
 }
@@ -886,7 +895,7 @@ RESPONSIVE 3-BUTTON BENTO UI (Fluid Scaling)
 #section-selector {
   width: 100%;
   background-color: var(--bg-secondary);
-  padding: clamp(1.5rem, 3vw, 4vh) 0;
+  padding: clamp(2rem, 3vw, 4vh) 0;
 }
 
 #section-selector .bento-box {
@@ -905,11 +914,11 @@ RESPONSIVE 3-BUTTON BENTO UI (Fluid Scaling)
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: clamp(0.8rem, 1.9vw, 1.35rem);
+  font-size: clamp(0.8rem, 2.2vw, 1.35rem);
   border-radius: clamp(0.3rem, 1vw, 0.5rem);
   transition: transform var(--transition-medium), box-shadow var(--transition-medium);
   cursor: pointer;
-  color: var(--text-primary);
+  color: var(--text-midprimary);
   margin: clamp(0.3rem, 1vh, 1rem) 0;
   letter-spacing: clamp(0.02rem, 0.2vw, 0.08rem);
   padding: clamp(0.3rem, 1vw, 0.8rem);
@@ -1304,19 +1313,19 @@ body::-webkit-scrollbar {
 /* Scrollbar visible when user scrolls */
 body.scrolling::-webkit-scrollbar {
   opacity: 1;
-  width: 20px;
+  width: 2.5vw;
 }
 
 /* Apply frosted styling ONLY when visible */
 body.scrolling::-webkit-scrollbar-track {
-  background: rgba(76, 240, 131, 0.3);
+  background: var(--accent-light);
   backdrop-filter: blur(1vh);
   -webkit-backdrop-filter: blur(1vh);
   border-radius: 1vh;
 }
 
 body.scrolling::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background: var(--bg-secondary);
   backdrop-filter: blur(1vh);
   -webkit-backdrop-filter: blur(1vh);
   border-radius: 10px;
@@ -1326,7 +1335,7 @@ body.scrolling::-webkit-scrollbar-thumb {
 }
 
 body.scrolling::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-strong);
+  background: var(--bg);
 }
 
 /* =========================
@@ -1348,8 +1357,8 @@ body.lang-mm .text-mm { display: inline; }
 .lang-toggle {
   position: relative;
   margin-right: 2vw;
-  background: var(--text-primary);
-  border: 0.1vh solid var(--text-primary);
+  background: var(--text-white);
+  border: 0.1vh solid var(--text-white);
   backdrop-filter: blur(var(--blur));
   border-radius: 2rem;
   padding: 0.4rem 0.9rem;
@@ -1358,6 +1367,7 @@ body.lang-mm .text-mm { display: inline; }
   font-size: 1rem;
   font-weight: 600;
   transition: background var(--transition-medium), transform var(--transition-medium);
+  opacity: 0.8;
 }
 
 .lang-toggle:hover {
